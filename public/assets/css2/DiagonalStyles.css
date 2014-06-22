@@ -1,0 +1,9 @@
+.diag-top::before{
+	background-image: url(../gallery/2013-girlHat.png); 
+}
+.diag-mid::before{
+	background-image: url(../gallery/2013_howl.png); 
+}
+.diag-btm::before{
+	background-image: url(../gallery/2013_levigne.png); 
+}

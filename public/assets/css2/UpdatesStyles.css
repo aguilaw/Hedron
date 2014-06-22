@@ -1,0 +1,19 @@
+.type-icon{
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.forms{
+    width:50%;
+}
+.radio{
+    margin-left: 40px;
+}
+
+#date, #icon-name{  
+    width:20%;
+}
+.submit{
+    margin-left:0;
+}
+

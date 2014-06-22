@@ -1,0 +1,59 @@
+body {
+	font-family: 'orbitron', sans-serif;
+	font-weight: 400;
+	font-size: medium;
+	color: #EDF1ED;
+	height: 920px;
+	background-image:url(../Hedron_hexbg_light.png);	
+}
+h2{
+	font-family: 'orbitron',sans-serif;
+	font-size: 120%;
+	font-weight: 400;
+}
+h1{
+	color: #ed6b58;
+	font-size: 250%;
+	font-family: 'orbitron',sans-serif;
+	font-weight: 500;
+	text-shadow: 1px 1px #000; 
+}
+a{
+	color: #EDF1ED;
+	text-decoration: none;
+}
+.nav a{
+	background-color:rgba(64,84,86,.6);
+	font-size: 90%;
+	text-shadow: 1px 1px #000;
+	color: #e7e7e7;
+	position: relative;
+	box-shadow: inset 0px 5px 5px 2px rgba(0, 0, 0, 0.5);
+	padding: 0 13px 0 13px;
+	font-weight:400; 
+	float: right;
+	margin-right: 10px;
+}
+
+li{
+	list-style-type: none;
+	display: inline;
+}
+
+.rnd-box{
+	-webkit-border-radius:50px 50px 50px 50px;
+	-moz-border-radius:40px;
+	background-color:rgba(64,84,86,.6);
+	padding: 40px 40px 40px 40px;
+	box-shadow: inset 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.rnd-box:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}

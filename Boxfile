@@ -8,6 +8,7 @@ web1:
     - redis
     - zip
     - xcache
+    - curl
   php_session_save_handler: redis
   php_session_save_path: "tcp://tunnel.pagodabox.com:6379"
   shared_writable_dirs:
@@ -16,8 +17,11 @@ web1:
     - app/storage/meta
     - app/storage/sessions
     - app/storage/views
+    - public/assets/gallery
+    - assets/gallery
+    - /assets/gallery
   after_build:
-    - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php; fi; php composer.phar install --prefer-source"
+    - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php -- --version=1.0.0-alpha7; fi; php composer.phar self-update; php composer.phar dump-autoload -o; php composer.phar install --prefer-source; "
   after_deploy:
     - "php artisan cache:clear"
     - "rm -f app/storage/views/*"
