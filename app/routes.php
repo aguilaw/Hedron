@@ -18,7 +18,8 @@ Route::get('/', 'HomeController@ShowHome');
 Route::get('/home','HomeController@ShowHome');
 
 /*Admin Routes*/
-Route::get('/admin', 'AdminController@AdminLogin');
+Route::get('/admin', 'AdminController@AdminDashboard');
+Route::get('/adminLogin', 'AdminController@AdminLogin');
 Route::get('/logout', 'AdminController@Logout');
 Route::get('/{page}', 'PagesController@ShowComingSoon');
 
@@ -40,4 +41,4 @@ Route::post('/admin/updates/new', 'UpdatesController@SaveUpdateNew');
 Route::post('/admin/updates/{update}', 'UpdatesController@SaveUpdateEdit');
 Route::post('/admin/updates/delete/{update}', 'UpdatesController@UpdateDelete');
 
-Route::post('/admin', 'AdminController@VerifyLogin');
+Route::post('/adminLogin', 'AdminController@VerifyLogin');

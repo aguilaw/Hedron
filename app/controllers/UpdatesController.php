@@ -20,7 +20,7 @@ class UpdatesController extends BaseController {
            $update->type=Input::get('updt-type');
            $update->FA_icon_name=Input::get('icon-name');
            $update->save();
-        return Redirect::action('UpdatesController@UpdateEdit',$update->id);
+        return Redirect::action('UpdatesController@UpdateNew');
     }
 /*****************************************************************/
     public function UpdateEdit(Update $update)

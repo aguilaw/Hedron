@@ -42,6 +42,12 @@ Images
 
 
 @section('form')
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+        {{$error}}
+        <br>
+        @endforeach
+     @endif
     {{-- FIGURE OUT HOW TO USE A ROUTE TO PRODUCE THE URL--}} 
     <form class="forms" action =@yield('action', action('ImagesController@ImageEdit', $toEdit->id)) enctype="multipart/form-data" method ="post" role="form">
          <!--contains form and file info -->

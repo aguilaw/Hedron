@@ -13,7 +13,6 @@
     
      <script type="text/JavaScript" src={{ asset("assets/js/diagonalManipulation.js") }}></script>
     
-    
 	{{-- Google Fonts --}}
 	<link href='http://fonts.googleapis.com/css?family=Monoton|Mrs+Sheppards|Orbitron:500,400,700|' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,300,600,700|Allerta+Stencil|Source+Code+Pro:300,500,400,700' rel='stylesheet' type='text/css'>

@@ -2,52 +2,44 @@
 
 class AdminController extends BaseController {
 
+    public function __construct() {
+        $this->beforeFilter('auth',array('except' => array('AdminLogin','VerifyLogin')));
+    }
+/*****************************************************************/    
 	public function AdminLogin()
     {  
-       if(Session::has('user')){
-            return Redirect::action('ImagesController@ImageNew');
-        }
-        else{
-            return View::make('admin-login');
-        }
-	}
 
+        return View::make('admin-login');
+        
+	}
+/*****************************************************************/    
+	public function AdminDashboard()
+    {  
+
+         return Redirect::action('ImagesController@ImageNew');
+        
+	}
+/*****************************************************************/    
 	public function VerifyLogin()
 	{
-        $admin= User::where('email', '=', Input::get('email'))
-            ->where('password','=', sha1(Input::get('password')))
-             ->where('role','=', 'admin')
-            ->get();
-		
-		if ($admin->count()==1){
-            $admin_name=$admin->first()->lname." , ".$admin->first()->fname;
-			Session::put('user',$admin_name);
-			return Redirect::action('ImagesController@ImageNew');
-		}
+        if (Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))) {
+            
+            return Redirect::to('admin/images/new')->with('message', 'You are now logged in!');
+        } 
         else {
-            return Redirect::action('AdminController@AdminLogin');
+            return Redirect::to('adminLogin')
+            ->with('message', 'Your username/password combination was incorrect')
+            ->withInput();
         }
+        
 	}
-    
+
+/*****************************************************************/        
     public function Logout()
     {   
-        Session::forget('user');
+        Auth::logout();
         return Redirect::action('HomeController@ShowHome');
     
     }
-            
-    
-	public function CreateUpdate()
-	{
-		/*$update=new Update;
-		$update->type='mssg';
-		$update->mssg='Will be adding more sketches soon!';
-		date_default_timezone_set('America/Los_Angeles');
-		$update->date= date('Y-m-d');
-		$update->save();*/
-	}
-    public function AddImgs()
-    {
 
-    }
 }

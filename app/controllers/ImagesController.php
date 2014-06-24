@@ -22,38 +22,44 @@ class ImagesController extends BaseController {
 /*****************************************************************/  
      public function SaveImageEdit($image)
     {
-            if(($image->title != Input::get('title')) || ($image->date_created != Input::get('date'))){
-                $title = str_replace(' ', '-', Input::get('title'));
-                $date=explode('-',Input::get('date'));
-                $year=$date[0];
-                $newFileName=$year."_".$title.".".$image->file_ext;
-                rename($this->DEST_PATH.$image->file_name, $this->DEST_PATH.$newFileName);
-                $image->file_name=$newFileName;
-            }
-            else{}
-         /*Set the other image parameters  from Input:: and save*/
-        $this->SetOtherParams($image);
-        return Redirect::action('ImagesController@ImageEdit',$image->id);
+        $validate = $this->validate(Input::all());
+         if($validate->passes()){
+                /*if the uploaded file has changed replace the last file with the new one*/
+                if (Input::hasFile('file')){
+                        unlink($this->DEST_PATH.$image->file_name);
+                        list($title,$ext,$date,$year,$fileName,$width,$height,$fileSize)=$this->SaveImginFS();
+                        $image->file_name=$fileName;
+                        $image->file_ext=$ext;
+                        $image->file_size=$this->HumanFileSize($fileSize);
+                        $image->file_width=$width;
+                        $image->file_height=$height;
+                 }
+                 /*if the title or the year  change the file is renamed to maintain the naming convention*/
+                elseif(($image->title != Input::get('title')) || ($image->date_created != Input::get('date'))){
+                    $title = str_replace(' ', '-', Input::get('title'));
+                    $date=explode('-',Input::get('date'));
+                    $year=$date[0];
+                    $newFileName=$year."_".$title.".".$image->file_ext;
+                    rename($this->DEST_PATH.$image->file_name, $this->DEST_PATH.$newFileName);
+                    $image->file_name=$newFileName;
+                    
+                }
+                else{}
+             /*Set the other image parameters  from Input:: and save*/
+            $this->SetOtherParams($image);
+            return Redirect::action('ImagesController@ImageEdit',$image->id);
+        }
+        else{
+           return Redirect::action('ImagesController@ImageEdit',$image->id)->withErrors($validate->messages());
+        }
     }   
  /*****************************************************************/     
     public function SaveImageNew(){
         if (Input::file('file')->isValid()){
-            /*Move the image into the gallery folder*/
-            $title = str_replace(' ', '-', Input::get('title'));
-            $ext=Input::file('file')->getClientOriginalExtension();
-            $date=explode('-',Input::get('date'));
-            $year=$date[0];            
-            $fileName=$year."_".$title.".".$ext;
-            
-            Input::file('file')->move($this->DEST_PATH,$fileName);
+            list($title,$ext,$date,$year,$fileName,$width,$height,$fileSize)=$this->SaveImginFS();
             
             /*Save the Image info to the Database*/
             $image= new Image;
-            
-            //gather additional file information             
-            list($width, $height) = getimagesize($this->DEST_PATH.$fileName);
-            $fileSize=Input::file('file')->getClientSize();
-            
             $image->file_name=$fileName;
             $image->file_ext=$ext;
             $image->file_size=$this->HumanFileSize($fileSize);
@@ -87,7 +93,25 @@ class ImagesController extends BaseController {
         $factor = floor((strlen($bytes) - 1) / 3);
         return sprintf("%.2f", $bytes / pow(1024, $factor)) . @$size[$factor];
     }
-/*****************************************************************/  
+/*****************************************************************/
+     private function SaveImginFS(){
+     
+        $title = str_replace(' ', '-', Input::get('title'));
+        $date=explode('-',Input::get('date'));
+        $year=$date[0];            
+        $ext=Input::file('file')->getClientOriginalExtension();
+        $fileName=$year."_".$title.".".$ext;
+        
+        
+        Input::file('file')->move($this->DEST_PATH,$fileName);
+        $fileSize=Input::file('file')->getClientSize();
+        list($width, $height) = getimagesize($this->DEST_PATH.$fileName);
+       
+        
+        return array($title,$ext,$date,$year,$fileName,$width,$height,$fileSize);
+     
+     }
+/*****************************************************************/
     private function SetOtherParams($image){
          $image->title=Input::get('title');
             $image->date_created=Input::get('date');
@@ -101,6 +125,22 @@ class ImagesController extends BaseController {
             $image->save();
 
     }
-    
+/*****************************************************************/    
+    public function validate($input) {
+
+        $rules = array(
+                'tools'  =>'Required|Alpha|Min:3|Max:200',
+                'file' => 'Image',
+                'type'=>'required|alpha',
+                'title'=>'alphaNum',
+               // 'desc'=>'alpha|max:300', /*fails eventhough input only contained letters and nums*/
+                'featured'=>'alpha',
+               // 'left'=>'numeric',
+               // 'top'=>'numeric',
+                
+        );
+
+        return Validator::make($input, $rules);
+}
    
 }

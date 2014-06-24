@@ -24,7 +24,7 @@
 
     
 .body-wrap{
-	height:700px;
+	min-height:700px;
 	min-width: 1330px;
 	width: 90%;
 }
@@ -99,3 +99,9 @@
            height: 0; 
            clear: both;
         }
+/**********************Admin Login*************************/
+.login-box{
+width:20%;
+margin-left:auto;
+margin-right:auto;
+}
