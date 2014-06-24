@@ -1,7 +1,7 @@
 @extends('admin-images')
 
 @section('pre-fill')
-    {{""}}
+
 @stop
 
 @section('action')

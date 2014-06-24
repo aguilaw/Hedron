@@ -54,6 +54,9 @@
            height: 0; 
            clear: both;
         }
+        form label{
+            margin-top:5%;
+        }
         form .input, form textarea{
             width: 100%;
         }

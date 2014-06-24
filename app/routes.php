@@ -13,6 +13,7 @@
 /*Route::model('page', 'pages');*/
 Route::model('image','Image');
 Route::model('update','Update');
+Route::model('user','User');
 
 Route::get('/', 'HomeController@ShowHome');
 Route::get('/home','HomeController@ShowHome');
@@ -31,6 +32,10 @@ Route::get('/admin/updates/new', 'UpdatesController@UpdateNew');
 Route::get('/admin/updates/{update}', 'UpdatesController@UpdateEdit');
 Route::get('/admin/updates/delete/{update}', 'UpdatesController@UpdateDelete');
 
+Route::get('/admin/users/new', 'UsersController@UserNew');
+Route::get('/admin/users/{user}', 'UsersController@UserEdit');
+Route::get('/admin/users/delete/{user}', 'UsersController@UserDelete');
+
 
 /*Handle Forms*/
 Route::post('/admin/images/delete/{image}', 'ImagesController@ImageDelete');
@@ -40,5 +45,9 @@ Route::post('/admin/images/{image}', 'ImagesController@SaveImageEdit');
 Route::post('/admin/updates/new', 'UpdatesController@SaveUpdateNew');
 Route::post('/admin/updates/{update}', 'UpdatesController@SaveUpdateEdit');
 Route::post('/admin/updates/delete/{update}', 'UpdatesController@UpdateDelete');
+
+Route::post('/admin/users/new', 'UsersController@SaveUserNew');
+Route::post('/admin/users/{user}', 'UsersController@SaveUserEdit');
+Route::post('/admin/users/delete/{user}', 'UsersController@UserDelete');
 
 Route::post('/adminLogin', 'AdminController@VerifyLogin');

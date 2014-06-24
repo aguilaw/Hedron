@@ -4,16 +4,23 @@
 }
 
 .forms{
-    width:50%;
+    width:60%;
+}
+form textarea{
+width:60%;
 }
 .radio{
     margin-left: 40px;
 }
 
 #date, #icon-name{  
-    width:20%;
+    width:30%;
 }
 .submit{
     margin-left:0;
+}
+
+.rnd-box{
+min-width:900px;
 }
 

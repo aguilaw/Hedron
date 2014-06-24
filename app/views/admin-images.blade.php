@@ -54,20 +54,16 @@ Images
         <div class="info-wrap">  
             <label for="title">Title:</label>
             <input class="input" type="text" name="title" id="title"   autocomplete="off" required value="@yield('pre-fill',  $toEdit->title)">
-            <br>
-            <br>
+
             <label for="date">Date:</label>
             <input class="input" type="date" name="date" id="date"  required value=@yield('pre-fill',  $toEdit->date_created)>
-            <br>
-            <br>
+
             <label for="tools">Tools:</label>
-            <input class="input" type="text" name="tools" id="tools" placeholder="other" value="@yield('pre-fill',  $toEdit->tools)" >
-            <br>
-            <br>
+            <input class="input" type="text" name="tools" id="tools"  value="@yield('pre-fill',  $toEdit->tools)" >
+
             <label for="type">Type:</label>
             <input class="input" type="text" name="type" id="type"  placeholder="" required value="@yield('pre-fill',  $toEdit->project_type)">
-            <br>
-            <br>
+
             <label for="desc">Description:</label>
             <br>
             <textarea class="input"  name="desc" id="desc" rows="20" columns="40">@yield('pre-fill', $toEdit->description)</textarea>
@@ -78,9 +74,7 @@ Images
             <!-- Upload the file -->
             <label for="file"> @yield('upload', "Change") Image File:</label>
             <input type="file" name="file" id="file" @yield('required', "")>
-            <br>
 
-            <br>
             <!--readonly File info -->
             <label for="file-width">Width:</label>
                 <input class="static-info" type="text" name="file-width" id="file-width"  readonly value="@yield('pre-fill', $toEdit->file_width) px">

@@ -1,7 +1,7 @@
 @extends('admin-updates')
 
 @section('pre-fill')
-    {{""}}
+
 @stop
 
 @section('action')

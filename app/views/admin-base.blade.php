@@ -27,10 +27,11 @@
 	<ul class="nav-buttons">		
 		<li ><a href={{ action('UpdatesController@UpdateNew')}}>Updates</a></li>	
 		<li ><a href={{ action('ImagesController@ImageNew')}}>Images</a></li>
+        <li ><a href={{ action('UsersController@UserNew')}}>Users</a></li>
 	</ul>
 	<ul class="user-grp">
 		<li id="logout"><a href={{ action('AdminController@Logout') }} >Log Out</a></li>
-		<li class="user">{{ Session::get('user') }}</li>
+		<li class="user">{{ Auth::user()->lname." , ".Auth::user()->fname }} </li>
 	</ul>
 	
 </nav><!-- END Nav-->	
