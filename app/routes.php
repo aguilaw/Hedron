@@ -15,14 +15,13 @@ Route::model('image','Image');
 Route::model('update','Update');
 Route::model('user','User');
 
-Route::get('/', 'HomeController@ShowHome');
-Route::get('/home','HomeController@ShowHome');
+
 
 /*Admin Routes*/
 Route::get('/admin', 'AdminController@AdminDashboard');
 Route::get('/adminLogin', 'AdminController@AdminLogin');
 Route::get('/logout', 'AdminController@Logout');
-Route::get('/{page}', 'PagesController@ShowComingSoon');
+
 
 Route::get('/admin/images/new', 'ImagesController@ImageNew');
 Route::get('/admin/images/{image}', 'ImagesController@ImageEdit');
@@ -35,6 +34,18 @@ Route::get('/admin/updates/delete/{update}', 'UpdatesController@UpdateDelete');
 Route::get('/admin/users/new', 'UsersController@UserNew');
 Route::get('/admin/users/{user}', 'UsersController@UserEdit');
 Route::get('/admin/users/delete/{user}', 'UsersController@UserDelete');
+
+/*Public Routes*/
+Route::get('/', 'PagesController@ShowHome');
+Route::get('/home','PagesController@ShowHome');
+
+Route::get('/gallery/{image}','PagesController@ShowImage');
+Route::get('/gallery','PagesController@ShowGallery');
+
+Route::get('/sketchbook','PagesController@ShowSketchbook');
+Route::get('/sketchbook/{image}','PagesController@ShowImage');
+
+Route::get('/{page}', 'PagesController@ShowComingSoon');
 
 
 /*Handle Forms*/

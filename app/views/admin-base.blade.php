@@ -28,7 +28,7 @@
 		<li ><a href={{ action('UpdatesController@UpdateNew')}}>Updates</a></li>	
 		<li ><a href={{ action('ImagesController@ImageNew')}}>Images</a></li>
         <li ><a href={{ action('UsersController@UserNew')}}>Users</a></li>
-        <li ><a href={{ action('HomeController@ShowHome')}}>Hedron Home</a></li>
+        <li ><a href={{ action('PagesController@ShowHome')}}>Hedron Home</a></li>
 	</ul>
 	<ul class="user-grp">
 		<li id="logout"><a href={{ action('AdminController@Logout') }} >Log Out</a></li>

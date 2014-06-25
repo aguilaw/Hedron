@@ -26,18 +26,20 @@
 		</nav>
 
 		<!-- Begin Features -->
-		<div class="diag-btm">
-        <script>var featured={{$featured->toJson() }}</script>
+        <script>
+            var URLtoGallery='{{url('gallery')}}';
+            var featured={{$featured->toJson() }};
+        </script>
+        
+		<a class="diag-btm" href="{{ url('gallery') }}">
             <img class="diag-btm-img" src="/assets/transparent.gif">
-        </div>
-        
-		<div class="diag-mid">
+        </a>
+		<a class="diag-mid" href="{{ url('gallery') }}">
             <img class="diag-mid-img" src="/assets/transparent.gif" >
-        </div>
-        
-		<div class="diag-top" id="frame"> 
-                    <img class="diag-top-img"  src="/assets/transparent.gif" >
-             </div><!--end .diag-top -->
+        </a>
+		<a class="diag-top" id="frame" href="{{ url('gallery') }}"> 
+            <img class="diag-top-img"  src="/assets/transparent.gif" >
+        </a><!--end .diag-top -->
 		<!-- End Features -->
 
 

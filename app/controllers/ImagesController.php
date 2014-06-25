@@ -50,7 +50,7 @@ class ImagesController extends BaseController {
                 }
                 else{}
              /*Set the other image parameters  from Input:: and save*/
-            $this->SetOtherParams($image);
+            $this->SetValsFromInput($image);
             return Redirect::action('ImagesController@ImageEdit',$image->id);
         }
         else{
@@ -71,7 +71,7 @@ class ImagesController extends BaseController {
             $image->file_height=$height;
             
             /*Set the other image parameters  from Input:: and save*/
-            $this->SetOtherParams($image);
+            $this->SetValsFromInput($image);
         }
         else{ }
         
@@ -116,14 +116,15 @@ class ImagesController extends BaseController {
      
      }
 /*****************************************************************/
-    private function SetOtherParams($image){
+    private function SetValsFromInput($image){
          $image->title=Input::get('title');
             $image->date_created=Input::get('date');
             $image->tools=Input::get('tools');
             $image->project_type=Input::get('type');
             $image->description=Input::get('desc');
-                $image->featured=Input::get('featured');
-            
+            $image->featured=Input::get('featured');
+            $image->link_to=Input::get('link-to');
+           
             $image->pos_x=Input::get('left');
             $image->pos_y=Input::get('top');
             $image->save();

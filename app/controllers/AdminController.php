@@ -38,7 +38,7 @@ class AdminController extends BaseController {
     public function Logout()
     {   
         Auth::logout();
-        return Redirect::action('HomeController@ShowHome');
+        return Redirect::action('PagesController@ShowHome');
     
     }
 

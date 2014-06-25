@@ -71,7 +71,11 @@
             width: 100%;
         }
         form textarea{
-            height:150px;
+            height:100px;
+        }
+        form #link-to-gallery{
+            margin-left:10%;
+        
         }
         .submit{
             width:100px;

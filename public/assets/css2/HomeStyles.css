@@ -91,7 +91,7 @@
     margin-right:20%;
     
     background-repeat: repeat;
-    background-image:url('../Hedron_hexbg_light.png');
+    background-image:url(../Hedron_hexbg_light.png);
     -webkit-transform: skewX(30deg); /* Safari and Chrome */
     z-index:55;  
     
@@ -219,13 +219,14 @@ width:9%;
 }
 
 .latest{
+    background-image:url(../home/curr_project_icon.png);
 	background-repeat: no-repeat;
 	background-size:cover;
 	background-position: 50% 50%;
 	margin-right: 3%;
 }
 .sketch{
-	background-repeat: no-repeat;
+	background-image:url(../home/sketchbook_icon.png);
 	background-size:cover;
 	background-position: 50% 50%;
 }

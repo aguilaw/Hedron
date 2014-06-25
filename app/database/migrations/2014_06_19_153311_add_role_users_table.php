@@ -12,9 +12,16 @@ class AddRoleUsersTable extends Migration {
 	 */
 	public function up()
 	{
-        $passwrd=Hash::make('h3dr0n');
+        Schema::table('images', function($table)
+        {
+            $table->string('link_to');
+        });
+        
+         $passwrd=Hash::make('h3dr0n');
         DB::table('users')->insert(array('email'=>'aguilawe@hedron.com', 'password'=>$passwrd, 'role'=>'admin','fname'=>'Wendy','lname'=>'Aguilar'));
-	}
+        
+       
+    }
 
 	/**
 	 * Reverse the migrations.

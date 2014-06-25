@@ -63,7 +63,12 @@ Images
 
             <label for="type">Type:</label>
             <input class="input" type="text" name="type" id="type"   autocomplete="off" placeholder="" required value="@yield('pre-fill',  $toEdit->project_type)">
-
+           
+           <label for="link-to">Save image in:</label>
+           <br>
+            <input class="input-radio" type="radio" name="link-to" id="link-to-gallery" required value="gallery" @if($toEdit->link_to == "gallery") checked @endif >Gallery
+            <input class="input-radio" type="radio" name="link-to" id="link-to-sketch" required value="sketchbook" @if($toEdit->link_to == "sketchbook") checked @endif> Sketchbook
+            <br>
             <label for="desc">Description:</label>
             <br>
             <textarea class="input"  name="desc" id="desc" rows="20" columns="40">@yield('pre-fill', $toEdit->description)</textarea>

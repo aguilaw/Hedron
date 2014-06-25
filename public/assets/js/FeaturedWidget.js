@@ -22,13 +22,22 @@ function FeaturedWidget (images) {
         return this.imgs[this.btm]['file_name'];
     }
     
+    this.getTopID=function(){   
+        return this.imgs[this.top]['id'];
+    }
+    this.getMidID=function(){    
+        return this.imgs[this.mid]['id'];
+    }
+    this.getBtmID=function(){    
+        return this.imgs[this.btm]['id'];
+    }
+    
     this.getTopLeft=function(){    
         return this.imgs[this.top]['pos_x'];
     }
     this.getTopTop= function(){    
         return this.imgs[this.top]['pos_y'];
     }
-
     
     
 }
@@ -58,6 +67,10 @@ FeaturedWidget.prototype.SetNextCycle=function(){
 
 function StartFeaturedWidget(featuredImgs) {
      var featWidg= new FeaturedWidget(featuredImgs);
+     $('.diag-btm').attr("href",URLtoGallery+"/"+featWidg.getBtmID());
+     $('.diag-mid').attr("href",URLtoGallery+"/"+featWidg.getMidID());
+     $('.diag-top').attr("href",URLtoGallery+"/"+featWidg.getTopID());
+     
      $(".diag-btm-img").css({ "background-image": "url("+IMG_URL+featWidg.getBtmName()+")", "background-size":"cover"});
      $(".diag-mid-img").css({ "background-image": "url("+IMG_URL+featWidg.getMidName()+")" ,"background-repeat": "none" ,"background-size":"cover"});
      $(".diag-top-img").css({ "left":featWidg.getTopLeft(), "top": featWidg.getTopTop(), "background-image": "url("+IMG_URL+featWidg.getTopName()+")","background-repeat": "none","background-size":"cover"}).fadeIn("slow");
@@ -67,6 +80,10 @@ function StartFeaturedWidget(featuredImgs) {
 
 function CycleImgs(featWidg){ 
     featWidg.SetNextCycle();
+     $('.diag-btm').attr("href",URLtoGallery+"/"+featWidg.getBtmID());
+     $('.diag-mid').attr("href",URLtoGallery+"/"+featWidg.getMidID());
+     $('.diag-top').attr("href",URLtoGallery+"/"+featWidg.getTopID());
+     
      $(".diag-btm-img").css({ "background-image": "url("+IMG_URL+featWidg.getBtmName()+")" });
      $(".diag-mid-img").css({ "background-image": "url("+IMG_URL+featWidg.getMidName()+")" });
      $(".diag-top-img").css({"left":featWidg.getTopLeft(), "top": featWidg.getTopTop(), "background-image": "url("+IMG_URL+featWidg.getTopName()+")" });

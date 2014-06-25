@@ -27,9 +27,11 @@ Users
     <a href= {{ action('UsersController@UserEdit', $user->id) }}>
         {{$user->lname.",".$user->fname}}
     </a>
-    <a id="delete" href={{ action('UsersController@UserDelete', $user->id) }}>
-        <i class="fa fa-times"></i>
-     </a >
+    @if($user->email != "aguilaw@hedron.com")
+        <a id="delete" href={{ action('UsersController@UserDelete', $user->id) }}>
+            <i class="fa fa-times"></i>
+        </a >
+     @endif
     <hr>
     </li>
     @endforeach
