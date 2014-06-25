@@ -3,7 +3,10 @@
 class UpdatesController extends BaseController {
 /********************Public Functions*******************************/
 /*****************************************************************/
-    public function UpdateNew()
+  public function __construct() {
+        $this->beforeFilter('auth');
+    }  
+  public function UpdateNew()
     {
         $updates=Update::orderBy('date_created','desc')->get();
         $toEdit=new update;

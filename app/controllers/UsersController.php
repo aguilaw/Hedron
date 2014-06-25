@@ -3,6 +3,10 @@
 class UsersController extends BaseController {
 /********************Public Functions*******************************/
 /*****************************************************************/
+      public function __construct() {
+        $this->beforeFilter('auth');
+    }
+    
     public function UserNew()
     {
         $users=User::orderBy('lname','asc')->get();

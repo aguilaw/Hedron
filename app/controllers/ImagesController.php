@@ -6,6 +6,10 @@ class ImagesController extends BaseController {
     
 /********************Public Functions*******************************/
 /*****************************************************************/ 
+    public function __construct() {
+        $this->beforeFilter('auth');
+    }
+    
     public function ImageNew()
     {
         $images=Image::orderBy('date_created','desc')->get();
@@ -96,7 +100,7 @@ class ImagesController extends BaseController {
 /*****************************************************************/
      private function SaveImginFS(){
      
-        $title = str_replace(' ', '-', Input::get('title'));
+        $title =preg_replace("/[^A-Za-z0-9]/", "_", Input::get('title'));
         $date=explode('-',Input::get('date'));
         $year=$date[0];            
         $ext=Input::file('file')->getClientOriginalExtension();
@@ -129,10 +133,10 @@ class ImagesController extends BaseController {
     public function validate($input) {
 
         $rules = array(
-                'tools'  =>'Required|Alpha|Min:3|Max:200',
+                'tools'  =>array('Min:3','Max:200','regex:/[A-Za-z0-9\(,\)\- ]/','required'),
                 'file' => 'Image',
-                'type'=>'required|alpha',
-                'title'=>'alphaNum',
+                'type'=>array('regex:/[A-Za-z0-9\(,\)\- ]/','required'),
+                'title'=>'regex:/[A-Za-z0-9_@#$%^&*()!,.`+=-~:;"\/) ]/',
                // 'desc'=>'alpha|max:300', /*fails eventhough input only contained letters and nums*/
                 'featured'=>'alpha',
                // 'left'=>'numeric',

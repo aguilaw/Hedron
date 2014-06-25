@@ -51,7 +51,7 @@ Images
     {{-- FIGURE OUT HOW TO USE A ROUTE TO PRODUCE THE URL--}} 
     <form class="forms" action =@yield('action', action('ImagesController@ImageEdit', $toEdit->id)) enctype="multipart/form-data" method ="post" role="form">
          <!--contains form and file info -->
-        <div class="info-wrap">  
+        
             <label for="title">Title:</label>
             <input class="input" type="text" name="title" id="title"   autocomplete="off" required value="@yield('pre-fill',  $toEdit->title)">
 
@@ -59,10 +59,10 @@ Images
             <input class="input" type="date" name="date" id="date"  required value=@yield('pre-fill',  $toEdit->date_created)>
 
             <label for="tools">Tools:</label>
-            <input class="input" type="text" name="tools" id="tools"  value="@yield('pre-fill',  $toEdit->tools)" >
+            <input class="input" type="text" name="tools" id="tools"   autocomplete="off" value="@yield('pre-fill',  $toEdit->tools)" >
 
             <label for="type">Type:</label>
-            <input class="input" type="text" name="type" id="type"  placeholder="" required value="@yield('pre-fill',  $toEdit->project_type)">
+            <input class="input" type="text" name="type" id="type"   autocomplete="off" placeholder="" required value="@yield('pre-fill',  $toEdit->project_type)">
 
             <label for="desc">Description:</label>
             <br>
@@ -74,7 +74,18 @@ Images
             <!-- Upload the file -->
             <label for="file"> @yield('upload', "Change") Image File:</label>
             <input type="file" name="file" id="file" @yield('required', "")>
-
+            <hr>
+             <input class="submit" type="submit" name="submit" id="submit" value="Save">
+            <button class="del-bttn" type="submit" formaction={{action('ImagesController@ImageDelete', $toEdit->id) }}> Delete </button>
+            <p>OPTIONAL &nbsp for featured images</p>
+             <p>Set the image position in the featured frame:</p>
+            
+            <div class="diag-top" id="frame">
+                    <!-- load page then load the matching image within the parallelogram 
+                            arguments are the saved left and top  values as well as the image file_title -->
+                            
+                    <img class="diag-img" id="draggable" src="/assets/transparent.gif" >
+             </div><!--end .diag-top -->
             <!--readonly File info -->
             <label for="file-width">Width:</label>
                 <input class="static-info" type="text" name="file-width" id="file-width"  readonly value="@yield('pre-fill', $toEdit->file_width) px">
@@ -86,37 +97,22 @@ Images
             <label for="file-ext">Extension:</label>
                 <input class="static-info" type="text" name="file-ext" id="file-ext"  readonly value="@yield('pre-fill',  $toEdit->file_ext)">
                 <br>
-             <input class="submit" type="submit" name="submit" id="submit" value="Save">
-             @section('pre-fill')
-             <button class="del-bttn" type="submit" formaction={{action('ImagesController@ImageDelete', $toEdit->id) }}> Delete </button>
-             @show
-        </div><!-- end .info-wrap-->
-        
-        
         <!-- wraps the image and position info-->
-        <div class="image-pos-wrap">
         @section('pre-fill-script')
-        <script>
-                                var tops= {{$toEdit->pos_y}};
-                                var left= {{$toEdit->pos_x}};
-                                
-                                var imgUrl = "url("+IMG_URL+'{{$toEdit->file_name}}'+")";
-                            </script>
-         @show
-            <div class="diag-top" id="frame"> 
-                    <!-- load page then load the matching image within the parallelogram 
-                            arguments are the saved left and top  values as well as the image file_title -->
-                            
-                    <img class="diag-img" id="draggable" src="/assets/transparent.gif" >
-             </div><!--end .diag-top -->
-             
-            <br><br>
+            <script>
+                var tops= {{$toEdit->pos_y}};
+                var left= {{$toEdit->pos_x}};
+                
+                var imgUrl = "url("+IMG_URL+'{{$toEdit->file_name}}'+")";
+            </script>
+         @show  
             <label for="left">Left (px):</label>
             <input type="text" class="static-info" id="left" name="left" value=" {{ $toEdit->pos_x }} px" readonly>
             <label for="top">Top:</label>
             <input type="text" class="static-info" id="top" name="top" value=" {{ $toEdit->pos_y }} px" readonly><br>
             <br>
-        </div><!--end .image-pos-wrap -->
-        
+         
     </form>
+    
+    
 @stop

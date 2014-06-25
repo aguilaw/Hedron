@@ -28,27 +28,27 @@
 		<li ><a href={{ action('UpdatesController@UpdateNew')}}>Updates</a></li>	
 		<li ><a href={{ action('ImagesController@ImageNew')}}>Images</a></li>
         <li ><a href={{ action('UsersController@UserNew')}}>Users</a></li>
+        <li ><a href={{ action('HomeController@ShowHome')}}>Hedron Home</a></li>
 	</ul>
 	<ul class="user-grp">
 		<li id="logout"><a href={{ action('AdminController@Logout') }} >Log Out</a></li>
 		<li class="user">{{ Auth::user()->lname." , ".Auth::user()->fname }} </li>
 	</ul>
-	
 </nav><!-- END Nav-->	
 
+<!-- The main bos that wraps all the contents of the admin pages-->
 <div class="rnd-box body-wrap">
+<!-- List containing all the item of type X-->
 	<div class="items-wrap">
 		<h2>All @yield('type-pl') </h2>
 		<a class="ui" href=@yield('type-create') > 
             <i class="fa fa-plus"></i>  New @yield('type') </a>
 		<br>
 		<ul class="items-list" id="items-list">
-        
             @yield('type-list')
-            
 		</ul>
 	</div>
-    
+<!-- A form uniqhe to each item type-->
         @yield('form')
         
 </div>

@@ -89,7 +89,7 @@
 .diag-top-img, .diag-mid-img, .diag-btm-img{
     position:relative;
     margin-right:20%;
-    background-size:cover;
+    
     background-repeat: repeat;
     background-image:url('../Hedron_hexbg_light.png');
     -webkit-transform: skewX(30deg); /* Safari and Chrome */
@@ -98,10 +98,9 @@
 }
 
 .diag-top-img{
-    width:300%;
-    height:300%;
-    background-size:contain;
-    -webkit-transition: background-image 1s, left 1s,top 1s;
+    width:200%;
+    height:200%;
+     -webkit-transition: background-image 2s,left 1s;
 }
 
 .diag-mid-img{

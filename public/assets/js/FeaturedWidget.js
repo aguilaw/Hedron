@@ -58,9 +58,9 @@ FeaturedWidget.prototype.SetNextCycle=function(){
 
 function StartFeaturedWidget(featuredImgs) {
      var featWidg= new FeaturedWidget(featuredImgs);
-     $(".diag-btm-img").css({ "background-image": "url("+IMG_URL+featWidg.getBtmName()+")", "background-repeat": "none" });
-     $(".diag-mid-img").css({ "background-image": "url("+IMG_URL+featWidg.getMidName()+")" ,"background-repeat": "none" });
-     $(".diag-top-img").css({ "left":featWidg.getTopLeft(), "top": featWidg.getTopTop(), "background-image": "url("+IMG_URL+featWidg.getTopName()+")","background-repeat": "none"  }).fadeIn("slow");
+     $(".diag-btm-img").css({ "background-image": "url("+IMG_URL+featWidg.getBtmName()+")", "background-size":"cover"});
+     $(".diag-mid-img").css({ "background-image": "url("+IMG_URL+featWidg.getMidName()+")" ,"background-repeat": "none" ,"background-size":"cover"});
+     $(".diag-top-img").css({ "left":featWidg.getTopLeft(), "top": featWidg.getTopTop(), "background-image": "url("+IMG_URL+featWidg.getTopName()+")","background-repeat": "none","background-size":"cover"}).fadeIn("slow");
     setInterval(function(){CycleImgs(featWidg)} , 3500);
 
 }
@@ -69,7 +69,7 @@ function CycleImgs(featWidg){
     featWidg.SetNextCycle();
      $(".diag-btm-img").css({ "background-image": "url("+IMG_URL+featWidg.getBtmName()+")" });
      $(".diag-mid-img").css({ "background-image": "url("+IMG_URL+featWidg.getMidName()+")" });
-     $(".diag-top-img").css({ "background-image": "url("+IMG_URL+featWidg.getTopName()+")" ,"left":featWidg.getTopLeft(), "top": featWidg.getTopTop() });
+     $(".diag-top-img").css({"left":featWidg.getTopLeft(), "top": featWidg.getTopTop(), "background-image": "url("+IMG_URL+featWidg.getTopName()+")" });
      
 }
 

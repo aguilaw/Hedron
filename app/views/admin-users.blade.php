@@ -46,7 +46,6 @@ Users
     {{-- FIGURE OUT HOW TO USE A ROUTE TO PRODUCE THE URL--}} 
     <form class="forms" action =@yield('action', action('UsersController@UserEdit', $toEdit->id)) method ="post" role="form">
          <!--contains form and file info -->
-        <div class="info-wrap">  
             <label for="fname">First Name:</label>
             <input class="input" type="text" name="fname" id="fname"   autocomplete="off" required value="@yield('pre-fill',  $toEdit->fname)">
             <br>
@@ -76,7 +75,6 @@ Users
              @section('pre-fill')
              <button class="del-bttn" type="submit" formaction={{action('ImagesController@ImageDelete', $toEdit->id) }}> Delete </button>
              @show
-        </div><!-- end .info-wrap-->
         
     </form>
 @stop
