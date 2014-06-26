@@ -5,7 +5,6 @@
 @stop
 
 @section('js')
-<script type="text/JavaScript" src={{ asset("assets/js/adminPagesEvents.js") }}></script>
 @stop 
  
 @section('type')
@@ -49,29 +48,20 @@ Users
     <form class="forms" action =@yield('action', action('UsersController@UserEdit', $toEdit->id)) method ="post" role="form">
          <!--contains form and file info -->
             <label for="fname">First Name:</label>
-            <input class="input" type="text" name="fname" id="fname"   autocomplete="off" required value="@yield('pre-fill',  $toEdit->fname)">
-            <br>
-            <br>
+                <input class="input" type="text" name="fname" id="fname"   autocomplete="off" required value="@yield('pre-fill',  $toEdit->fname)">
             <label for="lname">Last Name:</label>
-            <input class="input" type="text" name="lname" id="lname"  autocomplete="off" value="@yield('pre-fill',  $toEdit->lname)" >
-            <br>
-            <br>
+                <input class="input" type="text" name="lname" id="lname"  autocomplete="off" value="@yield('pre-fill',  $toEdit->lname)" >
             <label for="role">Role:</label>
-            <input class="input" type="text" name="role" id="role"  placeholder="" autocomplete="off" required value="@yield('pre-fill',  $toEdit->role)">
-            <br>
-            <br>
+                <input class="input" type="text" name="role" id="role"  placeholder="" autocomplete="off" required value="@yield('pre-fill',  $toEdit->role)">
             <label for="email">Email:</label>
-            <input class="input"  type="text" name="email" id="email" required autocomplete="off" value="@yield('pre-fill',  $toEdit->email)">
-            <br>
+                <input class="input"  type="text" name="email" id="email" required autocomplete="off" value="@yield('pre-fill',  $toEdit->email)">
             <label for="password">Change Password  &nbsp (A-Z & 0-9):</label>
-            <input class="input"  type="password" name="password" autocomplete="off" id="password" >
-            <br>
+                <input class="input"  type="password" name="password" autocomplete="off" id="password" >
             <label for="password_confirmation">Varify Password:</label>
             <input class="input"  type="password" name="password_confirmation" autocomplete="off" id="password_confirmation">
-            <br>
+
             <hr>
-            <br>
-            <br>
+            
             <!--readonly File info -->
              <input class="submit" type="submit" name="submit" id="submit" value="Save">
              @section('pre-fill')

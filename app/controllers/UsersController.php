@@ -31,7 +31,7 @@ class UsersController extends BaseController {
     {   
         $users=User::orderBy('lname','asc')->get();
         $toEdit=$user;
-        return View::make('admin-Users', compact('users' , 'toEdit') );
+        return View::make('admin-users', compact('users' , 'toEdit') );
     }
 /*****************************************************************/    
     public function SaveUserEdit(User $user)

@@ -1,6 +1,7 @@
 (function(){
 /*trigger a confirm window when attempting to delete an item
     from the 'x' icon or delete button*/
+    
     var links= $(".items-list #delete");
     for (var i=0; i< links.length; i++){
         var link= links[i];
@@ -10,8 +11,7 @@
     $(".del-bttn").click(function(){
          return verify();
     }); 
-    
-    
+
     function verify() {
         return confirm("Delete?");
     }

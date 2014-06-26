@@ -2,7 +2,7 @@
     width:200%;
     height:200%;
     position:relative;
-    background: url("../Gallery/transparent.gif") no-repeat;
+    background: url("../transparent.gif") no-repeat;
     background-size:cover;
     -webkit-transform: skewX(30deg); /* Safari and Chrome */
     z-index:55;

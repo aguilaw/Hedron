@@ -18,7 +18,7 @@ $(document).ready(function(){
                         $('#load-more-ajax').hide();
                         page=page+1;
                     }else{
-                        $('#load-more-ajax').html('<center>No more posts to show.</center>');
+                        $('#load-more-ajax').html('No more posts to show.');
                     }
                 }
             });

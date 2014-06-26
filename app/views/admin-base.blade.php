@@ -10,8 +10,7 @@
 	<!-- J query-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
-    
-     <script type="text/JavaScript" src={{ asset("assets/js/diagonalManipulation.js") }}></script>
+
     
 	{{-- Google Fonts --}}
 	<link href='http://fonts.googleapis.com/css?family=Monoton|Mrs+Sheppards|Orbitron:500,400,700|' rel='stylesheet' type='text/css'>

@@ -3,11 +3,9 @@
     margin-right:5px;
 }
 
+
 form textarea{
-width:60%;
-}
-.radio{
-    margin-left: 40px;
+width:70%;
 }
 
 #date, #icon-name{  
@@ -15,9 +13,5 @@ width:60%;
 }
 .submit{
     margin-left:0;
-}
-
-.rnd-box{
-min-width:900px;
 }
 

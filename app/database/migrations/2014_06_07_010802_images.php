@@ -22,6 +22,7 @@ class Images extends Migration {
             $table->string('tools',300);
             $table->string('project_type',100);
             $table->mediumtext('description');
+            $table->string('link_to');
             $table->integer('pos_x');
             $table->integer('pos_y');
             $table->integer('file_height');

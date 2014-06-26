@@ -1,5 +1,3 @@
-var IMG_URL= "/assets/gallery/";
-
 $(document).ready(function() {
     var drag= $("#draggable");
     drag.css({"top":tops+"px", "left":left+"px", "background-image": imgUrl });
@@ -12,8 +10,11 @@ $(document).ready(function() {
         }
     });
     
-   
+        /*/admin/IMAGES: when the text box corresponding to the "other" radio
+    button is filled select "other"*/
+    $("#type-other-val").focus(function(){
+        $('.radio-other').attr('checked',true);
+    });
     
-   
 });
 

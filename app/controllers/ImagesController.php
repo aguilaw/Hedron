@@ -120,9 +120,20 @@ class ImagesController extends BaseController {
          $image->title=Input::get('title');
             $image->date_created=Input::get('date');
             $image->tools=Input::get('tools');
-            $image->project_type=Input::get('type');
+            /*when the project type is not one of the defaults get data from text box*/
+            if(Input::get('type')=="Other"){
+                $image->project_type=Input::get('type-other-val');
+            }
+            else{
+                 $image->project_type=Input::get('type');
+            }
             $image->description=Input::get('desc');
-            $image->featured=Input::get('featured');
+            if(Input::get('featured') != null){
+                $image->featured=Input::get('featured');
+            }
+            else{
+                $image->featured="";
+            }
             $image->link_to=Input::get('link-to');
            
             $image->pos_x=Input::get('left');
