@@ -24,7 +24,6 @@ Images
 @stop
 
 @section('type-list')
-
     @foreach($images as $image)
     <li class="item">
     <a href= {{ action('ImagesController@ImageEdit', $image->id) }}>
@@ -32,22 +31,17 @@ Images
     </a>
     <a id="delete" href={{ action('ImagesController@ImageDelete', $image->id) }}>
         <i class="fa fa-times"></i>
-     </a >
-    <!-- <p>{{$image->date_created}}<p> -->
+    </a >
     <hr>
     </li>
     @endforeach
-    
 @stop
 
 
+    
 @section('form')
-    @if($errors->any())
-        @foreach($errors->all() as $error)
-        {{$error}}
-        <br>
-        @endforeach
-     @endif
+   
+    
     {{-- FIGURE OUT HOW TO USE A ROUTE TO PRODUCE THE URL--}} 
     <form class="forms" action =@yield('action', action('ImagesController@ImageEdit', $toEdit->id)) enctype="multipart/form-data" method ="post" role="form">
          <!--contains form and file info -->
@@ -93,7 +87,7 @@ Images
              <input class="submit" type="submit" name="submit" id="submit" value="Save">
             <button class="del-bttn" type="submit" formaction={{action('ImagesController@ImageDelete', $toEdit->id) }}> Delete </button>
             <p>OPTIONAL &nbsp for featured images</p>
-             <p>Set the image position in the featured frame:</p>
+            <p>Set the image position in the featured frame:</p>
             
             <div class="diag-top" id="frame">
                     <!-- load page then load the matching image within the parallelogram 
@@ -121,7 +115,7 @@ Images
                 var IMG_URL= "/assets/gallery/";
                 var imgUrl = "url("+IMG_URL+'{{$toEdit->file_name}}'+")";
             </script>
-         @show  
+        @show
             <label class="static-info-label" for="left">Left (px):</label>
             <input type="text" class="static-info" id="left" name="left" value=" {{ $toEdit->pos_x }} px" readonly>
             <label class="static-info-label" for="top">Top:</label>

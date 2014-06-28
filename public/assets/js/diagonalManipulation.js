@@ -9,12 +9,10 @@ $(document).ready(function() {
             $("#left").val(position.left);    
         }
     });
-    
-        /*/admin/IMAGES: when the text box corresponding to the "other" radio
-    button is filled select "other"*/
+    /*/admin/IMAGES: when the text box corresponding to the "other" radio
+    button is in focus select "other" radion button*/
     $("#type-other-val").focus(function(){
         $('.radio-other').attr('checked',true);
     });
-    
 });
 

@@ -41,23 +41,25 @@ Updates
 @stop
 
 
-@section('form')
+@section('form')    
     {{-- FIGURE OUT HOW TO USE A ROUTE TO PRODUCE THE URL--}} 
     <form class="forms" action =@yield('action', action('UpdatesController@UpdateEdit', $toEdit->id))  method ="post" role="form">
          <!--contains form and file info -->
          
         <label for="type">Type:</label>
-        <p><input class="radio " type="radio"  name="updt-type" value="mssg" {{ $toEdit->type == "mssg" ? "checked" : ""}}> 
-            <i class="fa fa-2x fa-comments type-icon"></i>Comment</p>
-        <p><input class="radio" type="radio"  name="updt-type" value="gallery" {{ $toEdit->type == "gallery" ? "checked" : ""}}> 
+        <p><input class="radio first-radio " type="radio"  name="updt-type" value="mssg" {{ $toEdit->type == "mssg" ? "checked" : ""}}> 
+            <i class="fa fa-2x fa-comments type-icon"></i>Comment
+        <input class="radio" type="radio"  name="updt-type" value="gallery" {{ $toEdit->type == "gallery" ? "checked" : ""}}> 
             <i class="fa fa-2x fa-picture-o type-icon"></i>Gallery
-        <p><input class="radio" type="radio"  name="updt-type" value="sketch" {{ $toEdit->type == "sketch" ? "checked" : ""}}> 
+        </p>
+        <p><input class="radio first-radio" type="radio"  name="updt-type" value="sketch" {{ $toEdit->type == "sketch" ? "checked" : ""}}> 
             <i class="fa fa-2x fa-pencil type-icon"></i>Sketch
-        <p><input class="radio" type="radio"  name="updt-type" value="event" {{ $toEdit->type == "event" ? "checked" : ""}}> 
+        <input class="radio" type="radio"  name="updt-type" value="event" {{ $toEdit->type == "event" ? "checked" : ""}}> 
             <i class="fa fa-2x fa-thumb-tack type-icon"></i>Event
-        <p><input class="radio radio-other " type="radio" name="updt-type" id="type-other" required value="Other" >
+        </p>
+        <p><input class="radio radio-other first-radio" type="radio" name="updt-type" id="type-other" required value="Other" >
             <input class="radio input-radio-other" type="text" name="type-other-val" id="type-other-val"  autocomplete="off"  placeholder="other" 
-                @if($toEdit->type == "Other")  value="{{ $toEdit->type}}"@endif  > </P>
+                @if($toEdit->type == "Other")  value="{{ $toEdit->type}}"@endif  > </p>
                 
         <label for="icon-type">Font Awesome Icon:</label
         <input class="input" type="text" name="icon-name" id="icon-name"  value=@yield('pre-fill',  $toEdit->FA_icon_name)>

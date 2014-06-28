@@ -51,7 +51,7 @@ class ImagesController extends BaseController {
                 else{}
              /*Set the other image parameters  from Input:: and save*/
             $this->SetValsFromInput($image);
-            return Redirect::action('ImagesController@ImageEdit',$image->id);
+            return Redirect::action('ImagesController@ImageEdit',$image->id)->with('message',"Image saved succesfully.");
         }
         else{
            return Redirect::action('ImagesController@ImageEdit',$image->id)->withErrors($validate->messages());
@@ -75,17 +75,17 @@ class ImagesController extends BaseController {
         }
         else{ }
         
-        return Redirect::action('ImagesController@ImageEdit',$image->id);
+        return Redirect::action('ImagesController@ImageEdit',$image->id)->with('message',"New image added successfully.");
     }
  /*****************************************************************/     
     public function ImageDelete($image){
         $image->delete();
         $redirect=Image::first();
         if($redirect==null){
-            return Redirect::action('ImagesController@ImageNew');
+            return Redirect::action('ImagesController@ImageNew')->with('message',"Image deleted successfully.");
          }
          else{
-            return Redirect::action('ImagesController@ImageEdit',$redirect->id);
+            return Redirect::action('ImagesController@ImageEdit',$redirect->id)->with('message',"Image deleted successfully.");
          }
 
     

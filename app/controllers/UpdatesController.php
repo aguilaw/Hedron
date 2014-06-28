@@ -17,13 +17,14 @@ class UpdatesController extends BaseController {
     {           
             /*Save the Image info to the Database*/
             $update= new Update;
-            $update->date_created=Input::get('date');
+             $this->SetValsFromInput($update);
+          /* $update->date_created=Input::get('date');
             /*Set the other image parameters  from Input:: and save*/
-           $update->message=Input::get('mssg');
+          /* $update->message=Input::get('mssg');
            $update->type=Input::get('updt-type');
-           $update->FA_icon_name=Input::get('icon-name');
+           $update->FA_icon_name=Input::get('icon-name');*/
            $update->save();
-        return Redirect::action('UpdatesController@UpdateNew');
+        return Redirect::action('UpdatesController@UpdateNew')->with('message',"Update saved successfully.");
     }
 /*****************************************************************/
     public function UpdateEdit(Update $update)
@@ -36,13 +37,14 @@ class UpdatesController extends BaseController {
     public function SaveUpdateEdit(Update $update)
     {           
             /*Save the Image info to the Database*/
-            $update->date_created=Input::get('date');
+            /*$update->date_created=Input::get('date');
             $update->type=Input::get('updt-type');
             $update->FA_icon_name=Input::get('icon-name');
             /*Set the other image parameters  from Input:: and save*/
-           $update->message=Input::get('mssg');
+             $this->SetValsFromInput($update);
+          /* $update->message=Input::get('mssg');*/
            $update->save();
-        return Redirect::action('UpdatesController@UpdateEdit',$update->id);
+        return Redirect::action('UpdatesController@UpdateEdit',$update->id)->with('message',"Update saved successfully.");
     }
 /*****************************************************************/    
     public function UpdateDelete($update)
@@ -53,7 +55,15 @@ class UpdatesController extends BaseController {
             return Redirect::action('UpdatesController@UpdateNew');
         }
         else{
-             return Redirect::action('UpdatesController@UpdateEdit',$redirect->id);
+             return Redirect::action('UpdatesController@UpdateEdit',$redirect->id)->with('message',"Update deleted successfully.");
         }
+    }
+ /*****************************************************************/       
+    public function SetValsFromInput($update) {
+         $update->date_created=Input::get('date');
+            $update->type=Input::get('updt-type');
+            $update->FA_icon_name=Input::get('icon-name');
+            /*Set the other image parameters  from Input:: and save*/
+           $update->message=Input::get('mssg');
     }
 }

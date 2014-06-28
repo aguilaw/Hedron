@@ -13,6 +13,11 @@
 		<div id="wrap">
             <h1>Admin Login</h1>
         <div class="rnd-box">
+            @if(Session::has('message'))
+                <b>{{Session::get('message')}}</b>
+                <br>
+            @endif
+
             <form class="login-box" action={{ action('AdminController@VerifyLogin') }}  method="post" role="form">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">

@@ -33,7 +33,7 @@
 		<li id="logout"><a href={{ action('AdminController@Logout') }} >Log Out</a></li>
 		<li class="user">{{ Auth::user()->lname." , ".Auth::user()->fname }} </li>
 	</ul>
-</nav><!-- END Nav-->	
+</nav><!-- END Nav-->
 
 <!-- The main bos that wraps all the contents of the admin pages-->
 <div class="rnd-box body-wrap">
@@ -48,8 +48,19 @@
 		</ul>
 	</div>
 <!-- A form uniqhe to each item type-->
-        @yield('form')
-        
+     @if(Session::has('message'))
+        <b>{{Session::get('message')}}</b>
+        <br>
+    @endif
+    
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+        {{$error}}
+        <br>
+        @endforeach
+    @endif
+    
+        @yield('form')    
 </div>
 @yield('js')
 

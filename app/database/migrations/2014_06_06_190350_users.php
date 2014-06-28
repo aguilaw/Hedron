@@ -19,6 +19,7 @@ class Users extends Migration {
             $table->string('lname', 128);
             $table->string('email',128);
             $table->string('password',60);
+            $table->string('remember_token',150);
         });
 	}
 
