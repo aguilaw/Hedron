@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddFilepath' => $baseDir . '/app/database/migrations/2014_07_02_182148_add_filepath.php',
     'AddRoleUsersTable' => $baseDir . '/app/database/migrations/2014_06_19_153311_add_role_users_table.php',
     'AddTemp' => $baseDir . '/app/database/migrations/2014_06_27_220237_add_temp.php',
     'AdminController' => $baseDir . '/app/controllers/AdminController.php',

@@ -57,11 +57,16 @@ Updates
         <input class="radio" type="radio"  name="updt-type" value="event" {{ $toEdit->type == "event" ? "checked" : ""}}> 
             <i class="fa fa-2x fa-thumb-tack type-icon"></i>Event
         </p>
-        <p><input class="radio radio-other first-radio" type="radio" name="updt-type" id="type-other" required value="Other" >
-            <input class="radio input-radio-other" type="text" name="type-other-val" id="type-other-val"  autocomplete="off"  placeholder="other" 
-                @if($toEdit->type == "Other")  value="{{ $toEdit->type}}"@endif  > </p>
-                
-        <label for="icon-type">Font Awesome Icon:</label
+        <p><input class="radio radio-other first-radio" type="radio" name="updt-type" id="type-other" required value="Other" 
+                @if(!in_array($toEdit->type,array("mssg","gallery","sketch","event")))
+                        checked>
+                     <input class="input-radio-other" type="text" name="type-other-val" id="type-other-val"  autocomplete="off"  placeholder="other" value="{{ $toEdit->type}}"> 
+                @else
+                      >
+                      <input class="input-radio-other" type="text" name="type-other-val" id="type-other-val"  autocomplete="off"  placeholder="other"> 
+                @endif
+        </p>
+        <label for="icon-type"> Change Font Awesome Icon (optional):</label>
         <input class="input" type="text" name="icon-name" id="icon-name"  value=@yield('pre-fill',  $toEdit->FA_icon_name)>
         <a href='http://fortawesome.github.io/Font-Awesome/icons/' target='_blank'><i class="fa fa-question-circle"></i>  Need Icon Names?</a>
         <label for="mssg">Message:</label>

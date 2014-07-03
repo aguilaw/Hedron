@@ -35,6 +35,14 @@ class PagesController extends BaseController {
 /***********************************************************************/
 	public function ShowSketchbook()
 	{
+         $sketches=Image::where('link_to','=','sketchbook')
+                        ->orderBy('date_created','desc')
+                        ->get();       
+		return View::make('sketchbook',compact('sketches'));
+	}
+/***********************************************************************/    
+    public function ShowSketch($sketch)
+	{
 		return View::make('coming-soon');
 	}
 /***********************************************************************/    

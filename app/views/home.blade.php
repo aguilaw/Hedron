@@ -15,19 +15,12 @@
 @stop
 
 @section('body')
-<div class="wrapper"  >
-	<div class="hero-unit"> 
-		<nav class="nav">
-			<img class="sign" src={{ asset("assets/home/Hedron_Sign2.png")}} alt="HEDRON">
-			<a href="{{ url('contact') }}"  class="contact">Contact</a>
-			<a href="{{ url('gallery') }}" class="gallery">Gallery</a>
-			<a href="{{ url('about') }}"  class="about">About</a>
-			<a href="{{ url('home') }}" class="home">Home</a>
-		</nav>
+<!--contains the geometrig astract img-->
 
 		<!-- Begin Features -->
         <script>
-            var URLtoGallery='{{url('gallery')}}';
+            var FEAT_THUMB_URL="{{Config::get('globals.THUMB_URL')}}"; 
+            var GALLERY_URL="{{Config::get('globals.GALLERY_URL')}}"; 
             var featured={{$featured->toJson() }};
         </script>
         
@@ -42,8 +35,6 @@
         </a><!--end .diag-top -->
 		<!-- End Features -->
 
-
-        
 		<div class="updates-grp">
 			<h1 id="updates-text">UPDATES</h1>
 			<div id="sq-rnd">
@@ -63,6 +54,4 @@
 			<h2 id="project-text">LATEST PROJECT</h2>
 		</a>
 		<!-- End Btm Windows-->
-	</div><!-- end hero-->
-</div><!-- end wrapper-->
 @stop

@@ -1,51 +1,4 @@
-.wrapper{
-	background: url(../abstract_polygon4.png) no-repeat;
-	min-width: 900px;
-	width:100%;
-	height: 100%;
-	background-size: 105%;
-	background-position: -30px  0;
-	overflow: hidden;
-}
 
-.hero-unit{
-	min-width: 1000px;
-	max-width: 1100px;
-	width:80%;
-	height: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	overflow: visible;
-}
-.hero-unit:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
-}
-
-.sign{
-	float: left;
-	margin-left: -2%;
-	margin-top: 30px;
-}
-.nav{
-	background: url(../top_banner.png) no-repeat;
-	width: 1070px;
-	height: 195px;
-	margin-top: -1%;
-	margin-right: auto;
-	margin-left: auto;
-	padding-right: 70px;
-	position: relative;
-	z-index: 55;
-
-}
-.nav a{
-	margin-top: 10%;
-	z-index: 55;
-}
 
 /******************************************************
 *******************FEATURED WIDGET********************/
@@ -60,6 +13,7 @@
     transform-origin: top left;
     overflow: hidden;
     float: left;
+    -webkit-border-radius:0px 0px 10px 10px;
     
 }
 .diag-top{
@@ -88,33 +42,29 @@
 
 .diag-top-img, .diag-mid-img, .diag-btm-img{
     position:relative;
-    margin-right:20%;
-    
     background-repeat: repeat;
     background-image:url(../Hedron_hexbg_light.png);
     -webkit-transform: skewX(30deg); /* Safari and Chrome */
     z-index:55;  
+    width:600px;
+    height:370px;
+    right:45%;
     
 }
 
 .diag-top-img{
-    width:200%;
-    height:200%;
-     -webkit-transition: background-image 2s,left 1s;
+    
+     -webkit-transition: background-image 2s;
 }
 
 .diag-mid-img{
-    width:150%;
-    height:200%;
-    -webkit-transition: background-image 200ms;
-    right:5%;
+    -webkit-transition: background-image 1s;
+
 }
 
 .diag-btm-img{
-    width:150%;
-    height:200%;
-     -webkit-transition: background-image 200ms;
-         right:5%;
+     -webkit-transition: background-image 1s;
+
 }
 
 
@@ -157,8 +107,13 @@ background-color:#5A6363;
 	display: inline;
 	margin-left: 5%;
 }
-.fa{
-	color:#97D5DD;}
+
+    
+.icon{
+    color:#97D5DD;
+	margin-left: 0;
+}
+
 #updates-widget{
 	width:100%;
 }
@@ -243,19 +198,3 @@ width:54%;
 }
 /*****************END BODY GRP*******************/
 
-.footer{
-
-	height:55px; 
-	width:245px;
-	color: #543A51;
-	box-shadow: 5px 10px 5px 5px rgba(0, 0, 0, 0.5);
-	position: relative;
-	margin-left: auto;
-	margin-right:auto;
-	margin-top: -100px;
-	padding-top: 7px;
-}
-.icon{
-	color: #ed6b58;
-	margin-left: 22px;
-}

@@ -1,6 +1,4 @@
 #draggable{
-    width:200%;
-    height:200%;
     position:relative;
     background: url("../transparent.gif") no-repeat;
     background-size:cover;

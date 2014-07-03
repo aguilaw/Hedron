@@ -24,14 +24,16 @@
 <body>
 <nav class="nav" role="navigation">
 	<ul class="nav-buttons">		
-		<li ><a href={{ action('UpdatesController@UpdateNew')}}>Updates</a></li>	
-		<li ><a href={{ action('ImagesController@ImageNew')}}>Images</a></li>
-        <li ><a href={{ action('UsersController@UserNew')}}>Users</a></li>
-        <li ><a href={{ action('PagesController@ShowHome')}}>Hedron Home</a></li>
+		<li ><a class="nav-bttn"  href={{ action('UpdatesController@UpdateNew')}}>Updates</a></li>	
+		<li ><a class="nav-bttn" href={{ action('ImagesController@ImageNew')}}>Images</a></li>
+        <li ><a class="nav-bttn" href={{ action('UsersController@UserNew')}}>Users</a></li>
+        <li ><a class="nav-bttn" href={{ action('PagesController@ShowHome')}}>Hedron Home</a></li>
 	</ul>
 	<ul class="user-grp">
-		<li id="logout"><a href={{ action('AdminController@Logout') }} >Log Out</a></li>
 		<li class="user">{{ Auth::user()->lname." , ".Auth::user()->fname }} </li>
+        <a href={{ action('AdminController@Logout') }} >
+        <i class="fa fa-sign-out"></i>Log Out
+        </a>
 	</ul>
 </nav><!-- END Nav-->
 

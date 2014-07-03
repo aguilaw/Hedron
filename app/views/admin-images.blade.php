@@ -93,9 +93,15 @@ Images
                     <!-- load page then load the matching image within the parallelogram 
                             arguments are the saved left and top  values as well as the image file_title -->
                             
-                    <img class="diag-img" id="draggable" src="/assets/transparent.gif" >
+                    <img class="diag-img" id="draggable" src={{asset("/assets/gallery/".$toEdit->file_name)}}>
              </div><!--end .diag-top -->
-             
+             @section('pre-fill-script')
+            <script>
+                var tops= {{$toEdit->pos_y}};
+                var left= {{$toEdit->pos_x}};
+                var imgUrl = "url("+"{{Config::get('globals.GALLERY_URL')}}"+'{{$toEdit->file_name}}'+")";
+            </script>
+        @show
             <!--readonly File info -->
             <label class="static-info-label" for="file-width">Width:</label>
                 <input class="static-info" type="text" name="file-width" id="file-width"  readonly value="@yield('pre-fill', $toEdit->file_width) px">
@@ -108,14 +114,7 @@ Images
                 <input class="static-info" type="text" name="file-ext" id="file-ext"  readonly value="@yield('pre-fill',  $toEdit->file_ext)">
                 <br>
         <!-- wraps the image and position info-->
-        @section('pre-fill-script')
-            <script>
-                var tops= {{$toEdit->pos_y}};
-                var left= {{$toEdit->pos_x}};
-                var IMG_URL= "/assets/gallery/";
-                var imgUrl = "url("+IMG_URL+'{{$toEdit->file_name}}'+")";
-            </script>
-        @show
+        
             <label class="static-info-label" for="left">Left (px):</label>
             <input type="text" class="static-info" id="left" name="left" value=" {{ $toEdit->pos_x }} px" readonly>
             <label class="static-info-label" for="top">Top:</label>

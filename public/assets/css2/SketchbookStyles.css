@@ -1,0 +1,45 @@
+.book-wrap{
+    width:80%;
+    height: 50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.book{
+    width:20%;
+    height:20%;
+    background-color:gray;
+    display:block;
+}
+
+.diag-thumb {
+    position: relative;
+	box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
+	-webkit-transform: skewX(-30deg); /* Safari and Chrome */
+    transform: skewX(-30deg); 
+    -ms-transform: skewX(-30deg); /* IE 9 */
+    -webkit-transform-origin: top right;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    overflow: hidden;
+    float: left;
+    z-index: 40;
+	height:200px;
+	width: 200px;
+	margin-left: 7%;
+	margin-top: -1.6%;
+    -webkit-border-radius:20px;
+    
+}
+
+.diag-thumb-img{
+    position:relative;
+    margin:auto;
+    background-repeat: repeat;
+    background-image:url(../Hedron_hexbg_light.png);
+    -webkit-transform: skewX(30deg); /* Safari and Chrome */
+    z-index:55;
+     -webkit-transition: background-image 200ms;
+     right:25%;    
+    
+}

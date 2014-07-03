@@ -43,7 +43,7 @@ Route::get('/gallery/{image}','PagesController@ShowImage');
 Route::get('/gallery','PagesController@ShowGallery');
 
 Route::get('/sketchbook','PagesController@ShowSketchbook');
-Route::get('/sketchbook/{image}','PagesController@ShowImage');
+Route::get('/sketchbook/{image}','PagesController@ShowSketch');
 
 Route::get('/{page}', 'PagesController@ShowComingSoon');
 

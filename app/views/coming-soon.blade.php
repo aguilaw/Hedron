@@ -5,9 +5,9 @@
 @stop
 
 @section('styles')
-	@parent
+
 @stop
 
 @section('body')
-<h1>Coming Soon!</h1>
-@end
+<h1 style="text-align:center;">Coming Soon!</h1>
+@stop

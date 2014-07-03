@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var drag= $("#draggable");
-    drag.css({"top":tops+"px", "left":left+"px", "background-image": imgUrl });
+    drag.css({"top":tops+"px", "left":left+"px"});
     
     drag.draggable({
         drag:function(){

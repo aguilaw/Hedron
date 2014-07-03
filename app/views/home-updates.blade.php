@@ -1,6 +1,6 @@
 @foreach ($updates as $update)
     <li>
-        <i class='fa {{$update->FA_icon_name}} fa-2x'></i>
+        <i class='fa {{$update->FA_icon_name}} fa-2x icon'></i>
         <h5 class='date'>{{$update->date_created}}</h5>
         <h4 class='message'>{{$update->message}}</h4>
         <hr>
