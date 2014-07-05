@@ -36,10 +36,9 @@
 	@yield('styles')
 </head>
 <body >
-    <div class="wrapper"  >
-	<div class="hero-unit"> 
+    <div class="fade-black"  >
+    
 		<nav class="nav">
-			<a  href="{{ url('home') }}"><img class="sign" src={{ asset("assets/home/Hedron_Sign2.png")}} alt="HEDRON"></a>
 			<a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
 			<a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
 			<a href="{{ url('about') }}"  class="nav-bttn about">About</a>
@@ -48,15 +47,14 @@
 
 	@yield('body')
     
-	</div><!-- end hero-->
 </div><!-- end wrapper-->
 
 
 	<footer class="footer">
-	<i class="fa fa-facebook fa-2x "></i>
-	<i class="fa fa-twitter fa-2x "></i>
-	<i class="fa fa-tumblr fa-2x "></i>
-	<i class="fa fa-youtube fa-2x "></i>
+	<i class="fa fa-facebook fa-2x foot-icon"></i>
+	<i class="fa fa-twitter fa-2x foot-icon"></i>
+	<i class="fa fa-tumblr fa-2x foot-icon"></i>
+	<i class="fa fa-youtube fa-2x foot-icon"></i>
 	</footer><!-- end footer-->
 <script type="text/JavaScript" src={{ asset("assets/js/InfinitePagination.js") }}></script>
 </body>

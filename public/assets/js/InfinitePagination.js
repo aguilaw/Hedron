@@ -2,13 +2,14 @@
 /*****sq-rnd = the box containing the list of updates*/
 $(document).ready(function(){
     var page=2;
-    $('#sq-rnd').scroll(function(){
-        /*Where does th eextra 1px come from? without it sP=111 and sH=112*/
-        var scrollPosition = $(this).scrollTop() + $(this).outerHeight()+1;
+    $('#sq-rnd').data('ajaxready', true).scroll(function(){
+        if ($(this).data('ajaxready') == false) return ;
+        var scrollPosition = $(this).scrollTop() + $(this).outerHeight();
         var divTotalHeight = this.scrollHeight 
         
         if( scrollPosition == divTotalHeight ){
             $('#load-more-ajax').show();
+            $(this).data('ajaxready', false);
             $.ajax({
                 url: "/?page="+page,
                 datatype:"json",
@@ -20,8 +21,12 @@ $(document).ready(function(){
                     }else{
                         $('#load-more-ajax').html('No more posts to show.');
                     }
-                }
+                    $(this).data('ajaxready', true);
+                },
+                error:function(data,error){ $(this).data('ajaxready', true);}
+                
             });
+            
         }
         else{$('#load-more-ajax').hide();}
     });

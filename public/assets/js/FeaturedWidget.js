@@ -2,6 +2,8 @@ $(document).ready(function(){
     StartFeaturedWidget(featured);
 });
 
+
+
 function FeaturedWidget (images) {
     this.top=0;  
     this.mid=1;
@@ -65,27 +67,27 @@ FeaturedWidget.prototype.SetNextCycle=function(){
 
 function StartFeaturedWidget(featuredImgs) {
      var featWidg= new FeaturedWidget(featuredImgs);
-     $('.diag-btm').attr("href",GALLERY_URL+"/"+featWidg.getBtmID());
-     $('.diag-mid').attr("href",GALLERY_URL+"/"+featWidg.getMidID());
-     $('.diag-top').attr("href",GALLERY_URL+"/"+featWidg.getTopID());
+     $('#img-a-left').attr("href",GALLERY_URL+"/"+featWidg.getBtmID());
+     $('#img-a-mid').attr("href",GALLERY_URL+"/"+featWidg.getMidID());
+     $('#img-a-right').attr("href",GALLERY_URL+"/"+featWidg.getTopID());
      
-     $(".diag-btm-img").css({ "background-image": "url("+FEAT_THUMB_URL+featWidg.getBtmName()+")", "background-repeat": "none"});
-     $(".diag-mid-img").css({ "background-image": "url("+FEAT_THUMB_URL+featWidg.getMidName()+")" ,"background-repeat": "none" });
-     $(".diag-top-img").css({  "background-image": "url("+FEAT_THUMB_URL+featWidg.getTopName()+")","background-repeat": "none"});
+     $("#img-left").css({ "background-image": "url("+FEAT_THUMB_URL+featWidg.getBtmName()+")", "background-repeat": "none"});
+     $("#img-mid").css({ "background-image": "url("+FEAT_THUMB_URL+featWidg.getMidName()+")" ,"background-repeat": "none" });
+     $("#img-right").css({  "background-image": "url("+FEAT_THUMB_URL+featWidg.getTopName()+")","background-repeat": "none"});
     setInterval(function(){CycleImgs(featWidg)} , 3500);
 
 }
 
 function CycleImgs(featWidg){ 
     featWidg.SetNextCycle();
-     $('.diag-btm').attr("href",GALLERY_URL+"/"+featWidg.getBtmID());
-     $('.diag-mid').attr("href",GALLERY_URL+"/"+featWidg.getMidID());
-     $('.diag-top').attr("href",GALLERY_URL+"/"+featWidg.getTopID());
+     $('#img-a-left').attr("href",GALLERY_URL+"/"+featWidg.getBtmID());
+     $('#img-a-mid').attr("href",GALLERY_URL+"/"+featWidg.getMidID());
+     $('#img-a-right').attr("href",GALLERY_URL+"/"+featWidg.getTopID());
      
      
-      $(".diag-btm-img").css({ "background-image": "url("+FEAT_THUMB_URL+featWidg.getBtmName()+")"});
-     $(".diag-mid-img").css({ "background-image": "url("+FEAT_THUMB_URL+featWidg.getMidName()+")" });
-     $(".diag-top-img").css({  "background-image": "url("+FEAT_THUMB_URL+featWidg.getTopName()+")"});
+      $("#img-left").css({ "background-image": "url("+FEAT_THUMB_URL+featWidg.getBtmName()+")"});
+     $("#img-mid").css({ "background-image": "url("+FEAT_THUMB_URL+featWidg.getMidName()+")" });
+     $("#img-right").css({  "background-image": "url("+FEAT_THUMB_URL+featWidg.getTopName()+")"});
      
 }
 

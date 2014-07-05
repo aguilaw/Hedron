@@ -16,37 +16,45 @@
 
 @section('body')
 <!--contains the geometrig astract img-->
-
+    <div class="wrapper">
 		<!-- Begin Features -->
         <script>
             var FEAT_THUMB_URL="{{Config::get('globals.THUMB_URL')}}"; 
             var GALLERY_URL="{{Config::get('globals.GALLERY_URL')}}"; 
             var featured={{$featured->toJson() }};
         </script>
-        
-		<a class="diag-btm" href="{{ url('gallery') }}">
-            <img class="diag-btm-img" src="/assets/transparent.gif">
-        </a>
-		<a class="diag-mid" href="{{ url('gallery') }}">
-            <img class="diag-mid-img" src="/assets/transparent.gif" >
-        </a>
-		<a class="diag-top" id="frame" href="{{ url('gallery') }}"> 
-            <img class="diag-top-img"  src="/assets/transparent.gif" >
-        </a><!--end .diag-top -->
-		<!-- End Features -->
+        <div class="shadow-wrap"><div class="shadow"></div></div>
+         <ul class="featured-widg">
+               <li class="frame"> <a  id="img-a-left" href="{{ url('gallery') }}">
+                    <img id="img-left" src={{asset("assets/home/img_mask.png")}}>
+                </a>
+                </li>
+                <li class="frame">
+                <a  id="img-a-mid" href="{{ url('gallery') }}">
+                    <img id="img-mid" src={{asset("assets/home/img_mask.png")}} >
+                </a>
+                </li>
+                <li class="frame">
+                <a  id="img-a-right"  href="{{ url('gallery') }}">  <!-- had id frame-->
+                    <img id="img-right"  src={{asset("assets/home/img_mask.png")}} >
+                </a><!--end .diag-top -->
+                </li>
+            <!-- End Features -->
+            
+        </ul>
 
-		<div class="updates-grp">
-			<h1 id="updates-text">UPDATES</h1>
-			<div id="sq-rnd">
+<img class="logo-shadow"  src={{asset("assets/home/logo_shadow.png")}} >
+</div>
+<div class="edge">
+        <h1 id="updates-text">UPDATES<i class="fa fa-chevron-down"></i></h1><br>
+        <div id="sq-rnd">
 				<ul id="updates-widget">
                     @include('home-updates')
-                    
 				</ul>
-                <div id="load-more-ajax" style="display:none;"><i class="fa fa-2x fa-refresh fa-spin"></i></div>
-			</div><!-- end sqr-rnd--> 
+                    <div id="load-more-ajax" style="display:none;"><i class="fa fa-2x fa-refresh fa-spin"></i></div>
 		</div><!-- end updates-widget -->
-
-		<!-- Begin Btm Windows -->			 
+        
+        		<!-- Begin Btm Windows -->			 
 		<a class="sketch" href="{{ url('sketchbook') }}">
 			<h2 id="sketch-text">SKETCHBOOK</h2>
 		</a> 
@@ -54,4 +62,10 @@
 			<h2 id="project-text">LATEST PROJECT</h2>
 		</a>
 		<!-- End Btm Windows-->
+        
+</div>
+        
+
+
+
 @stop

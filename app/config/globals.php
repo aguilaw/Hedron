@@ -14,7 +14,7 @@ return array(
 	*/
     'THUMB_URL'        => "/assets/gallery/thumb/",
     'DEST_PATH'         =>"../public/assets/gallery/",
-    'GALLERY_URL'      =>  "{{url('/gallery')}}",
+    'GALLERY_URL'      =>  url('/gallery'),
 
 
 );

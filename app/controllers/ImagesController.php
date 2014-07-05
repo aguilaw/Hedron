@@ -174,9 +174,9 @@ class ImagesController extends BaseController {
         }
         
         /* create a new, "virtual" image */
-            $widthOffset=abs(Input::get('left'))*.80+$offset;
+            $widthOffset=abs(Input::get('left'))*.70+$offset;
         
-        $heightOffset=abs(Input::get('top'));
+        $heightOffset=abs(Input::get('top'))*.65;
         $virtual_image = imagecreatetruecolor($thumbWidth, $thumbHeight);
         
         /* copy source image at a resized size */
