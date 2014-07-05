@@ -14,8 +14,8 @@ class AddFilepath extends Migration {
 	{
 		Schema::table('images', function($table)
         {
-            $table->renameColumn('file_name','file_path');
-            $table->string('thumb',250);
+            $table->renameColumn('file_path','file_name');
+            $table->dropColumn('thumb');
         });
 	}
 
@@ -28,7 +28,7 @@ class AddFilepath extends Migration {
 	{
 		Schema::table('images', function($table)
         {
-            $table->renameColumn('file_path','file_name');
+            $table->renameColumn('file_name','file_path');
         });
 	}
 

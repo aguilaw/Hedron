@@ -4,7 +4,7 @@ $(document).ready(function(){
     var page=2;
     $('#sq-rnd').data('ajaxready', true).scroll(function(){
         if ($(this).data('ajaxready') == false) return ;
-        var scrollPosition = $(this).scrollTop() + $(this).outerHeight();
+        var scrollPosition = $(this).scrollTop() + $(this).outerHeight()+1;
         var divTotalHeight = this.scrollHeight 
         
         if( scrollPosition == divTotalHeight ){
@@ -22,6 +22,7 @@ $(document).ready(function(){
                         $('#load-more-ajax').html('No more posts to show.');
                     }
                     $(this).data('ajaxready', true);
+                    
                 },
                 error:function(data,error){ $(this).data('ajaxready', true);}
                 
