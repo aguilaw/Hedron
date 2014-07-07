@@ -22,6 +22,7 @@
 </head>
 
 <body>
+<div class="fade-black">
 <nav class="nav" role="navigation">
 	<ul class="nav-buttons">		
 		<li ><a class="nav-bttn"  href={{ action('UpdatesController@UpdateNew')}}>Updates</a></li>	
@@ -65,6 +66,6 @@
         @yield('form')    
 </div>
 @yield('js')
-
+</div>
 </body>
 </html>

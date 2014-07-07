@@ -10,16 +10,17 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,300,600,700|Allerta+Stencil|Source+Code+Pro:300,500,400,700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<div id="wrap">
-            <h1>Admin Login</h1>
-        <div class="rnd-box">
-            @if(Session::has('message'))
-                <b>{{Session::get('message')}}</b>
-                <br>
-            @endif
+		<div class="fade-black">
+            <h1 id="admin-text">Admin Login</h1>
+        
+            
 
-            <form class="login-box" action={{ action('AdminController@VerifyLogin') }}  method="post" role="form">
-                <label for="exampleInputEmail1">Email address</label>
+            <form class="login-form" action={{ action('AdminController@VerifyLogin') }}  method="post" role="form">
+                @if(Session::has('message'))
+                    <b>{{Session::get('message')}}</b>
+                    <br>
+                @endif
+               <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
                 <br>
                 <label for="exampleInputPassword1">Password</label>

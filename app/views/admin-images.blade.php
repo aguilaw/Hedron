@@ -93,7 +93,7 @@ Images
                     <!-- load page then load the matching image within the parallelogram 
                             arguments are the saved left and top  values as well as the image file_title -->
                             
-                    <img class="diag-img" id="draggable" src={{asset("/assets/gallery/".$toEdit->file_name)}}>
+                    <img class="diag-img" id="draggable" src="@yield('pre-fill', asset('/assets/gallery/'.$toEdit->file_name))">
              </div><!--end .diag-top -->
              @section('pre-fill-script')
             <script>

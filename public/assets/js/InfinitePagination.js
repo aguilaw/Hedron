@@ -4,7 +4,7 @@ $(document).ready(function(){
     var page=2;
     $('#sq-rnd').data('ajaxready', true).scroll(function(){
         if ($(this).data('ajaxready') == false) return ;
-        var scrollPosition = $(this).scrollTop() + $(this).outerHeight()+1;
+        var scrollPosition = $(this).scrollTop() + $(this).outerHeight();
         var divTotalHeight = this.scrollHeight 
         
         if( scrollPosition == divTotalHeight ){

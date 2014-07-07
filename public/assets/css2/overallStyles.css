@@ -4,8 +4,11 @@ body {
 	font-size: medium;
 	color: #EDF1ED;
 	height: 1500px;
+    margin:0;
     /*background-color:#f4f9f8;*/
 	background-image:url(../Hedron_hexbg_light.png);
+    
+    text-align:center;
 }
 h2{
 	font-family: 'orbitron',sans-serif;
@@ -13,14 +16,14 @@ h2{
 	font-weight: 400;
 }
 h1{
-	color: #ed6b58;
+	color: afede3;
 	font-size: 250%;
 	font-family: 'orbitron',sans-serif;
 	font-weight: 500;
 	text-shadow: 1px 1px #000; 
 }
 a{
-	color: #EDF1ED;
+	color: #eab4ad;
 	text-decoration: none;
 }
 li{
@@ -31,17 +34,23 @@ li{
 /****************************NAV AREA***********************
 ************************************************************/
 .wrapper{
-    width:80%;
+    width:60%;
+    height:100%;
     max-width:885px;
     margin-left:auto;
     margin-right:auto;
      text-align:center;
+     background: url(../home/stairs_tile_long.png) repeat-x;
+         padding-top: 1px;
+    margin-top: 165px;
 }
 .fade-black{
-	background: url(../home/top_gradient_tile.png) repeat-x;
+background: -moz-linear-gradient(top, rgba(37,43,42,1) 0%, rgba(13,15,14,0) 66%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(37,43,42,1)), color-stop(66%,rgba(13,15,14,0)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ *//
 	width:100%;
 	height: 100%;
-        position:relative;
+    position:relative;
+    margin-top:0;
        
 }
 
@@ -70,8 +79,9 @@ li{
 	width: 80%;
     height:50px;
 	margin-right: auto;
+    min-width:895px;
 	margin-left: auto;
-    padding-top:2%;
+    padding-top:1%;
 	position: relative;
     text-align:center;
 	z-index: 55;
@@ -97,7 +107,7 @@ li{
 .rnd-box{
 	-webkit-border-radius:50px 50px 50px 50px;
 	-moz-border-radius:40px;
-	background-color:rgba(64,84,86,.6);
+	background-color:rgba(23,25,25,.3);
 	padding: 40px 40px 40px 40px;
 	box-shadow: inset 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
 	margin-right: auto;
