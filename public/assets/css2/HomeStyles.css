@@ -6,7 +6,7 @@
     max-width:636px;
     left:0;
   right:0;
-  bottom:930px;
+  bottom:1102px;
   margin:auto;
     z-index:60;
     pointer-events:none;
@@ -17,13 +17,13 @@
 
 @keyframes mymove
 {
-    50% {bottom:936px;}
+    50% {bottom:1110px;}
 }
 
 /*Safari and Chrome:*/
 @-webkit-keyframes mymove
 {
-    50% {bottom:936px;}
+    50% {bottom:1110px;}
 }
 
 }
@@ -69,13 +69,13 @@
  /*************************FEATURED WIDGET****************/  
 .featured-widg{
     padding:0;
-    width:60%;
+    width:100%;
     margin-left:auto;
     margin-right:auto;
     position:absolute;
     margin-top:-246px;
     max-width:885px;
-    bottom:1133px;
+    bottom:1287px;
      -webkit-perspective:450px; /* Chrome, Safari, Opera  */
     perspective:450px;
 }
@@ -161,14 +161,8 @@
  /*************************FEATURED WIDGET****************/  
  
 .edge{
-    bottom:7%;
+    bottom:315px;
     position:absolute;
-    margin-left:auto;
-    margin-right:auto;
-    left:0;
-    right:0;
-    width: 80%;
-    height:50%;
         padding: 5% 5%;
         z-index:20;
 
@@ -183,8 +177,7 @@
 }
 #sq-rnd{
 margin:0;
-	height:40%;
-	 width:75%;
+	height:300px;
      max-width:900px;
 	 -webkit-border-radius:10px;
 	 -moz-border-radius:10px;
@@ -216,11 +209,11 @@ border-top-left-radius: 0;
 .date{
 	display: inline;
 	margin-left: 5%;
+    color:#FED87F;
 }
 
     
 .icon{
-    color:#97D5DD;
 	margin-left: 0;
 }
 
@@ -272,14 +265,14 @@ border-top-left-radius: 0;
 	-webkit-border-radius: 20px;
      -moz-border-radius: 20px;
 	position: relative; 	
-	background-color:rgba(64,84,86,.6);
+	background-color:rgba(70, 67, 61, 1);
 	right: -20px;
 	box-shadow: 3px -8px 2px rgba(0, 0, 0, .5);
 }
 .latest, .sketch{
-	width:30%;
+	width:40%;
     max-width:350px;
-	height:25%;
+	height:200px;
 	position: relative;
 	margin-top: 4%;
 	-webkit-border-radius:20px;	

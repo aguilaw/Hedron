@@ -35,9 +35,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,300,600,700|Allerta+Stencil|Source+Code+Pro:300,500,400,700' rel='stylesheet' type='text/css'>
 	@yield('styles')
 </head>
-<body >
-    <div class="fade-black"  >
-    
+<body >    
 		<nav class="nav">
 			<a href="{{ url('home') }}" class="nav-bttn home">Home</a>
             <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
@@ -46,16 +44,15 @@
 		</nav>
 
 	@yield('body')
-    
-</div><!-- end wrapper-->
-
-
-	<footer class="footer">
+    <footer class="footer">
 	<i class="fa fa-facebook fa-2x foot-icon"></i>
 	<i class="fa fa-twitter fa-2x foot-icon"></i>
 	<i class="fa fa-tumblr fa-2x foot-icon"></i>
 	<i class="fa fa-youtube fa-2x foot-icon"></i>
 	</footer><!-- end footer-->
+
+
+	
 <script type="text/JavaScript" src={{ asset("assets/js/InfinitePagination.js") }}></script>
 </body>
 </html>
