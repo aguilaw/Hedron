@@ -36,13 +36,15 @@
 	@yield('styles')
 </head>
 <body >    
-		<nav class="nav">
+		@section('nav')
+        <nav class="nav">
+            <div class="circle"><img class="logo"  src="{{asset('/assets/logo.png')}}"></div>
 			<a href="{{ url('home') }}" class="nav-bttn home">Home</a>
             <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
             <a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
             <a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
 		</nav>
-
+    @show
 	@yield('body')
     <footer class="footer">
 	<i class="fa fa-facebook fa-2x foot-icon"></i>

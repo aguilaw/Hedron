@@ -1,21 +1,6 @@
 $(document).ready(function(){
-
-/*whne the feat imgs move the stair edges move too. this readjusts the
-illusion remains seamless*/
-   /* $("#img-left").hover(adjustMargins($(this)),revertMargins($(this)));
-    $("#img-mid").hover(adjustMargins(this),revertMargins(this));
-    $("#img-right").hover(adjustMargins(this),revertMargins(this));*/
     StartFeaturedWidget(featured);
 });
-
-function adjustMargins(obj){
-        $(obj).css({'margin-top':'6px'});
-        $(".stairs-edge-left").css({'top':'-50px'});
-    }
-function revertMargins(obj){
-        $(obj).css({'margin-top':'0px'});
-        $(".stairs-edge-left").css({'top':'-50px'});
-    }
 
 function FeaturedWidget (images) {
     this.top=0;  
@@ -26,13 +11,13 @@ function FeaturedWidget (images) {
     this.imgCount= this.imgs.length;
     
     this.getTopName=function(){   
-        return "FEAT_"+this.imgs[this.top]['file_name'];
+        return "ICON_"+this.imgs[this.top]['file_name'];
     }
     this.getMidName=function(){    
-        return "FEAT_"+this.imgs[this.mid]['file_name'];
+        return "ICON_"+this.imgs[this.mid]['file_name'];
     }
     this.getBtmName=function(){    
-        return "FEAT_"+this.imgs[this.btm]['file_name'];
+        return "ICON_"+this.imgs[this.btm]['file_name'];
     }
     
     this.getTopID=function(){   

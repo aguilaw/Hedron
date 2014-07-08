@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href={{ asset("assets/css2/SketchbookStyles.css")}}> 
 @stop
 
+
 @section('body')
     <ul class="book-wrap">
     @foreach($sketches as $sketch)

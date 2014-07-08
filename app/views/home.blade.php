@@ -13,7 +13,14 @@
 @section('styles')
 	<link rel="stylesheet" href={{ asset("assets/css2/HomeStyles.css")}}>
 @stop
-
+@section('nav')
+    <nav class="nav">
+			<a href="{{ url('home') }}" class="nav-bttn home">Home</a>            
+            <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
+            <a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
+            <a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
+		</nav>
+ @stop
 @section('body')
 <!--contains the geometrig astract img-->
     <div class="wrapper">
@@ -47,7 +54,7 @@
         
         
         <img class="stairs-edge-left"  src={{asset("assets/home/stairs_edge_left_long.png")}} >
-        <img class="logo-shadow"  src={{asset("assets/home/logo_shadow_stairs.png")}} >
+        <img class="logo-shadow"  src={{asset("assets/home/logo_shadow_stairs_copy.png")}} >
         <img class="stairs-edge-right"   src={{asset("assets/home/stairs_edge_right_long.png")}} >
 
 

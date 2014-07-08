@@ -34,7 +34,7 @@ h1{
 	text-shadow: 1px 1px #000; 
 }
 a{
-	color: #eab4ad;
+	color: white;
 	text-decoration: none;
 }
 li{
@@ -104,10 +104,20 @@ li{
     margin-top:4%;
 	z-index: 55;
 }
-.sign{
+.logo{
 	float: left;
-	margin-left: -2%;
-	margin-top: 30px;
+	margin-left: 11%;
+	margin-top: 30%;
+    width:150px;
+ 
+}
+.circle{
+    width:200px;
+    height:200px;
+    margin-top:-6.5%;
+    background-color:#2E2D2A;
+    border-radius:200px;
+    float:left;
 }
 
 /************************OVERALL BODY************************
@@ -115,7 +125,7 @@ li{
 .rnd-box{
 	-webkit-border-radius:50px 50px 50px 50px;
 	-moz-border-radius:40px;
-	background-color:rgba(23,25,25,.3);
+	background-color:rgba(23,25,25,.6);
 	padding: 40px 40px 40px 40px;
 	box-shadow: inset 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
 	margin-right: auto;

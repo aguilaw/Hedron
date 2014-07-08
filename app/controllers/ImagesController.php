@@ -53,8 +53,7 @@ class ImagesController extends BaseController {
                 else{}/*
              /*Set the other image parameters  from Input:: and save*/
             $this->SetValsFromInput($image);
-            $this->make_thumb($image,580,370,"FEAT",1.2,0);
-            $this->make_thumb($image,350,200,"ICON",2.5,0);
+            $this->make_thumb($image,380,350,"ICON",200);
             return Redirect::action('ImagesController@ImageEdit',$image->id)->with('message',"Image saved succesfully.");
         }
         else{
@@ -146,7 +145,7 @@ class ImagesController extends BaseController {
 
     }
   /*******************************************************************/
-    function make_thumb($image,$thumbWidth,$thumbHeight,$type,$factor,$offset) {
+    function make_thumb($image,$thumbWidth,$thumbHeight,$type,$percent) {
     $dest=$this->DEST_PATH."thumb/".$type."_".$image->file_name;
     $src=$this->DEST_PATH.$image->file_name;
         /* read the source image */
@@ -161,22 +160,27 @@ class ImagesController extends BaseController {
         else{
             $source_image = imagecreatefromjpeg($src);
         }
+        /*the factor required to scale the thumbsize area to match that in admin/imgs
+            if img full height is 800 it is displayed as 700px in dmin/img (width:200% of 350px square)
+            the 300px square becomes .875*350=400px*/
+        $factor=$image->file_height/(($percent/100)*$thumbHeight);
         
         if( $image->file_height > $image->file_width ){
-            /* Portrait */
+            // Portrait 
            $desired_width = $thumbWidth*$factor;
            $desired_height = $image->file_height * ( ($thumbHeight*$factor) / $image->file_height);
          }
         else{
-            /* Landscape */
+             //Landscape
+             
             $desired_height = $thumbHeight*$factor;
             $desired_width = $image->file_width * ( $thumbWidth*$factor / $image->file_width );
         }
-        
+         //   return "f".$factor." h".$desired_height." w".$desired_width;
         /* create a new, "virtual" image */
-            $widthOffset=abs(Input::get('left'))*.70+$offset;
+            $widthOffset=abs(Input::get('left'));
         
-        $heightOffset=abs(Input::get('top'))*.65;
+        $heightOffset=abs(Input::get('top'))*1.6;
         $virtual_image = imagecreatetruecolor($thumbWidth, $thumbHeight);
         
         /* copy source image at a resized size */
