@@ -3,7 +3,7 @@
 $(document).ready(function(){
     var page=2;
     $('#sq-rnd').data('ajaxready', true).scroll(function(){
-        if ($(this).data('ajaxready') == false) return ;
+        if ($(this).data('ajaxready') == false) return;
         var scrollPosition = $(this).scrollTop() + $(this).outerHeight();
         var divTotalHeight = this.scrollHeight 
         
@@ -20,14 +20,14 @@ $(document).ready(function(){
                         page=page+1;
                     }else{
                         $('#load-more-ajax').html('No more posts to show.');
+                        
                     }
-                    $(this).data('ajaxready', true);
-                    
                 },
-                error:function(data,error){ $(this).data('ajaxready', true);}
-                
+                complete:function(jqXHR, textStatus){
+                    $(this).data('ajaxready', true);
+                }
             });
-            
+              $(this).data('ajaxready', true);
         }
         else{$('#load-more-ajax').hide();}
     });

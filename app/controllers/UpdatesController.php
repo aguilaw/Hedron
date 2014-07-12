@@ -18,11 +18,6 @@ class UpdatesController extends BaseController {
             /*Save the Image info to the Database*/
             $update= new Update;
              $this->SetValsFromInput($update);
-          /* $update->date_created=Input::get('date');
-            /*Set the other image parameters  from Input:: and save*/
-          /* $update->message=Input::get('mssg');
-           $update->type=Input::get('updt-type');
-           $update->FA_icon_name=Input::get('icon-name');*/
            $update->save();
         return Redirect::action('UpdatesController@UpdateNew')->with('message',"Update saved successfully.");
     }
@@ -37,12 +32,7 @@ class UpdatesController extends BaseController {
     public function SaveUpdateEdit(Update $update)
     {           
             /*Save the Image info to the Database*/
-            /*$update->date_created=Input::get('date');
-            $update->type=Input::get('updt-type');
-            $update->FA_icon_name=Input::get('icon-name');
-            /*Set the other image parameters  from Input:: and save*/
              $this->SetValsFromInput($update);
-          /* $update->message=Input::get('mssg');*/
            $update->save();
         return Redirect::action('UpdatesController@UpdateEdit',$update->id)->with('message',"Update saved successfully.");
     }

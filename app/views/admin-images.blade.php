@@ -5,7 +5,6 @@
 @stop
 
 @section('js')
-<script type="text/JavaScript" src={{ asset("assets/js/adminPagesEvents.js") }}></script>
 <script type="text/JavaScript" src={{ asset("assets/js/diagonalManipulation.js") }}></script>
 	<script type="text/JavaScript" src= {{ asset("assets/js/button.js") }}></script>
     <script type="text/JavaScript" src= {{ asset("assets/js/verify.js") }}></script>

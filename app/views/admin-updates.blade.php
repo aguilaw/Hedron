@@ -66,7 +66,7 @@ Updates
                       <input class="input-radio-other" type="text" name="type-other-val" id="type-other-val"  autocomplete="off"  placeholder="other"> 
                 @endif
         </p>
-        <label for="icon-type"> Change Font Awesome Icon (optional):</label>
+        <label for="icon-name"> Change Font Awesome Icon (optional):</label>
         <input class="input" type="text" name="icon-name" id="icon-name"  value=@yield('pre-fill',  $toEdit->FA_icon_name)>
         <a href='http://fortawesome.github.io/Font-Awesome/icons/' target='_blank'><i class="fa fa-question-circle"></i>  Need Icon Names?</a>
         <label for="mssg">Message:</label>

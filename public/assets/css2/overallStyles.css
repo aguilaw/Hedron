@@ -114,7 +114,8 @@ li{
 .circle{
     width:200px;
     height:200px;
-    margin-top:-6.5%;
+    position:absolute;
+    top:-104.5%;
     background-color:#2E2D2A;
     border-radius:200px;
     float:left;
