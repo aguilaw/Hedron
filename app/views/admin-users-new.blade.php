@@ -5,7 +5,21 @@
 @stop
 
 @section('pre-fill-email')
+@if(Input::old('email') != "")
+    {{Input::old('email')}}
+@else
 {{"@hedron.com"}}
+@endif
+@stop
+
+
+
+@section('re-fill-fname')
+{{Input::old('fname')}}
+@stop
+
+@section('re-fill-lname')
+{{Input::old('lname')}}
 @stop
 
 @section('pre-fill-password')

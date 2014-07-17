@@ -30,12 +30,16 @@ class UsersController extends BaseController {
             return Redirect::action('UsersController@UserEdit',$user->id)->with('message',"User saved successfully.");
         }
         else{
-           return Redirect::action('UsersController@UserNew')->withErrors($validate->messages());
+           return Redirect::action('UsersController@UserNew')->withErrors($validate->messages())
+                                                                                         ->withInput(Input::except('password','password_confirmation'));
         }
     }
 /*****************************************************************/
     public function UserEdit(User $user)
-    {   
+    {  
+        if(($user->email == Config::get('globals.WEBMASTER_@')) && (Auth::user()->email != Config::get('globals.WEBMASTER_@'))){
+             return Redirect::action('UsersController@UserNew')->with('message',"Not Authorized to access Webmaster's Information");
+        }
         $users=User::orderBy('lname','asc')->get();
         $toEdit=$user;
         return View::make('admin-users', compact('users' , 'toEdit') );

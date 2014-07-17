@@ -45,13 +45,13 @@ Images
     <form class="forms" action =@yield('action', action('ImagesController@ImageEdit', $toEdit->id)) enctype="multipart/form-data" method ="post" role="form">
          <!--contains form and file info -->
             <label for="title">Title:</label>
-                <input class="input" type="text" name="title" id="title"   autocomplete="off" required value="@yield('pre-fill',  $toEdit->title)">
+                <input class="input" type="text" name="title" id="title"   autocomplete="off" required value="@yield('pre-fill-title',  $toEdit->title)">
 
-            <label for="date">Date:</label>
-                <input class="input" type="date" name="date" id="date"  required value=@yield('pre-fill',  $toEdit->date_created)>
+            <label for="date">Date Created:</label>
+                <input class="input" type="date" name="date" id="date"  required value=@yield('pre-fill-date',  $toEdit->date_created)>
 
             <label for="tools">Tools:</label>
-                <input class="input" type="text" name="tools" id="tools"   autocomplete="off" value="@yield('pre-fill',  $toEdit->tools)" >
+                <input class="input" type="text" name="tools" id="tools"   autocomplete="off" value="@yield('pre-fill-tools',  $toEdit->tools)" >
 
             <label for="type">Type:</label>
                 <input class="input-radio first-radio" type="radio" name="type" id="type-first" required value="Original" 
@@ -75,12 +75,12 @@ Images
                 <input class="input-radio first-radio" type="radio" name="link-to" id="link-to-gallery" required value="gallery" @if($toEdit->link_to == "gallery") checked @endif >Gallery
                 <input class="input-radio" type="radio" name="link-to" id="link-to-sketch" required value="sketchbook" @if($toEdit->link_to == "sketchbook") checked @endif> Sketchbook
             <label for="desc">Description:</label>
-                <textarea class="input"  name="desc" id="desc" rows="20" columns="40">@yield('pre-fill', $toEdit->description)</textarea>
-            <input class="" type="checkbox" name="featured" id="featured" value="checked" @yield('pre-fill',   $toEdit->featured  )> Featured
+                <textarea class="input"  name="desc" id="desc" rows="20" columns="40">@yield('pre-fill-desc', $toEdit->description)</textarea>
+            <input class="" type="checkbox" name="featured" id="featured" value="checked" @yield('pre-fill-featured',   $toEdit->featured  )> Featured
                 <br>
                 <hr>
             <!-- Upload the file -->
-            <label for="file"> @yield('upload', "Change") Image File:</label>
+            <label for="file"> @yield('upload', "Change") Image File {up to 2 . 4mb}:</label>
             <input type="file" name="file" id="file" @yield('required', "")>
             <hr>
              <input class="submit" type="submit" name="submit" id="submit" value="Save">
@@ -92,7 +92,7 @@ Images
                     <!-- load page then load the matching image within the parallelogram 
                             arguments are the saved left and top  values as well as the image file_title -->
                             
-                    <img class="diag-img" id="draggable" src="@yield('pre-fill', asset('/assets/gallery/'.$toEdit->file_name))">
+                    <img class="diag-img" id="draggable" src="@yield('pre-fill-img', asset('/assets/gallery/'.$toEdit->file_name))">
              </div><!--end .diag-top -->
              @section('pre-fill-script')
             <script>

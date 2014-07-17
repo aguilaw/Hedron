@@ -4,8 +4,28 @@
 
 @stop
 
+@section('pre-fill-title')
+{{Input::old('title')}}
+@stop
+
+@section('pre-fill-title')
+{{Input::old('title')}}
+@stop
+
+@section('pre-fill-date')
+{{Input::old('date')}}
+@stop
+
+@section('pre-fill-desc')
+{{Input::old('desc')}}
+@stop
+
+@section('pre-fill-tools')
+{{Input::old('tools')}}
+@stop
+
 @section('action')
-    {{ action('ImagesController@SaveImageNew') }}
+    {{action('ImagesController@SaveImageNew') }}
 @stop
 
 

@@ -48,9 +48,9 @@ Users
     <form class="forms" action =@yield('action', action('UsersController@UserEdit', $toEdit->id)) method ="post" role="form">
          <!--contains form and file info -->
             <label for="fname">First Name:</label>
-                <input class="input" type="text" name="fname" id="fname"   autocomplete="off" required value="@yield('pre-fill',  $toEdit->fname)">
+                <input class="input" type="text" name="fname" id="fname"   autocomplete="off" required value="@yield('re-fill-fname',  $toEdit->fname)">
             <label for="lname">Last Name:</label>
-                <input class="input" type="text" name="lname" id="lname"  autocomplete="off" value="@yield('pre-fill',  $toEdit->lname)" >
+                <input class="input" type="text" name="lname" id="lname"  autocomplete="off" value="@yield('re-fill-lname',  $toEdit->lname)" >
             <label for="role">Role:</label>
                 <input class="input-radio first-radio" type="radio" name="role" id="role" required value="admin" 
                     @if($toEdit->role == "admin") checked @endif >Admin

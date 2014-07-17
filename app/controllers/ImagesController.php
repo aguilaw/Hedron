@@ -62,10 +62,17 @@ class ImagesController extends BaseController {
     }   
  /*****************************************************************/     
     public function SaveImageNew(){
-        if (Input::file('file')->isValid()){
+        if(!Input::file('file')->isValid()){
+             return Redirect::action('ImagesController@ImageNew')->with('message',"Image Size Exceeds Limit")
+                                                                                                ->withInput(Input::except('file'));
+        }
+        
+         $validate = $this->validate(Input::all());
+         if($validate->passes() && Input::file('file')->isValid()){
             
             /*Save the Image info to the Database*/
             $image= new Image;
+            //save to assign an id
             $image->save();
              list($ext,$fileName,$width,$height,$fileSize)=$this->SaveImginFS($image->id);
             $image->file_name=$fileName;
@@ -76,10 +83,12 @@ class ImagesController extends BaseController {
             
             /*Set the other image parameters  from Input:: and save*/
             $this->SetValsFromInput($image);
+            return Redirect::action('ImagesController@ImageEdit',$image->id)->with('message',"New image added successfully.");
         }
-        else{ }
-        
-        return Redirect::action('ImagesController@ImageEdit',$image->id)->with('message',"New image added successfully.");
+        else{ 
+        return Redirect::action('ImagesController@ImageNew')->withErrors($validate->messages()) 
+                                                                                         ->withInput(Input::except('file'));
+        }
     }
  /*****************************************************************/     
     public function ImageDelete($image){
@@ -103,12 +112,7 @@ class ImagesController extends BaseController {
     }
 /*****************************************************************/
      private function SaveImginFS($id){
-     
-        /*$title =preg_replace("/[^A-Za-z0-9]/", "_", Input::get('title'));
-        $date=explode('-',Input::get('date'));
-        $year=$date[0];            
-        $fileName=$year."_".$title.".".$ext;*/
-         $ext=Input::file('file')->getClientOriginalExtension();
+        $ext=Input::file('file')->getClientOriginalExtension();
         $fileName=$id.".".$ext;
         Input::file('file')->move($this->DEST_PATH,$fileName);
         $fileSize=Input::file('file')->getClientSize();
@@ -200,7 +204,7 @@ class ImagesController extends BaseController {
 
         $rules = array(
                 'tools'  =>array('Min:3','Max:200','regex:/[A-Za-z0-9\(,\)\- ]/','required'),
-                'file' => 'Image',
+                'file' => 'Image','Max:2000',
                 'type'=>array('regex:/[A-Za-z0-9\(,\)\- ]/','required'),
                 'title'=>'regex:/[A-Za-z0-9_@#$%^&*()!,.`+=-~:;"\/) ]/',
                // 'desc'=>'alpha|max:300', /*fails eventhough input only contained letters and nums*/
