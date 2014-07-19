@@ -37,8 +37,10 @@ class PagesController extends BaseController {
 	{
          $sketches=Image::where('link_to','=','sketchbook')
                         ->orderBy('date_created','desc')
-                        ->get();       
-		return View::make('sketchbook',compact('sketches'));
+                        ->get();     
+         $aDate=explode('-',$sketches->first()->date_created);
+         $currYear=$aDate[2];
+		return View::make('sketchbook',compact('sketches','currYear'));
 	}
 /***********************************************************************/    
     public function ShowSketch($sketch)

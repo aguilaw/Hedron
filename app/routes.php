@@ -24,14 +24,17 @@ Route::get('/logout', 'AdminController@Logout');
 
 
 Route::get('/admin/images/new', 'ImagesController@ImageNew');
+Route::get('/admin/images', 'ImagesController@ImageNew');
 Route::get('/admin/images/{image}', 'ImagesController@ImageEdit');
 Route::get('/admin/images/delete/{image}', 'ImagesController@ImageDelete');
 
 Route::get('/admin/updates/new', 'UpdatesController@UpdateNew');
+Route::get('/admin/updates', 'UpdatesController@UpdateNew');
 Route::get('/admin/updates/{update}', 'UpdatesController@UpdateEdit');
 Route::get('/admin/updates/delete/{update}', 'UpdatesController@UpdateDelete');
 
 Route::get('/admin/users/new', 'UsersController@UserNew');
+Route::get('/admin/users', 'UsersController@UserNew');
 Route::get('/admin/users/{user}', 'UsersController@UserEdit');
 Route::get('/admin/users/delete/{user}', 'UsersController@UserDelete');
 
@@ -45,7 +48,10 @@ Route::get('/gallery','PagesController@ShowGallery');
 Route::get('/sketchbook','PagesController@ShowSketchbook');
 Route::get('/sketchbook/{image}','PagesController@ShowSketch');
 
-Route::get('/{page}', 'PagesController@ShowComingSoon');
+Route::get('/gallery', 'PagesController@ShowComingSoon');
+Route::get('/about', 'PagesController@ShowComingSoon');
+Route::get('/contact', 'PagesController@ShowComingSoon');
+Route::get('/latest-project', 'PagesController@ShowComingSoon');
 
 
 /*Handle Forms*/

@@ -1,21 +1,33 @@
-.book-wrap{
-    width:80%;
+.center{
+    width:90%;
     height: 100%;
     margin-left:auto;
     margin-right:auto;
-    left:3%;
-    max-width:1153px;
 }
-
+.book-wrap{
+    width:100%;
+    height: 100%;
+    margin-left:13%;
+    max-width:1325px;
+}
+hr{
+margin-bottom:9%;
+}
+.year-text{
+font-size:300%;
+    margin-bottom:-3%;
+    margin-top:5%;
+    margin-right:15%;
+}
 .book{
     width:20%;
     height:20%;
     background-color:gray;
     display:block;
 }
-
 .diag-thumb {
     position: relative;
+    display:inline-block;
 	box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
 	-webkit-transform: skewX(-30deg); /* Safari and Chrome */
     transform: skewX(-30deg); 
@@ -24,12 +36,11 @@
     -ms-transform-origin: top left;
     transform-origin: top left;
     overflow: hidden;
-    float: left;
+   /* float: left;*/
     z-index: 40;
 	height:340px;
-	width: 200px;
-	margin-left: 7%;
-	margin-top: -1.6%;
+	width: 130px;
+	margin-top: -6.6%;
     -webkit-border-radius:20px;
     
 }
@@ -41,7 +52,7 @@
     z-index:55;
     width:380px;
     height:350px;
-    right:44%;
+    right:100%;
      -webkit-transition: background-image 200ms;
       
     
