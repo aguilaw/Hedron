@@ -12,9 +12,12 @@ return array(
 	| that are included on basically every request into the application.
 	|
 	*/
+    /*URLs used accross the app*/
     'THUMB_URL'        => "/assets/gallery/thumb/",
     'DEST_PATH'         =>"../public/assets/gallery/",
-    'GALLERY_URL'      =>  url('/gallery'),
+    'GALLERY_URL'      =>  asset('/gallery'),
+    
+    /*The webmasters email*/
     'WEBMASTER_@'  => "aguilaw@hedron.com",
 
 

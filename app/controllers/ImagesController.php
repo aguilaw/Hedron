@@ -39,18 +39,9 @@ class ImagesController extends BaseController {
                         $image->file_width=$width;
                         $image->file_height=$height;
                  }
-                 /*if the title or the year  change the file is renamed to maintain the naming convention*/
-                //elseif(($image->title != Input::get('title')) || ($image->date_created != Input::get('date'))){
-                   /* $title = str_replace(' ', '-', Input::get('title'));
-                    $date=explode('-',Input::get('date'));
-                    $year=$date[0];
-                    $newFileName=$year."_".$title.".".$image->file_ext;*/
                      $newFileName=$image->id.".".$image->file_ext;
                     rename($this->DEST_PATH.$image->file_name, $this->DEST_PATH.$newFileName);
                     $image->file_name=$newFileName;
-                    
-               /* }
-                else{}/*
              /*Set the other image parameters  from Input:: and save*/
             $this->SetValsFromInput($image);
             $this->make_thumb($image,380,350,"ICON",200);

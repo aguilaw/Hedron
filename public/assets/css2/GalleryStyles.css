@@ -1,0 +1,13 @@
+.wall{
+    height:50%;
+    width:90%;
+    background-color:gray;
+    margin:auto;
+}
+.frame{
+    width:20%;
+    height:30%;
+    margin-left:3%;
+    background-color:pink;
+    
+}

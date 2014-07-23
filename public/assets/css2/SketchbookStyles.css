@@ -1,3 +1,11 @@
+#sketch-popup a:hover {
+  color: #ECB147;
+  text-decoration: none;
+}
+#sketch-popup a {
+      color: #ed6b58;
+}
+
 .center{
     width:90%;
     height: 100%;
@@ -7,18 +15,30 @@
 .book-wrap{
     width:100%;
     height: 100%;
-    margin-left:13%;
     max-width:1325px;
+    margin-left:50px;
 }
 hr{
 margin-bottom:9%;
+position:relative;
+width:55%;
 }
 .year-text{
-font-size:300%;
-    margin-bottom:-3%;
-    margin-top:5%;
-    margin-right:15%;
+font-size:250%;
+    margin-top:60px;
+    z-index:50;
+    position:relative;
+    margin-right:11%;
+    float:left;
 }
+
+.year-text:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+   }
 .book{
     width:20%;
     height:20%;
@@ -37,23 +57,71 @@ font-size:300%;
     transform-origin: top left;
     overflow: hidden;
    /* float: left;*/
-    z-index: 40;
-	height:340px;
+    z-index: 50;
+	height:244px;
 	width: 130px;
 	margin-top: -6.6%;
     -webkit-border-radius:20px;
     
+}
+.first-thumb{
+margin-left:12%;
 }
 
 .diag-thumb-img{
     position:relative;
     margin:auto;
     -webkit-transform: skewX(30deg); /* Safari and Chrome */
-    z-index:55;
-    width:380px;
-    height:350px;
-    right:100%;
+    z-index:40;
+    width:266px;
+    right:57%;
      -webkit-transition: background-image 200ms;
-      
+     }
+ #blanket{
+    position:fixed;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,.7);
+    z-index:58;
+    display:none;
     
+ }
+#sketch-popup{
+    position:fixed;
+    width:85%;
+    margin:auto;
+    left:7.5%;
+    height:800px;
+    margin-top:4%;
+    z-index:60;
+    display:none;
 }
+    .sketch{
+        float:right;
+        position:relative;
+        width:500px;
+        z-index:65;
+    }
+    #mssg{
+        color:#7A7A7A;
+        margin-top:10%;
+        font-size:70%;
+    }
+    .info{
+        position:relative;
+        float:left;
+        margin-top:14%;
+        width:46%;
+        z-index:65;
+        
+    }
+    .sketch:after { 
+       content: "."; 
+       visibility: hidden; 
+       display: block; 
+       height: 0; 
+       clear: both;
+       }
+

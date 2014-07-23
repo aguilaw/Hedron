@@ -5,7 +5,7 @@
 @stop
 
 
-@section('js')
+@section('end-js')
     <script type="text/JavaScript" src={{ asset("assets/js/SketchbookEvents.js") }}></script>
 @stop
 
@@ -16,21 +16,27 @@
 
 
 @section('body')
+<!--darkens the page to make it seem like it fades into the bg 
+when viewing an image-->
+<div id="blanket"></div>
+<div id="sketch-popup">
+
+</div>
+
 <div class="center">
     <ul class="book-wrap">
 
   @foreach($sketches as $sketch)
-        @if($aDate=explode("-", $sketch->date_created))@endif
+        <?php $aDate=explode("-", $sketch->date_created) ?>
         @if ($aDate[0] !=$currYear)
-        
-            <p class="year-text">{{$aDate[0]}}</p>
-            <hr>
+         <hr>
+            <li class="year-text">{{$aDate[0]}}</li>
+            <li class="diag-thumb first-thumb"  id="{{url('/sketchbook/'.$sketch->id)}}" >
             @if($currYear=$aDate[0])@endif
+        @else
+            <li class="diag-thumb" id="{{url('/sketchbook/'.$sketch->id)}}" >
         @endif
-        <li class="diag-thumb">
-            <a href={{action('PagesController@ShowSketch',$sketch->id)}}>
             <img class="diag-thumb-img"  src="{{Config::get('globals.THUMB_URL').'ICON_'.$sketch->file_name}}">
-            </a>
         </li>
     @endforeach
 

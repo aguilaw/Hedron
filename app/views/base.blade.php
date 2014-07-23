@@ -23,8 +23,7 @@
 	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	-->
-	<!-- overall styling -->
-	<link rel="stylesheet" href={{ asset("assets/css2/overallStyles.css")}}>
+
     @yield('js')
     
      
@@ -33,7 +32,10 @@
 	{{-- Google Fonts --}}
 	<link href='http://fonts.googleapis.com/css?family=Monoton|Mrs+Sheppards|Orbitron:500,400,700|' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,300,600,700|Allerta+Stencil|Source+Code+Pro:300,500,400,700' rel='stylesheet' type='text/css'>
-	@yield('styles')
+	
+    	<!-- overall styling -->
+	<link rel="stylesheet" href={{ asset("assets/css2/overallStyles.css")}}>
+    @yield('styles')
 </head>
 <body >    
 		@section('nav')
@@ -52,7 +54,7 @@
 	<i class="fa fa-tumblr fa-2x foot-icon"></i>
 	<i class="fa fa-youtube fa-2x foot-icon"></i>
 	</footer><!-- end footer-->
-
+    @yield('end-js')
 
 	
 <script type="text/JavaScript" src={{ asset("assets/js/InfinitePagination.js") }}></script>

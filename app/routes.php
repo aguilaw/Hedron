@@ -48,7 +48,6 @@ Route::get('/gallery','PagesController@ShowGallery');
 Route::get('/sketchbook','PagesController@ShowSketchbook');
 Route::get('/sketchbook/{image}','PagesController@ShowSketch');
 
-Route::get('/gallery', 'PagesController@ShowComingSoon');
 Route::get('/about', 'PagesController@ShowComingSoon');
 Route::get('/contact', 'PagesController@ShowComingSoon');
 Route::get('/latest-project', 'PagesController@ShowComingSoon');

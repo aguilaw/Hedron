@@ -15,7 +15,12 @@ class PagesController extends BaseController {
 /***********************************************************************/
 	public function ShowGallery()
 	{
-		return View::make('coming-soon');
+        $sketches=Image::where('link_to','=','gallery')
+                        ->orderBy('date_created','desc')
+                        ->get();
+        $aDate=explode('-',$sketches->first()->date_created);
+         $currYear=$aDate[2];
+		return View::make('sketchbook',compact('sketches','currYear'));
 	}
 /***********************************************************************/
 	public function ShowAbout()
@@ -35,6 +40,8 @@ class PagesController extends BaseController {
 /***********************************************************************/
 	public function ShowSketchbook()
 	{
+       
+
          $sketches=Image::where('link_to','=','sketchbook')
                         ->orderBy('date_created','desc')
                         ->get();     
@@ -45,7 +52,9 @@ class PagesController extends BaseController {
 /***********************************************************************/    
     public function ShowSketch($sketch)
 	{
-		return View::make('coming-soon');
+        if (Request::ajax()) {
+            return Response::json(View::make('show-sketch',compact('sketch'))->render());
+        };
 	}
 /***********************************************************************/    
     public function ShowImage()

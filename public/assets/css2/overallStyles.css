@@ -31,10 +31,14 @@ h1{
 	font-weight: 500;
 	text-shadow: 1px 1px #000; 
 }
+ .fa{
+    color:#ED6B58;
+}
 a{
 	color: white;
 	text-decoration: none;
 }
+
 li{
 	list-style-type: none;
 	display: inline;
@@ -161,6 +165,6 @@ li{
 .foot-icon{
 margin-left:5%;
 }
-.fa{
+footer .fa{
     color: #ed6b58;
 }
