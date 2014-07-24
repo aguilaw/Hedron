@@ -1,12 +1,12 @@
 @extends('base')
 
 @section('title')
-{{"Gallery"}}
+{{"Sketchbook"}}
 @stop
 
 
 @section('end-js')
-    <script type="text/JavaScript" src={{ asset("assets/js/SketchbookEvents.js") }}></script>
+    <script type="text/JavaScript" src={{ asset("assets/js/GalleryEvents.js") }}></script>
 @stop
 
 
@@ -20,17 +20,20 @@
 when viewing an image-->
 <div id="blanket"></div>
 <div id="sketch-popup">
+
 </div>
 
-<script>
-            var FEAT_THUMB_URL="{{Config::get('globals.THUMB_URL')}}"; 
-            var GALLERY_URL="{{Config::get('globals.GALLERY_URL')}}"; 
-            var gallery={{$gallery->toJson() }};
-    </script>
-    
-<ul class="wall">
-    <li class="frame"></li>
-    <li class="frame"></li>
-    <li class="frame"></li>
-</ul>
+<div class="center">
+    <ul class="book-wrap">
+
+  @foreach($images as $image)
+        
+            <li class="diag-thumb" id="{{url('/sketchbook/'.$image->id)}}" >
+
+            <img class="diag-thumb-img"  src="{{Config::get('globals.THUMB_URL').'ICON_'.$image->file_name}}">
+        </li>
+    @endforeach
+
+    </ul>
+    </div>
 @stop

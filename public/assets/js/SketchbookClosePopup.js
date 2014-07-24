@@ -1,6 +1,11 @@
 (function(){
-    $("#back-bttn").click(function(){
-         $('#blanket').fadeOut("slow");
-         $('#sketch-popup').fadeOut("slow");
+ /*   $("body").click(function(){
+         $('#frame').fadeOut("slow");
+    }); */
+       $(".close-bttn").click(function(){
+         $('#frame').fadeOut("slow");
     }); 
+    
+     
+
 })();

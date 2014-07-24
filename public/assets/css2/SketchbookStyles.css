@@ -1,127 +1,52 @@
-#sketch-popup a:hover {
-  color: #ECB147;
-  text-decoration: none;
+.nav{
+position:fixed;
 }
-#sketch-popup a {
-      color: #ed6b58;
+.sketch-wrapper{
+    margin:auto;
+    width:80%;
+    max-width:2000px;
 }
-
-.center{
-    width:90%;
-    height: 100%;
-    margin-left:auto;
-    margin-right:auto;
+#frame{
+    display:none;
+    position:fixed;
+    width:60%;
+    padding:3%;
+    height:70%;
+    left:20%;
+    top:190px;
+    border-radius: 10px;
+    background-color:rgba(23,25,25,.6);
+        
+    
+}
+.close-bttn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    z-index:70;
 }
 .book-wrap{
-    width:100%;
-    height: 100%;
-    max-width:1325px;
-    margin-left:50px;
+    width:80%;
+    max-width:1200px;
+    margin-left:20%;
+    margin-top:40px;
+    text-align:left;
 }
-hr{
-margin-bottom:9%;
-position:relative;
-width:55%;
-}
+
 .year-text{
-font-size:250%;
-    margin-top:60px;
-    z-index:50;
-    position:relative;
-    margin-right:11%;
-    float:left;
+margin-top:2.5%;
 }
-
-.year-text:after { 
-   content: "."; 
-   visibility: hidden; 
-   display: block; 
-   height: 0; 
-   clear: both;
-   }
-.book{
-    width:20%;
-    height:20%;
-    background-color:gray;
-    display:block;
-}
-.diag-thumb {
-    position: relative;
-    display:inline-block;
-	box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
-	-webkit-transform: skewX(-30deg); /* Safari and Chrome */
-    transform: skewX(-30deg); 
-    -ms-transform: skewX(-30deg); /* IE 9 */
-    -webkit-transform-origin: top right;
-    -ms-transform-origin: top left;
-    transform-origin: top left;
-    overflow: hidden;
-   /* float: left;*/
-    z-index: 50;
-	height:244px;
-	width: 130px;
-	margin-top: -6.6%;
-    -webkit-border-radius:20px;
+.diag-thumb{
+    width:100px;
+    height:100px;
     
+margin-top:0;
 }
-.first-thumb{
-margin-left:12%;
-}
-
 .diag-thumb-img{
-    position:relative;
-    margin:auto;
-    -webkit-transform: skewX(30deg); /* Safari and Chrome */
-    z-index:40;
-    width:266px;
-    right:57%;
-     -webkit-transition: background-image 200ms;
-     }
- #blanket{
-    position:fixed;
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-    background-color:rgba(0,0,0,.7);
-    z-index:58;
-    display:none;
-    
- }
-#sketch-popup{
-    position:fixed;
-    width:85%;
-    margin:auto;
-    left:7.5%;
-    height:800px;
-    margin-top:4%;
-    z-index:60;
-    display:none;
+width:150%;
+right:14%;
 }
-    .sketch{
-        float:right;
-        position:relative;
-        width:500px;
-        z-index:65;
-    }
-    #mssg{
-        color:#7A7A7A;
-        margin-top:10%;
-        font-size:70%;
-    }
-    .info{
-        position:relative;
-        float:left;
-        margin-top:14%;
-        width:46%;
-        z-index:65;
-        
-    }
-    .sketch:after { 
-       content: "."; 
-       visibility: hidden; 
-       display: block; 
-       height: 0; 
-       clear: both;
-       }
-
+.info{
+width:40%;
+background-color:rgba(23,25,25,.8);
+}

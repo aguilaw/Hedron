@@ -30,9 +30,7 @@
 
 	<script type="text/JavaScript" src={{ asset("assets/js/button.js")}}></script>
 	{{-- Google Fonts --}}
-	<link href='http://fonts.googleapis.com/css?family=Monoton|Mrs+Sheppards|Orbitron:500,400,700|' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,300,600,700|Allerta+Stencil|Source+Code+Pro:300,500,400,700' rel='stylesheet' type='text/css'>
-	
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300|Orbitron:400,500,700' rel='stylesheet' type='text/css'>
     	<!-- overall styling -->
 	<link rel="stylesheet" href={{ asset("assets/css2/overallStyles.css")}}>
     @yield('styles')
@@ -40,7 +38,7 @@
 <body >    
 		@section('nav')
         <nav class="nav">
-            <div class="circle"><img class="logo"  src="{{asset('/assets/logo.png')}}"></div>
+            <div class="circle"><a href="{{ url('home') }}"><img class="logo"  src="{{asset('/assets/logo.png')}}"></a></div>
 			<a href="{{ url('home') }}" class="nav-bttn home">Home</a>
             <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
             <a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
