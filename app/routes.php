@@ -42,11 +42,12 @@ Route::get('/admin/users/delete/{user}', 'UsersController@UserDelete');
 Route::get('/', 'PagesController@ShowHome');
 Route::get('/home','PagesController@ShowHome');
 
-Route::get('/gallery/{image}','PagesController@ShowImage');
+Route::get('/gallery/{image}','PagesController@ShowGallery');
 Route::get('/gallery','PagesController@ShowGallery');
 
+
+Route::get('/sketchbook/{image}','PagesController@ShowSketchbook');
 Route::get('/sketchbook','PagesController@ShowSketchbook');
-Route::get('/sketchbook/{image}','PagesController@ShowSketch');
 
 Route::get('/about', 'PagesController@ShowComingSoon');
 Route::get('/contact', 'PagesController@ShowComingSoon');

@@ -5,8 +5,9 @@
 @stop
 
 
-@section('js')
+@section('end-js')
     <script type="text/JavaScript" src={{ asset("assets/js/FeaturedWidget.js") }}></script>
+    <script type="text/JavaScript" src={{ asset("assets/js/InfinitePagination.js") }}></script>
 @stop
 
 
@@ -24,12 +25,10 @@
 @section('body')
 <!--contains the geometrig astract img-->
     <div class="wrapper">
-    
-
 		<!-- Begin Features -->
         <script>
             var FEAT_THUMB_URL="{{Config::get('globals.THUMB_URL')}}"; 
-            var GALLERY_URL="{{Config::get('globals.GALLERY_URL')}}"; 
+            var HOME_URL="{{Config::get('globals.HOME_URL')}}";  
             var featured={{$featured->toJson() }};
         </script>
         <div class="shadow-wrap"><div class="shadow"></div></div>
@@ -51,14 +50,10 @@
             <!-- End Features -->
             
         </ul>
-        
-        
         <img class="stairs-edge-left"  src={{asset("assets/home/stairs_edge_left_long.png")}} >
         <img class="logo-shadow"  src={{asset("assets/home/logo_shadow_stairs_copy.png")}} >
         <img class="stairs-edge-right"   src={{asset("assets/home/stairs_edge_right_long.png")}} >
-
-
-
+</div>
 <div class="edge">
         <h1 id="updates-text">UPDATES<i class="fa fa-chevron-down"></i></h1><br>
         <div id="sq-rnd">
@@ -78,7 +73,6 @@
 		</a> 
 		<!-- End Btm Windows-->
         </div>
-</div>
         
 
 

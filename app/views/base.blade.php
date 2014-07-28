@@ -38,23 +38,29 @@
 <body >    
 		@section('nav')
         <nav class="nav">
-            <div class="circle"><a href="{{ url('home') }}"><img class="logo"  src="{{asset('/assets/logo.png')}}"></a></div>
-			<a href="{{ url('home') }}" class="nav-bttn home">Home</a>
-            <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
-            <a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
-            <a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
+            <ul class="nav-list">
+            <li class="nav-block">
+                <a href="{{ url('home') }}" class="nav-bttn home">Home</a>
+                <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
+                <a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
+                <a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
+            </li>
+            <li class="logo-block ">
+                <div class="circle"><a href="{{ url('home') }}"><img class="logo"  src="{{asset('/assets/logo.png')}}"></a></div>
+            </li>
+            <li class="social-block">
+                <a class="fa fa-facebook  social"></a>
+                <a class="fa fa-twitter social"></a>
+                <a class="fa fa-tumblr social"></a>
+                <a class="fa fa-youtube social"></a>
+            </li>
+            </ul>
 		</nav>
     @show
 	@yield('body')
-    <footer class="footer">
-	<i class="fa fa-facebook fa-2x foot-icon"></i>
-	<i class="fa fa-twitter fa-2x foot-icon"></i>
-	<i class="fa fa-tumblr fa-2x foot-icon"></i>
-	<i class="fa fa-youtube fa-2x foot-icon"></i>
-	</footer><!-- end footer-->
     @yield('end-js')
-
+    <script type="text/JavaScript" src={{ asset("assets/js/OverallJS.js") }}></script>
 	
-<script type="text/JavaScript" src={{ asset("assets/js/InfinitePagination.js") }}></script>
+
 </body>
 </html>

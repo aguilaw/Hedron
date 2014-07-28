@@ -4,7 +4,9 @@
 {{"Gallery"}}
 @stop
 
-
+@section('js')
+   <script type="text/JavaScript" src={{ asset("assets/js/autoLoadImg.js") }}></script> 
+@stop
 @section('end-js')
    <script type="text/JavaScript" src={{ asset("assets/js/SketchbookEvents.js") }}></script> 
 @stop
@@ -21,13 +23,17 @@
 @section('body')
 <!--darkens the page to make it seem like it fades into the bg 
 when viewing an image-->
-
+@if($toShow != null)
+    <script>
+        loadSketch("{{url('/sketchbook/'.$toShow->id)}}");
+    </script>
+@endif
 <script>
-    var FEAT_THUMB_URL="{{Config::get('globals.THUMB_URL')}}"; 
+    var FEAT_THUMB_URL="{{Config::get('globals.GALLERY_URL')}}"; 
     var GALLERY_URL="{{Config::get('globals.GALLERY_URL')}}"; 
-    var gallery={{$images->toJson() }};
 </script>
-    
+<div class="view">   
+    <div id="frame"></div> 
     <ul class="book-wrap">
         @foreach($images as $image)
             <?php $aDate=explode("-", $image->date_created) ?>
@@ -43,5 +49,6 @@ when viewing an image-->
         </li>
          @endforeach
     </ul>
-    <div id="frame"></div>
+
+ </div>
 @stop

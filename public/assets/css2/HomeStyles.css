@@ -1,3 +1,7 @@
+html{
+min-height:1500px;
+min-width:795px;
+}
 body{
     background: -moz-linear-gradient(top, rgba(12,19,25,.8) 0%, rgba(107,158,199,0) 30%, rgba(125,185,232,0) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(12,19,25,.8)), color-stop(30%,rgba(12,19,25,.1)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
@@ -80,7 +84,7 @@ body{
     position:absolute;
     margin-top:-246px;
     max-width:885px;
-    bottom:1327px;
+    bottom:1329px;
      -webkit-perspective:450px; /* Chrome, Safari, Opera  */
     perspective:450px;
 }
@@ -153,11 +157,11 @@ body{
  /*************************FEATURED WIDGET****************/  
  
 .edge{
-    bottom:315px;
+    bottom:188px;
     position:absolute;
-        padding: 5% 5%;
-        z-index:20;
-    width:100%;
+    right:0;
+    left:0;
+    z-index:20;
 }
 /**********************UPDATES WIDGET****************
 *****************************************************/
@@ -168,7 +172,7 @@ body{
     padding:0;
 }
 #sq-rnd{
-margin:0;
+margin:auto;
 	height:300px;
      max-width:900px;
 	 -webkit-border-radius:10px;
@@ -228,7 +232,7 @@ border-top-left-radius: 0;
 }
 
 #greeting-text{
-width:120%;
+width:85%;
 }
 .divider{
 	width:50%;

@@ -1,11 +1,6 @@
 (function(){
- /*   $("body").click(function(){
-         $('#frame').fadeOut("slow");
-    }); */
        $(".close-bttn").click(function(){
-         $('#frame').fadeOut("slow");
+         $('#frame').html("").animate({width:"5%"},500,function() {});
+          $('.book-wrap').animate({width:"85%"},300,function() {}).css("overflow","visible");
     }); 
-    
-     
-
 })();
