@@ -15,17 +15,17 @@
     margin-right:auto;
     margin-top:72px;
     padding:4%;
-    overflow:hidden;
+    overflow:visible;
 }
 .book-wrap{
     width:100%;
     height: 100%;
     max-width:1325px;
-    margin-left:6%;
-    text-align:left;
+    padding-left:18%;
     position:relative;
     z-index:0;
 }
+
     .book-wrap:after { 
    content: "."; 
    visibility: hidden; 
@@ -131,7 +131,7 @@ margin-left:8%;
     #mssg{
         color:#7A7A7A;
         margin-top:10%;
-        font-size:70%;
+        font-size:100%;
     }
     .desc{
         padding: 3%;

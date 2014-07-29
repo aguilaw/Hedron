@@ -1,5 +1,6 @@
 html{
 min-height:1500px;
+height:100%;
 min-width:795px;
 }
 body{
@@ -186,24 +187,19 @@ margin:auto;
 	 overflow-x: hidden;
      
 }
+.update-frame{
+    display:block;
+}
 #sq-rnd::-webkit-scrollbar{
 	background-color: #9DA09D;
     width: 12px;
-    border-radius: 10px;
 }
 #sq-rnd::-webkit-scrollbar-thumb{
- border-radius: 10px;
 background-color:#1a1c1b;
-border-top-left-radius: 0;
-     border-bottom-left-radius: 0;
 }
-#sq-rnd::-webkit-scrollbar-track {
-    border-radius: 10px;
-    border-top-left-radius: 0;
-     border-bottom-left-radius: 0;
-}
+
 .date{
-	display: inline;
+	display: inline-block;
 	margin-left: 5%;
     color:#FED87F;
 }
@@ -217,6 +213,9 @@ border-top-left-radius: 0;
 .message{
 	font-size: 120%;
     margin-bottom:25px;
+    display:block;
+    max-width:500px;
+    margin:auto;
 }
 #updates-text, #greeting-text{
 
@@ -230,7 +229,9 @@ border-top-left-radius: 0;
 	box-shadow: 0px -11px 2px 2px rgba(0, 0, 0, 0.5);
 	margin-top:-0.5%;
 }
-
+#updates-text{
+    max-width:400px;
+}
 #greeting-text{
 width:85%;
 }

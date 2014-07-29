@@ -4,11 +4,14 @@
 {{"Sketchbook"}}
 @stop
 
-@section('js')
-   <script type="text/JavaScript" src={{ asset("assets/js/autoLoadImg.js") }}></script> 
-@stop
+
 @section('end-js')
     <script type="text/JavaScript" src={{ asset("assets/js/GalleryEvents.js") }}></script>
+    @if($toShow != null)
+    <script>
+        loadGalleryImg("{{url('/sketchbook/'.$toShow->id)}}");
+    </script>
+@endif
 @stop
 
 
@@ -18,11 +21,7 @@
 
 
 @section('body')
-@if($toShow != null)
-    <script>
-        loadGalleryImg("{{url('/sketchbook/'.$toShow->id)}}");
-    </script>
-@endif
+
 <!--darkens the page to make it seem like it fades into the bg 
 when viewing an image-->
 <div id="blanket"></div>

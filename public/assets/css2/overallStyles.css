@@ -1,6 +1,6 @@
 html{
 	background-image:url(../Hedron_hexbg_light.png);
-    height:100%;
+    min-height:100%;
     position:relative;
     
 }
@@ -21,6 +21,7 @@ body {
     text-align:center;
     padding:1px;
 }
+
 h2{
 	font-family: 'orbitron',sans-serif;
 	font-size: 120%;

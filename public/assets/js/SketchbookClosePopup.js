@@ -1,6 +1,12 @@
 (function(){
+
        $(".close-bttn").click(function(){
-         $('#frame').html("").animate({width:"5%"},500,function() {});
-          $('.book-wrap').animate({width:"85%"},300,function() {}).css("overflow","visible");
+           var percentThumbs=.89;
+           var percentFrame=.05;
+           var parentWidth =$('.view').width();
+            var thumbsWidth =  Math.round(percentThumbs*parentWidth);
+            var frameWidth =  Math.round(percentFrame*parentWidth);
+         $('#frame').html("").animate({width:frameWidth},300);
+          $('.book-wrap').animate({width:thumbsWidth},300).css("overflow-y","visible","overflow-x","scroll");
     }); 
 })();

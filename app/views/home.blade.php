@@ -17,8 +17,8 @@
 @section('nav')
     <nav class="nav">
 			<a href="{{ url('home') }}" class="nav-bttn home">Home</a>            
-            <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
             <a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
+            <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
             <a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
 		</nav>
  @stop

@@ -2,6 +2,7 @@
 /*****sq-rnd = the box containing the list of updates*/
 $(document).ready(function(){
     var page=2;
+     /*sets data to prevent multiple ajax calls*/
     $('#sq-rnd').data('ajaxready', true).scroll(function(){
         if ($(this).data('ajaxready') == false) return;
         var scrollPosition = $(this).scrollTop() + $(this).outerHeight();

@@ -5,10 +5,13 @@
 @stop
 
 @section('js')
-   <script type="text/JavaScript" src={{ asset("assets/js/autoLoadImg.js") }}></script> 
+   
 @stop
 @section('end-js')
    <script type="text/JavaScript" src={{ asset("assets/js/SketchbookEvents.js") }}></script> 
+  @if($toShow != null)
+  <script>loadSketch("{{url('/sketchbook/'.$toShow->id)}}");</script>
+    @endif 
 @stop
 
 
@@ -23,11 +26,7 @@
 @section('body')
 <!--darkens the page to make it seem like it fades into the bg 
 when viewing an image-->
-@if($toShow != null)
-    <script>
-        loadSketch("{{url('/sketchbook/'.$toShow->id)}}");
-    </script>
-@endif
+
 <script>
     var FEAT_THUMB_URL="{{Config::get('globals.GALLERY_URL')}}"; 
     var GALLERY_URL="{{Config::get('globals.GALLERY_URL')}}"; 
