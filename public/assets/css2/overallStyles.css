@@ -1,6 +1,6 @@
 html{
 	background-image:url(../Hedron_hexbg_light.png);
-    min-height:100%;
+    height:100%;
     position:relative;
     
 }
@@ -20,6 +20,7 @@ body {
     background-attachment:fixed;    
     text-align:center;
     padding:1px;
+    margin:0;
 }
 
 h2{

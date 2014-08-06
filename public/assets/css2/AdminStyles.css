@@ -5,6 +5,7 @@ top:3%;
 }
 .nav{
 	position: relative;
+    display:block;
 	margin-right: auto;
 	margin-left: auto;
 	width:80%;

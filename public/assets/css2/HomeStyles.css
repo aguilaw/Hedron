@@ -158,8 +158,8 @@ body{
  /*************************FEATURED WIDGET****************/  
  
 .edge{
-    bottom:188px;
-    position:absolute;
+    bottom:1000px;
+    position:relative;
     right:0;
     left:0;
     z-index:20;
