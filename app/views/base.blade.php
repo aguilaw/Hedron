@@ -59,7 +59,7 @@
     @show
 	@yield('body')
     @yield('end-js')
-    <script type="text/JavaScript" src={{ asset("assets/js/BigText.js") }}></script>
+    <script type="text/JavaScript" src={{ asset("assets/js/bigtext.js") }}></script>
     <script type="text/JavaScript" src={{ asset("assets/js/OverallJS.js") }}></script>
 	
 
