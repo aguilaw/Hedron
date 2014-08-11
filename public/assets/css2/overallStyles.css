@@ -1,6 +1,6 @@
 html{
 	background-image:url(../Hedron_hexbg_light.png);
-    height:100%;
+
     position:relative;
     
 }
@@ -10,11 +10,10 @@ body {
 	font-weight: 100;
 	font-size: medium;
 	color: #EDF1ED;
-	height: 100%;
     
     /*background-color:#f4f9f8;*/
     background: -moz-linear-gradient(top, rgba(12,19,25,.8) 0%, rgba(107,158,199,0) 40%, rgba(125,185,232,0) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(12,19,25,.8)), color-stop(40%,rgba(12,19,25,.3)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(12,19,25,.8)), color-stop(30%,rgba(12,19,25,.7)), color-stop(90%,rgba(125,185,232,0)));/* Chrome,Safari4+ */
     background: -ms-linear-gradient(top, rgba(12,19,25,.8) 0%,rgba(107,158,199,.4) 50%,  rgba(125,185,232,0) 100%); /* IE10+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-8 */
     background-attachment:fixed;    
@@ -48,6 +47,14 @@ li{
 	display: inline;
 }
 
+.center{
+    width:90%;
+    max-width:1215px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:2% 4%;
+    overflow:hidden;
+}
 /****************************NAV AREA***********************
 ************************************************************/
 .wrapper{
@@ -84,7 +91,7 @@ li{
 }
 
 .nav{
-    background-color:#2E2D2A;
+    background-color:#232628;
     -webkit-border-radius:0px 0px 10px 10px;
 	-moz-border-radius:0px 0px 10px 10px;
     border-radius:0px 0px 10px 10px;
@@ -143,17 +150,17 @@ li{
             float:left;
         }
             .circle{
-                width:120px;
-                height:100px;
+                width:100px;
+                height:65px;
                 position:absolute;
                 right:0;
                 left:0;
                 margin:auto;
-                background-color:#2E2D2A;
+                background-color:#232628;
                 border-radius:10px;
             }
                 .logo{
-                    height:80px;
+                    height:50px;
                 }
 /************************OVERALL BODY************************
 ************************************************************/

@@ -46,19 +46,20 @@
                 <a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
             </li>
             <li class="logo-block ">
-                <div class="circle"><a href="{{ url('home') }}"><img class="logo"  src="{{asset('/assets/logo.png')}}"></a></div>
+                <div class="circle"><a class="logo-link" href="{{ url('home') }}"><img class="logo"  src="{{asset('/assets/logo.png')}}"></a></div>
             </li>
             <li class="social-block">
                 <a class="fa fa-facebook  social"></a>
                 <a class="fa fa-twitter social"></a>
-                <a class="fa fa-tumblr social"></a>
-                <a class="fa fa-youtube social"></a>
+                <a class="fa fa-tumblr social" href="http://one-hedron.tumblr.com/"></a>
+                <a class="fa fa-youtube social" ></a>
             </li>
             </ul>
 		</nav>
     @show
 	@yield('body')
     @yield('end-js')
+    <script type="text/JavaScript" src={{ asset("assets/js/BigText.js") }}></script>
     <script type="text/JavaScript" src={{ asset("assets/js/OverallJS.js") }}></script>
 	
 

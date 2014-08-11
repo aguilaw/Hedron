@@ -49,7 +49,7 @@ Route::get('/gallery','PagesController@ShowGallery');
 Route::get('/sketchbook/{image}','PagesController@ShowSketchbook');
 Route::get('/sketchbook','PagesController@ShowSketchbook');
 
-Route::get('/about', 'PagesController@ShowComingSoon');
+Route::get('/about', 'PagesController@ShowAbout');
 Route::get('/contact', 'PagesController@ShowComingSoon');
 Route::get('/latest-project', 'PagesController@ShowComingSoon');
 

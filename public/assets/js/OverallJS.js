@@ -3,4 +3,5 @@
 $(document).ready(function(){
   $(".nav, .nav-list ").slideDown("slow");
   $(".nav").css("overflow","visible");
+  $(".bigtext").bigtext({minfontsize: 24});
 });
