@@ -35,7 +35,7 @@
 	<link rel="stylesheet" href={{ asset("assets/css2/overallStyles.css")}}>
     @yield('styles')
 </head>
-<body >    
+<body >   
 		@section('nav')
         <nav class="nav">
             <ul class="nav-list">
@@ -46,7 +46,7 @@
                 <a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
             </li>
             <li class="logo-block ">
-                <div class="circle"><a class="logo-link" href="{{ url('home') }}"><img class="logo"  src="{{asset('/assets/logo.png')}}"></a></div>
+                <div class="circle"><a class="logo-link" href="{{ url('home') }}"><img class="logo"  src="{{asset('/assets/Hedron_logo_Vector.svg')}}"></a></div>
             </li>
             <li class="social-block">
                 <a class="fa fa-facebook  social"></a>
@@ -57,7 +57,9 @@
             </ul>
 		</nav>
     @show
+    <div class="center">
 	@yield('body')
+        </div>
     @yield('end-js')
     <script type="text/JavaScript" src={{ asset("assets/js/bigtext.js") }}></script>
     <script type="text/JavaScript" src={{ asset("assets/js/OverallJS.js") }}></script>

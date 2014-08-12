@@ -14,7 +14,7 @@ return array(
 	*/
     /*URLs used accross the app*/
     'THUMB_URL'        =>'/assets/gallery/thumb/',
-    'DEST_PATH'         =>'/assets/gallery/',
+    'DEST_PATH'         =>'../public/assets/gallery/',
     'GALLERY_URL'      =>  action('PagesController@ShowHome')."/gallery/",
      'SKETCHBOOK_URL'      =>  action('PagesController@ShowHome')."/sketchbook/",
      'HOME_URL'      =>  action('PagesController@ShowHome'),

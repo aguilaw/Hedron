@@ -1,10 +1,8 @@
 html{
 	background-image:url(../Hedron_hexbg_light.png);
 
-    position:relative;
     
 }
-
 body {
 	font-family: 'roboto', sans-serif;
 	font-weight: 100;
@@ -50,25 +48,24 @@ li{
 .center{
     width:90%;
     max-width:1215px;
+    min-height:800px;
     margin-left:auto;
     margin-right:auto;
     padding:2% 4%;
+    padding-top:7%;
     overflow:hidden;
 }
 /****************************NAV AREA***********************
 ************************************************************/
 .wrapper{
-    width:66%;
-    height:100%;
-    max-width:885px;
+    width:90%;
+    max-width:900px;
     position:relative;
-    
+    height:500px;
     margin-left:auto;
     margin-right:auto;
      text-align:center;
-     background: url(../home/stairs_tile_long.png) repeat-x;
-         padding-top: 1px;
-    margin-top: 165px;
+     padding:2%;
 }
 
 
@@ -97,11 +94,11 @@ li{
     border-radius:0px 0px 10px 10px;
 	width: 95%;
     max-width:1400px;
-
+    position:absolute;
     height:50px;
-	margin-left: auto;
-    margin-right: auto;
-    margin-bottom:3%;
+    left: 0;
+    right: 0;
+    margin:auto;
     text-align:center;
 	z-index: 55;
     display:none;

@@ -9,19 +9,14 @@
 }
 
 .center{
-    width:90%;
-    max-width:1215px;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:72px;
-    padding:4%;
+    padding:9% 2%;
     overflow:visible;
 }
 .book-wrap{
     width:100%;
     height: 100%;
     max-width:1325px;
-    padding-left:18%;
+    padding-left:15%;
     position:relative;
     z-index:0;
 }

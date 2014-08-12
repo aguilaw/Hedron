@@ -1,7 +1,11 @@
+body{
+min-height:900px;
+}
+
 #admin-text{
 margin:0;
 position:relative;
-top:3%;
+margin-top:8%;
 }
 .nav{
 	position: relative;

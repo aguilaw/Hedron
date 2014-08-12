@@ -29,7 +29,6 @@ when viewing an image-->
 
 </div>
 
-<div class="center">
     <ul class="book-wrap">
 
   @foreach($images as $image)
@@ -41,5 +40,4 @@ when viewing an image-->
     @endforeach
 
     </ul>
-    </div>
 @stop

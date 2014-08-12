@@ -1,4 +1,5 @@
 (function(){
+$(".gallery").css("color","white");
     $("#blanket, #sketch-popup").click(function(){
          $('#blanket').fadeOut("slow");
          $('#sketch-popup').fadeOut("slow");
@@ -6,6 +7,7 @@
     $(".diag-thumb").click(function(){
         loadGalleryImg($(this).attr('id'));
     }); 
+    
 })();
 
 function loadGalleryImg(ajaxURL){

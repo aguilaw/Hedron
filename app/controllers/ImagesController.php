@@ -2,13 +2,11 @@
 
 class ImagesController extends BaseController {
 /*Constants*/
-    private $DEST_PATH="";
     
 /********************Public Functions*******************************/
 /*****************************************************************/ 
     public function __construct() {
         $this->beforeFilter('auth');
-        $this->DEST_PATH=Config::get('globals.DEST_PATH');
     }
     
     public function ImageNew()
@@ -31,7 +29,7 @@ class ImagesController extends BaseController {
          if($validate->passes()){
                 /*if the uploaded file has changed replace the last file with the new one*/
                 if (Input::hasFile('file')){
-                        unlink($this->DEST_PATH.$image->file_name);
+                        unlink(Config::get('globals.DEST_PATH').$image->file_name);
                         list($ext,$fileName,$width,$height,$fileSize)=$this->SaveImginFS($image->id);
                         $image->file_name=$fileName;
                         $image->file_ext=$ext;
@@ -40,7 +38,7 @@ class ImagesController extends BaseController {
                         $image->file_height=$height;
                  }
                      $newFileName=$image->id.".".$image->file_ext;
-                    rename($this->DEST_PATH.$image->file_name, $this->DEST_PATH.$newFileName);
+                    rename(Config::get('globals.DEST_PATH').$image->file_name, Config::get('globals.DEST_PATH').$newFileName);
                     $image->file_name=$newFileName;
              /*Set the other image parameters  from Input:: and save*/
             $this->SetValsFromInput($image);
@@ -65,7 +63,7 @@ class ImagesController extends BaseController {
             $image= new Image;
             //save to assign an id
             $image->save();
-             list($ext,$fileName,$width,$height,$fileSize)=$this->SaveImginFS($image->id);
+            list($ext,$fileName,$width,$height,$fileSize)=$this->SaveImginFS($image->id);
             $image->file_name=$fileName;
             $image->file_ext=$ext;
             $image->file_size=$this->HumanFileSize($fileSize);
@@ -105,9 +103,9 @@ class ImagesController extends BaseController {
      private function SaveImginFS($id){
         $ext=Input::file('file')->getClientOriginalExtension();
         $fileName=$id.".".$ext;
-        Input::file('file')->move($this->DEST_PATH,$fileName);
+        Input::file('file')->move(Config::get('globals.DEST_PATH'),$fileName);
         $fileSize=Input::file('file')->getClientSize();
-        list($width, $height) = getimagesize($this->DEST_PATH.$fileName);
+        list($width, $height) = getimagesize(Config::get('globals.DEST_PATH').$fileName);
        
         
         return array($ext,$fileName,$width,$height,$fileSize);
@@ -141,12 +139,12 @@ class ImagesController extends BaseController {
     }
   /*******************************************************************/
     function make_thumb($image,$thumbWidth,$thumbHeight,$type,$percent) {
-    $dest=$this->DEST_PATH."thumb/".$type."_".$image->file_name;
-    $src=$this->DEST_PATH.$image->file_name;
+    $dest=Config::get('globals.DEST_PATH')."thumb/".$type."_".$image->file_name;
+    $src=Config::get('globals.DEST_PATH').$image->file_name;
         /* read the source image */
         /*create the directory if it doesnt exist*/
-        if (!file_exists($this->DEST_PATH."thumb")) {
-            mkdir($this->DEST_PATH."thumb", 0777, true);
+        if (!file_exists(Config::get('globals.DEST_PATH')."thumb")) {
+            mkdir(Config::get('globals.DEST_PATH')."thumb", 0777, true);
         }
         
         if($image->file_ext =="png"){
