@@ -7,9 +7,21 @@
 #sketch-popup a {
       color: #ed6b58;
 }
+   .bubble {
+        width:45%;
+        margin:auto;
+        margin-bottom:3%;
+        font-family:roboto;
+        font-weight:100;
+    }
 
+        .pointer-big{
+            border-width:26px 62px 0px 0;
+            top:-25px;
+            left:75px;
+        }
 .center{
-    padding:9% 2%;
+    padding:2%;
     overflow:visible;
 }
 .book-wrap{
@@ -150,3 +162,8 @@ margin-left:8%;
        clear: both;
        }
 
+#to-sketch{
+float:right;
+font-family:orbitron;
+color:#ED6B58;
+}

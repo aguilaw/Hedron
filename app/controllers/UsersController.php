@@ -7,14 +7,14 @@ class UsersController extends BaseController {
         $this->beforeFilter('auth');
     }
     
-    public function UserNew()
+    public function MakeNewUser()
     {
         $users=User::orderBy('lname','asc')->get();
         $toEdit=new User;
         return View::make('admin-users-new',compact('users','toEdit'));
     }
 /*****************************************************************/
-    public function SaveUserNew()
+    public function SaveNewUser()
     {           
         /*Save the Image info to the Database*/
         $validate = $this->validate(Input::all());
@@ -27,18 +27,18 @@ class UsersController extends BaseController {
             $user->email=Input::get('email');*/
             $this->SetValsFromInput($user);
             $user->save();
-            return Redirect::action('UsersController@UserEdit',$user->id)->with('message',"User saved successfully.");
+            return Redirect::action('UsersController@EditUser',$user->id)->with('message',"User saved successfully.");
         }
         else{
-           return Redirect::action('UsersController@UserNew')->withErrors($validate->messages())
+           return Redirect::action('UsersController@MakeNewUser')->withErrors($validate->messages())
                                                                                          ->withInput(Input::except('password','password_confirmation'));
         }
     }
 /*****************************************************************/
-    public function UserEdit(User $user)
+    public function EditUser(User $user)
     {  
         if(($user->email == Config::get('globals.WEBMASTER_@')) && (Auth::user()->email != Config::get('globals.WEBMASTER_@'))){
-             return Redirect::action('UsersController@UserNew')->with('message',"Not Authorized to access Webmaster's Information");
+             return Redirect::action('UsersController@MakeNewUser')->with('message',"Not Authorized to access Webmaster's Information");
         }
         $users=User::orderBy('lname','asc')->get();
         $toEdit=$user;
@@ -62,7 +62,7 @@ class UsersController extends BaseController {
          if($validate->passes()){
             $this->SetValsFromInput($user);
             $user->save();
-            return Redirect::action('UsersController@UserEdit',$user->id)->with('message',"User saved successfully.");
+            return Redirect::action('UsersController@EditUser',$user->id)->with('message',"User saved successfully.");
         }
         else{
            return Redirect::action('UsersController@UserEdit',$user->id)->withErrors($validate->messages());
@@ -74,10 +74,10 @@ class UsersController extends BaseController {
         $user->delete();
         $redirect=User::first();
         if($redirect ==null){
-            return Redirect::action('UsersController@UserNew')->with('message',"User deleted successfully.");
+            return Redirect::action('UsersController@MakeNewUser')->with('message',"User deleted successfully.");
         }
         else{
-             return Redirect::action('UsersController@UserEdit',$redirect->id)->with('message',"User deleted successfully.");
+             return Redirect::action('UsersController@EditUser',$redirect->id)->with('message',"User deleted successfully.");
         }
     }
  /*****************************************************************/    

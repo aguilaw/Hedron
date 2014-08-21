@@ -8,18 +8,21 @@ class AdminController extends BaseController {
 /*****************************************************************/    
 	public function AdminLogin()
     {  
-
         return View::make('admin-login');
         
 	}
-/*****************************************************************/    
+/****************************************************************
+Display the homepage for the admin dashboard
+*****************************************************************/    
 	public function AdminDashboard()
     {  
-
          return Redirect::action('ImagesController@ImageNew');
         
 	}
-/*****************************************************************/    
+/****************************************************************
+accept the credentials provided by the user and authenticate.
+It they are valid the admin dashboard is displayed 
+****************************************************************/    
 	public function VerifyLogin()
 	{
         if (Auth::attempt(array('email'=>Input::get('email'), 'password'=>Input::get('password')))) {

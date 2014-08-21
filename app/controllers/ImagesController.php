@@ -3,26 +3,28 @@
 class ImagesController extends BaseController {
 /*Constants*/
     
-/********************Public Functions*******************************/
-/*****************************************************************/ 
+/********************Public Functions*******************************
+****************************************************************/
     public function __construct() {
         $this->beforeFilter('auth');
     }
-    
-    public function ImageNew()
+ /***************************************************************/   
+    public function MakeNewImage()
     {
         $images=Image::orderBy('date_created','desc')->get();
         $toEdit=new Image;
         return View::make('admin-images-new',compact('images','toEdit'));
     }
+    
 /*****************************************************************/    
-    public function ImageEdit(Image $image)
+    public function EditImage(Image $image)
     {   
         $images=Image::orderBy('date_created','desc')->get();
         $toEdit=$image;
         return View::make('admin-images', compact('images' , 'toEdit') );
     }
-/*****************************************************************/  
+    
+/**************************************************************** */  
      public function SaveImageEdit($image)
     {
         $validate = $this->validate(Input::all());
@@ -42,17 +44,17 @@ class ImagesController extends BaseController {
                     $image->file_name=$newFileName;
              /*Set the other image parameters  from Input:: and save*/
             $this->SetValsFromInput($image);
-            $this->make_thumb($image,380,350,"ICON",200);
-            return Redirect::action('ImagesController@ImageEdit',$image->id)->with('message',"Image saved succesfully.");
+            $this->MakeThumb($image,380,350,"ICON",200);
+            return Redirect::action('ImagesController@EditImage',$image->id)->with('message',"Image saved succesfully.");
         }
         else{
-           return Redirect::action('ImagesController@ImageEdit',$image->id)->withErrors($validate->messages());
+           return Redirect::action('ImagesController@EditImage',$image->id)->withErrors($validate->messages());
         }
     }   
  /*****************************************************************/     
-    public function SaveImageNew(){
+    public function SaveNewImage(){
         if(!Input::file('file')->isValid()){
-             return Redirect::action('ImagesController@ImageNew')->with('message',"Image Size Exceeds Limit")
+             return Redirect::action('ImagesController@MakeNewImage')->with('message',"Image Size Exceeds Limit")
                                                                                                 ->withInput(Input::except('file'));
         }
         
@@ -72,22 +74,22 @@ class ImagesController extends BaseController {
             
             /*Set the other image parameters  from Input:: and save*/
             $this->SetValsFromInput($image);
-            return Redirect::action('ImagesController@ImageEdit',$image->id)->with('message',"New image added successfully.");
+            return Redirect::action('ImagesController@EditImage',$image->id)->with('message',"New image added successfully.");
         }
         else{ 
-        return Redirect::action('ImagesController@ImageNew')->withErrors($validate->messages()) 
+        return Redirect::action('ImagesController@MakeNewImage')->withErrors($validate->messages()) 
                                                                                          ->withInput(Input::except('file'));
         }
     }
  /*****************************************************************/     
-    public function ImageDelete($image){
+    public function DeleteImage($image){
         $image->delete();
         $redirect=Image::first();
         if($redirect==null){
-            return Redirect::action('ImagesController@ImageNew')->with('message',"Image deleted successfully.");
+            return Redirect::action('ImagesController@MakeNewImage')->with('message',"Image deleted successfully.");
          }
          else{
-            return Redirect::action('ImagesController@ImageEdit',$redirect->id)->with('message',"Image deleted successfully.");
+            return Redirect::action('ImagesController@EditImage',$redirect->id)->with('message',"Image deleted successfully.");
          }
 
     
@@ -138,7 +140,7 @@ class ImagesController extends BaseController {
 
     }
   /*******************************************************************/
-    function make_thumb($image,$thumbWidth,$thumbHeight,$type,$percent) {
+    function MakeThumb($image,$thumbWidth,$thumbHeight,$type,$percent) {
     $dest=Config::get('globals.DEST_PATH')."thumb/".$type."_".$image->file_name;
     $src=Config::get('globals.DEST_PATH').$image->file_name;
         /* read the source image */

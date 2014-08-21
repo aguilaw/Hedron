@@ -20,14 +20,13 @@ function loadSketch(ajaxURL){
                     datatype:"json",
                     success: function(data){
                         if(data){
-                            $("#frame").ready().html(data).animate({width:frameWidth},300);
+                            $("#frame").ready().html(data).animate({width:frameWidth,padding:"3%"},300);
                             $(".sketch").fadeIn("slow");
-                            /*only resize when the image view is closed*/
+                            /*only resize the list of sketches when the image view is closed*/
                             var width=$('.book-wrap').innerWidth();
                             if(width != thumbsWidth){
                             $('.book-wrap').ready().animate({width:thumbsWidth+"px"},300).css("overflow-y","visible");
                            }
-                           
                         }else{
                             $('#frame').html('There was a problem with the image.');
                             

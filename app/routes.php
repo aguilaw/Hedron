@@ -23,15 +23,15 @@ Route::get('/adminLogin', 'AdminController@AdminLogin');
 Route::get('/logout', 'AdminController@Logout');
 
 
-Route::get('/admin/images/new', 'ImagesController@ImageNew');
-Route::get('/admin/images', 'ImagesController@ImageNew');
-Route::get('/admin/images/{image}', 'ImagesController@ImageEdit');
-Route::get('/admin/images/delete/{image}', 'ImagesController@ImageDelete');
+Route::get('/admin/images/new', 'ImagesController@MakeNewImage');
+Route::get('/admin/images', 'ImagesController@MakeNewImage');
+Route::get('/admin/images/{image}', 'ImagesController@EditImage');
+Route::get('/admin/images/delete/{image}', 'ImagesController@DeleteImage');
 
-Route::get('/admin/updates/new', 'UpdatesController@UpdateNew');
-Route::get('/admin/updates', 'UpdatesController@UpdateNew');
-Route::get('/admin/updates/{update}', 'UpdatesController@UpdateEdit');
-Route::get('/admin/updates/delete/{update}', 'UpdatesController@UpdateDelete');
+Route::get('/admin/updates/new', 'UpdatesController@MakeNewUpdate');
+Route::get('/admin/updates', 'UpdatesController@MakeNewUpdate');
+Route::get('/admin/updates/{update}', 'UpdatesController@EditUpdate');
+Route::get('/admin/updates/delete/{update}', 'UpdatesController@DeleteUpdate');
 
 Route::get('/admin/users/new', 'UsersController@UserNew');
 Route::get('/admin/users', 'UsersController@UserNew');
@@ -55,16 +55,16 @@ Route::get('/latest-project', 'PagesController@ShowComingSoon');
 
 
 /*Handle Forms*/
-Route::post('/admin/images/delete/{image}', 'ImagesController@ImageDelete');
-Route::post('/admin/images/new', 'ImagesController@SaveImageNew');
+Route::post('/admin/images/delete/{image}', 'ImagesController@DeleteImage');
+Route::post('/admin/images/new', 'ImagesController@SaveNewImage');
 Route::post('/admin/images/{image}', 'ImagesController@SaveImageEdit');
 
-Route::post('/admin/updates/new', 'UpdatesController@SaveUpdateNew');
+Route::post('/admin/updates/new', 'UpdatesController@SaveNewUpdate');
 Route::post('/admin/updates/{update}', 'UpdatesController@SaveUpdateEdit');
-Route::post('/admin/updates/delete/{update}', 'UpdatesController@UpdateDelete');
+Route::post('/admin/updates/delete/{update}', 'UpdatesController@DeleteUpdate');
 
-Route::post('/admin/users/new', 'UsersController@SaveUserNew');
+Route::post('/admin/users/new', 'UsersController@SaveNewUser');
 Route::post('/admin/users/{user}', 'UsersController@SaveUserEdit');
-Route::post('/admin/users/delete/{user}', 'UsersController@UserDelete');
+Route::post('/admin/users/delete/{user}', 'UsersController@DeleteUser');
 
 Route::post('/adminLogin', 'AdminController@VerifyLogin');

@@ -46,13 +46,13 @@
 <p class="thin">You see, I studied Computer Science.</p>
 <p >Over time I found that writing code changes people</p>
 <p>but despite the high concentration of </p><p class="thin">Monster in my blood,</><p> or the number of bags under my eyes</p>
-<p>it never managed to completely erase the</p><p class="thin">  doodles on my notes. </p>
+<p>it never managed to completely erase the</p><p class="thin">  doodles on my notes.</p>
 <hr>
 <p>It took longer than expected,</p>
 
-<p class="thin">But Here I am now.</p>
-<p >An artist with some serious technical chops and a dream.</p>
-<p class="thin">A dream of a unique art style </p><p>and of creating things for the fun of it.</p>
+<p class="thin">but here I am.</p>
+<p >An artist with some serious technical chops</p>
+<p >in search of a unique art style </p><p >and creating things for the fun of it.</p>
 <p class="thin">Hello Internet!</p>
 <p class="light-txt"> Nice to meet you.</p>
         </div>

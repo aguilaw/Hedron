@@ -13,7 +13,7 @@ class UpdatesController extends BaseController {
         return View::make('admin-updates-new',compact('updates','toEdit'));
     }
 /*****************************************************************/
-    public function SaveUpdateNew()
+    public function SaveNewUpdate()
     {           
             /*Save the Image info to the Database*/
             $update= new Update;
@@ -22,7 +22,7 @@ class UpdatesController extends BaseController {
         return Redirect::action('UpdatesController@UpdateNew')->with('message',"Update saved successfully.");
     }
 /*****************************************************************/
-    public function UpdateEdit(Update $update)
+    public function EditUpdate(Update $update)
     {   
         $updates=Update::orderBy('date_created','desc')->get();
         $toEdit=$update;
@@ -37,7 +37,7 @@ class UpdatesController extends BaseController {
         return Redirect::action('UpdatesController@UpdateEdit',$update->id)->with('message',"Update saved successfully.");
     }
 /*****************************************************************/    
-    public function UpdateDelete($update)
+    public function DeleteUpdate($update)
     {
         $update->delete();
         $redirect=Update::first();
