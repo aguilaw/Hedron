@@ -25,9 +25,9 @@
 <div class="fade-black">
 <nav class="nav" role="navigation">
 	<ul class="nav-buttons">		
-		<li ><a class="nav-bttn"  href={{ action('UpdatesController@UpdateNew')}}>Updates</a></li>	
-		<li ><a class="nav-bttn" href={{ action('ImagesController@ImageNew')}}>Images</a></li>
-        <li ><a class="nav-bttn" href={{ action('UsersController@UserNew')}}>Users</a></li>
+		<li ><a class="nav-bttn"  href={{ action('UpdatesController@MakeNewUpdate')}}>Updates</a></li>	
+		<li ><a class="nav-bttn" href={{ action('ImagesController@MakeNewImage')}}>Images</a></li>
+        <li ><a class="nav-bttn" href={{ action('UsersController@MakeNewUser')}}>Users</a></li>
         <li ><a class="nav-bttn" href={{ action('PagesController@ShowHome')}}>Hedron Home</a></li>
 	</ul>
 	<ul class="user-grp">

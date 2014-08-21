@@ -5,7 +5,7 @@
 @stop
 
 @section('action')
-    {{ action('UpdatesController@SaveUpdateNew') }}
+    {{ action('UpdatesController@SaveNewUpdate') }}
 @stop
 
 @section('todays-date')

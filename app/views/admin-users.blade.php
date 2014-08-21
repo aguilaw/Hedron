@@ -16,18 +16,18 @@ Users
 @stop
 
 @section('type-create')
-{{ action('UsersController@SaveUserNew') }}
+{{ action('UsersController@SaveNewUser') }}
 @stop
 
 @section('type-list')
 
     @foreach($users as $user)
     <li class="item">
-    <a href= {{ action('UsersController@UserEdit', $user->id) }}>
+    <a href= {{ action('UsersController@EditUser', $user->id) }}>
         {{$user->lname.",".$user->fname}}
     </a>
     @if($user->email != "aguilaw@hedron.com")
-        <a id="delete" href={{ action('UsersController@UserDelete', $user->id) }}>
+        <a id="delete" href={{ action('UsersController@DeleteUser', $user->id) }}>
             <i class="fa fa-times"></i>
         </a >
      @endif
@@ -45,7 +45,7 @@ Users
         @endforeach
      @endif
     {{-- FIGURE OUT HOW TO USE A ROUTE TO PRODUCE THE URL--}} 
-    <form class="forms" action =@yield('action', action('UsersController@UserEdit', $toEdit->id)) method ="post" role="form">
+    <form class="forms" action =@yield('action', action('UsersController@EditUser', $toEdit->id)) method ="post" role="form">
          <!--contains form and file info -->
             <label for="fname">First Name:</label>
                 <input class="input" type="text" name="fname" id="fname"   autocomplete="off" required value="@yield('re-fill-fname',  $toEdit->fname)">
@@ -69,7 +69,7 @@ Users
             <!--readonly File info -->
              <input class="submit" type="submit" name="submit" id="submit" value="Save">
              @section('pre-fill')
-             <button class="del-bttn" type="submit" formaction={{action('ImagesController@ImageDelete', $toEdit->id) }}> Delete </button>
+             <button class="del-bttn" type="submit" formaction={{action('UsersController@DeleteUser', $toEdit->id) }}> Delete </button>
              @show
         
     </form>

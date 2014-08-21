@@ -19,16 +19,16 @@ Images
 @stop
 
 @section('type-create')
-{{ action('ImagesController@SaveImageNew') }}
+{{ action('ImagesController@SaveNewImage') }}
 @stop
 
 @section('type-list')
     @foreach($images as $image)
     <li class="item">
-    <a href= {{ action('ImagesController@ImageEdit', $image->id) }}>
+    <a href= {{ action('ImagesController@EditImage', $image->id) }}>
         {{$image->title}}
     </a>
-    <a id="delete" href={{ action('ImagesController@ImageDelete', $image->id) }}>
+    <a id="delete" href={{ action('ImagesController@DeleteImage', $image->id) }}>
         <i class="fa fa-times"></i>
     </a >
     <hr>
@@ -42,7 +42,7 @@ Images
    
     
     {{-- FIGURE OUT HOW TO USE A ROUTE TO PRODUCE THE URL--}} 
-    <form class="forms" action =@yield('action', action('ImagesController@ImageEdit', $toEdit->id)) enctype="multipart/form-data" method ="post" role="form">
+    <form class="forms" action =@yield('action', action('ImagesController@EditImage', $toEdit->id)) enctype="multipart/form-data" method ="post" role="form">
          <!--contains form and file info -->
             <label for="title">Title:</label>
                 <input class="input" type="text" name="title" id="title"   autocomplete="off" required value="@yield('pre-fill-title',  $toEdit->title)">
@@ -84,7 +84,7 @@ Images
             <input type="file" name="file" id="file" @yield('required', "")>
             <hr>
              <input class="submit" type="submit" name="submit" id="submit" value="Save">
-            <button class="del-bttn" type="submit" formaction={{action('ImagesController@ImageDelete', $toEdit->id) }}> Delete </button>
+            <button class="del-bttn" type="submit" formaction={{action('ImagesController@DeleteImage', $toEdit->id) }}> Delete </button>
             <p>OPTIONAL &nbsp for featured images</p>
             <p>Set the image position in the featured frame:</p>
             

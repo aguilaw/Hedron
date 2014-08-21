@@ -6,7 +6,7 @@ class UsersController extends BaseController {
       public function __construct() {
         $this->beforeFilter('auth');
     }
-    
+/*****************************************************************/ 
     public function MakeNewUser()
     {
         $users=User::orderBy('lname','asc')->get();
@@ -69,7 +69,7 @@ class UsersController extends BaseController {
         }
     }
 /*****************************************************************/    
-    public function UserDelete($user)
+    public function DeleteUser($user)
     {
         $user->delete();
         $redirect=User::first();

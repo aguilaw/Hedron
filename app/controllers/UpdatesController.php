@@ -6,7 +6,7 @@ class UpdatesController extends BaseController {
   public function __construct() {
         $this->beforeFilter('auth');
     }  
-  public function UpdateNew()
+  public function MakeNewUpdate()
     {
         $updates=Update::orderBy('date_created','desc')->get();
         $toEdit=new update;
@@ -19,7 +19,7 @@ class UpdatesController extends BaseController {
             $update= new Update;
              $this->SetValsFromInput($update);
            $update->save();
-        return Redirect::action('UpdatesController@UpdateNew')->with('message',"Update saved successfully.");
+        return Redirect::action('UpdatesController@MakeNewUpdate')->with('message',"Update saved successfully.");
     }
 /*****************************************************************/
     public function EditUpdate(Update $update)
@@ -34,7 +34,7 @@ class UpdatesController extends BaseController {
             /*Save the Image info to the Database*/
              $this->SetValsFromInput($update);
            $update->save();
-        return Redirect::action('UpdatesController@UpdateEdit',$update->id)->with('message',"Update saved successfully.");
+        return Redirect::action('UpdatesController@EditUpdate',$update->id)->with('message',"Update saved successfully.");
     }
 /*****************************************************************/    
     public function DeleteUpdate($update)
@@ -42,10 +42,10 @@ class UpdatesController extends BaseController {
         $update->delete();
         $redirect=Update::first();
         if($redirect ==null){
-            return Redirect::action('UpdatesController@UpdateNew');
+            return Redirect::action('UpdatesController@MakeNewUpdate');
         }
         else{
-             return Redirect::action('UpdatesController@UpdateEdit',$redirect->id)->with('message',"Update deleted successfully.");
+             return Redirect::action('UpdatesController@EditUpdate',$redirect->id)->with('message',"Update deleted successfully.");
         }
     }
  /*****************************************************************/       

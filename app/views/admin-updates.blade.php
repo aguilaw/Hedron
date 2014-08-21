@@ -18,18 +18,18 @@ Updates
 @stop
 
 @section('type-create')
-{{ action('UpdatesController@SaveUpdateNew') }}
+{{ action('UpdatesController@SaveNewUpdate') }}
 @stop
 
 @section('type-list')
 
     @foreach($updates as $update)
     <li class="item">
-    <a href= {{ action('UpdatesController@UpdateEdit', $update->id) }}>
+    <a href= {{ action('UpdatesController@EditUpdate', $update->id) }}>
        {{$update->date_created." -  "}}
     <i class="fa {{$update->FA_icon_name}} type-icon"></i>
     </a>
-    <a id="delete" href={{ action('UpdatesController@UpdateDelete', $update->id) }}>
+    <a id="delete" href={{ action('UpdatesController@DeleteUpdate', $update->id) }}>
         <i class="fa fa-times"></i>
     </a >
     <!-- <p>{{$update->date_created}}<p> -->
@@ -43,7 +43,7 @@ Updates
 
 @section('form')    
     {{-- FIGURE OUT HOW TO USE A ROUTE TO PRODUCE THE URL--}} 
-    <form class="forms" action =@yield('action', action('UpdatesController@UpdateEdit', $toEdit->id))  method ="post" role="form">
+    <form class="forms" action =@yield('action', action('UpdatesController@EditUpdate', $toEdit->id))  method ="post" role="form">
          <!--contains form and file info -->
          
         <label for="type">Type:</label>
@@ -76,7 +76,7 @@ Updates
         <br>
         <input class="submit" type="submit" name="submit" id="submit" value="Save">
         @section('pre-fill')
-         <button class="del-bttn" type="submit" formaction={{action('UpdatesController@UpdateDelete', $toEdit->id) }}> Delete </button>
+         <button class="del-bttn" type="submit" formaction={{action('UpdatesController@DeleteUpdate', $toEdit->id) }}> Delete </button>
          @show
     </form>
 @stop

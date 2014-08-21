@@ -25,7 +25,7 @@
 @stop
 
 @section('action')
-    {{action('ImagesController@SaveImageNew') }}
+    {{action('ImagesController@SaveNewImage') }}
 @stop
 
 

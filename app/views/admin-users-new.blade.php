@@ -27,7 +27,7 @@
 @stop
 
 @section('action')
-    {{ action('UsersController@SaveUserNew') }}
+    {{ action('UsersController@SaveNewUser') }}
 @stop
 
 @section('required')

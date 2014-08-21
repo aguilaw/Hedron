@@ -33,10 +33,10 @@ Route::get('/admin/updates', 'UpdatesController@MakeNewUpdate');
 Route::get('/admin/updates/{update}', 'UpdatesController@EditUpdate');
 Route::get('/admin/updates/delete/{update}', 'UpdatesController@DeleteUpdate');
 
-Route::get('/admin/users/new', 'UsersController@UserNew');
-Route::get('/admin/users', 'UsersController@UserNew');
-Route::get('/admin/users/{user}', 'UsersController@UserEdit');
-Route::get('/admin/users/delete/{user}', 'UsersController@UserDelete');
+Route::get('/admin/users/new', 'UsersController@MakeNewUser');
+Route::get('/admin/users', 'UsersController@MakeNewUser');
+Route::get('/admin/users/{user}', 'UsersController@EditUser');
+Route::get('/admin/users/delete/{user}', 'UsersController@DeleteUser');
 
 /*Public Routes*/
 Route::get('/', 'PagesController@ShowHome');
