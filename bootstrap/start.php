@@ -53,7 +53,7 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 | from the actual running of the application with a given request.
 |
 */
-
+$app->forgetMiddleware('Illuminate\Http\FrameGuard');
 $framework = $app['path.base'].
                  '/vendor/laravel/framework/src';
 

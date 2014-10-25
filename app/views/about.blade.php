@@ -13,8 +13,8 @@
 @stop
 
 @section('body')
+<div class="center">
 <img class="hedron" src={{asset("assets/Hedron_Character.svg")}} alt="HEDRON">
-
 <div class="bubble main-bbl bigtext " >
 		<div class="pointer-big bigtext-exempt"  ></div>
         <p id="greeting">Greetings...</p>
@@ -56,5 +56,6 @@
 <p class="thin">Hello Internet!</p>
 <p class="light-txt"> Nice to meet you.</p>
         </div>
+ </div>
 @stop
 

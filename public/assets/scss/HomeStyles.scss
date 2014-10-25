@@ -1,0 +1,294 @@
+/*overwites*/
+.center-home{
+}
+
+body{
+width:100%;
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+/*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjkiLz4KICAgIDxzdG9wIG9mZnNldD0iMjklIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4yIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+/*background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.9)), color-stop(29%,rgba(0,0,0,0.6)), color-stop(45%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+/*background: -webkit-linear-gradient(top,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.6) 29%,rgba(0,0,0,0.2) 45%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+/*background: -o-linear-gradient(top,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.6) 29%,rgba(0,0,0,0.2) 45%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+/*background: -ms-linear-gradient(top,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.6) 29%,rgba(0,0,0,0.2) 45%,rgba(0,0,0,0) 100%); /* IE10+ */
+/*background: linear-gradient(to bottom,  rgba(0,0,0,0.9) 0%,rgba(0,0,0,0.6) 29%,rgba(0,0,0,0.2) 45%,rgba(0,0,0,0) 100%); /* W3C */
+/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-8 */
+/*height:100%;*/
+}
+
+#illustration{
+        position:relative;
+        width:55%;
+        height:210%;
+        float:left;
+        margin-left:-3%;
+        max-width:578px;
+        background:no-repeat url(../home/hedron_youngirl_web_sm.png) ;
+        background-size:contain;
+        margin-right:-20%;
+        z-index:60;
+    }
+   
+    #header-band-ext{
+        position:relative;
+        width:74%;
+        height:400px;
+        right:0;
+        left:auto;
+        margin-top:28px;
+        padding:2%;
+    }
+    #header-band{
+        text-align:center;
+        position:relative;
+        margin:auto;
+        max-width:816px;
+        width:100%;
+        height:100%;
+        z-index:0;
+        
+        #hedron-name{
+            position:relative;
+            width:38%;
+            margin-left:13%;
+        }
+        .underline{
+        margin-top:15px;
+            position:relative;
+            height:5px;
+            width:48%;
+            border:none;
+            color:$COLOR_GOLD;
+            background-color:$COLOR_GOLD;
+            margin-right:5%;
+        }
+        .featured-widget{
+         float:left;
+        position:relative;
+        height:45%;
+        width:56%;
+        padding:0;
+        margin-left:12%;
+            #img-left,
+            #img-mid,
+            #img-right{
+                -webkit-border-radius:10px;
+                -moz-border-radius:10px;
+                border-radius:10px;
+            }
+            .frame img{
+                height:100%;
+                width:30%;
+                background-size:cover;
+            }
+        }   
+        }
+.header-wrap{
+    position:relative;
+    text-align:center;
+    margin:auto;
+    z-index:20;
+    margin-right:0;
+    padding:0;
+    padding-left:36%;
+        
+        
+ 
+    
+    #updates-text{
+    margin:auto;
+        width:85%;
+        -webkit-border-radius:10px ;
+        -moz-border-radius:10px ;
+        border-radius:10px ;
+    }
+    
+    #sq-rnd{
+        height:300px;
+        width:85%;
+        display:block;
+        position:relative;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        -webkit-border-radius:10px;
+        -moz-border-radius:10px;
+        border-radius:10px;
+        background-color:rgba(23,25,25,.6);
+        padding: 40px 40px 40px 40px;
+        margin-right: auto;
+        margin-left: auto;
+    
+        &::-webkit-scrollbar{
+            background-color: #9DA09D;
+            width: 12px;
+        }
+        &::-webkit-scrollbar-thumb{
+        background-color:#1a1c1b;
+        }
+        #updates-widget{
+            padding:0;
+        }
+        .date{
+            display: inline-block;
+            margin-left: 5%;
+            color:$COLOR_GOLD;
+        }
+
+            
+        .icon{
+            margin-left: 0;
+        }
+
+
+        .message{
+            font-size: 120%;
+            margin-bottom:25px;
+            display:block;
+            max-width:500px;
+            margin:auto;
+        }
+    } 
+}
+    #header-band-ext{
+        width:100%;
+        background-color:$COLOR_DARKGREY;
+    }
+.page-bottom{
+    text-align:center;
+    margin-top:5%;
+    width:100%;
+    
+    #project-text, #sketch-text{
+	color: $COLOR_GOLD;
+	width:100%;
+    padding:2%;
+	-moz-border-radius:20px 0;
+	-webkit-border-radius: 20px 0;
+    border-radius: 20px    20px 0  0;	
+	background-color:$COLOR_DARKGREY;
+	margin-top:-4%;
+    }
+    .latest, .sketch{
+        width:43%;
+        height:126px;
+        position: relative;
+        margin:auto;
+        -webkit-border-radius:20px;	
+         -moz-border-radius:20px;	
+         border-radius:20px;	
+        display:inline-block;
+        
+    }
+
+    .latest{
+        background-image:url(../home/curr_project_icon.png);
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: 50% 50%;
+
+    }
+    .sketch{
+        background-image:url(../home/sketchbook_icon.png);
+        background-size:cover;
+        background-position: 50% 50%;
+        margin-left:3%;
+    }
+}
+
+
+ @media only screen and (max-width: 800px) {
+    #sq-rnd{
+        width:200%;
+        padding:4%;
+    }
+     .header-wrap{
+        padding:10px;
+    }
+    #header-band{
+        padding-left:6%;
+        
+        #illustration{
+        background-image:url(../home/hedron_youngirl_nb_web_sm.png) ;
+        height:111%;
+        width:35%;
+        }
+        #hedron-name{
+        margin:auto;
+        }
+        .underline{
+        margin: 2% auto;
+        }
+        .featured-widget{
+            width:66%;
+            margin-left:11%;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .nav{
+        width:100%;
+        text-align:center;
+    }
+
+    #header-band{
+     padding:3%;
+         #illustration{
+        background-image:url(../home/logo_shadow_stairs.png) ;
+        height:141px;
+        width:230px;
+        margin:auto;
+        margin-left:81px;
+        float:none;
+        }
+        #hedron-name{
+                display:none;
+             }
+         .featured-widget{
+            width:80%;
+         }
+     }
+    .header-wrap{
+        padding:0;
+        #updates-text{
+            font-size:150%;
+        }
+        #sq-rnd{
+            width:100%;
+            padding:4%;
+        }
+        
+     }
+     #project-text, #sketch-text{
+        font-size:60%;
+        -moz-border-radius:1px;
+        -webkit-border-radius: 1px;
+        border-radius: 1px;
+     }
+}
+
+@media only screen and (max-width: 480px) {
+    nav{
+        width:100%;
+        text-align:center;
+        font-size:80%;
+    }
+
+    #header-band{
+         #illustration{
+        margin-left:13px;
+        }
+        .featured-widget{
+            #img-a-mid, #img-a-right{
+                display:none;
+            }
+            
+           .frame img{
+            width:100%;
+            margin-top:20px;
+           }
+         
+         }
+         
+    }
+}
+   

@@ -31,35 +31,37 @@ when viewing an image-->
     var FEAT_THUMB_URL="{{Config::get('globals.GALLERY_URL')}}"; 
     var GALLERY_URL="{{Config::get('globals.GALLERY_URL')}}"; 
 </script>
-<h1 id="sketchbook-txt">Sketchbook</h1>
-<div class="bubble " >
-		<div class="pointer-big" ></div>
-        <p id="sketch-intro">Ah yes... the good'ol sketchbook. It contains everything from napkin doodles to illustrations that didn't quite make the cut.
-        </p>
-</div>
 
-<div class="view">   
-    <div id="frame"></div> 
-    <ul class="book-wrap">
-        @foreach($images as $image)
-            <?php $aDate=explode("-", $image->date_created) ?>
-        @if ($aDate[0] !=$currYear)
-         <hr>
-            <li class="year-text">{{$aDate[0]}}</li>
-            <li class="diag-thumb first-thumb"  id="{{url('/sketchbook/'.$image->id)}}" >
-            @if($currYear=$aDate[0])@endif
-        @else
-            <li class="diag-thumb" id="{{url('/sketchbook/'.$image->id)}}" >
-        @endif
-            <img class="diag-thumb-img"  src="{{ asset('assets/gallery/thumb').'/ICON_'.$image->file_name}}">
-        </li>
-         @endforeach
-         <li><div class=" bubble bubble-sm" >
-        <p id="sketch-intro">Need More? How about checking out the social networks?</p>
-</div></li>
-    </ul>
+<div class="center">
+    <h1 id="sketchbook-txt">Sketchbook</h1>
+    <div class="bubble " >
+            <div class="pointer-big" ></div>
+            <p id="sketch-intro">Ah yes... the good'ol sketchbook. It contains everything from napkin doodles to illustrations that didn't quite make the cut.
+            </p>
+    </div>
 
- </div>
- 
+    <div class="view">   
+        <div id="frame"></div> 
+        <ul class="book-wrap">
+            @foreach($images as $image)
+                <?php $aDate=explode("-", $image->date_created) ?>
+            @if ($aDate[0] !=$currYear)
+             <hr>
+                <li class="year-text">{{$aDate[0]}}</li>
+                <li class="diag-thumb first-thumb"  id="{{url('/sketchbook/'.$image->id)}}" >
+                @if($currYear=$aDate[0])@endif
+            @else
+                <li class="diag-thumb" id="{{url('/sketchbook/'.$image->id)}}" >
+            @endif
+                <img class="diag-thumb-img"  src="{{ asset('assets/gallery/thumb').'/ICON_'.$image->file_name}}">
+            </li>
+             @endforeach
+             <li><div class=" bubble bubble-sm" >
+            <p id="sketch-intro">Need More? How about checking out the social networks?</p>
+    </div></li>
+        </ul>
+
+     </div>
+</div> 
  
 @stop

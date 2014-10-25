@@ -21,13 +21,10 @@
 
 
 @section('body')
-
-<!--darkens the page to make it seem like it fades into the bg 
-when viewing an image-->
+<!--darkens the page to make it seem like it fades into the bg when viewing an image-->
 <div id="blanket"></div>
-<div id="sketch-popup">
-
-</div>
+<div id="sketch-popup"></div>
+<div class="center">
     <div class="bubble " >
 		<div class="pointer-big" ></div>
         <p id="sketch-intro">Welcome to the gallery.</p><p> Here is a quick glance at some of my work.</p>
@@ -44,4 +41,5 @@ when viewing an image-->
         
     </ul>
    <a id="to-sketch" href="{{ url('sketchbook') }}"> <p >To the skethbook! <i class="fa fa-chevron-circle-right fa-2x"></i></p></a>
-@stop
+</div>
+   @stop

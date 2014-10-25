@@ -7,6 +7,9 @@
 		"laravel/framework": "4.1.*",
         "doctrine/dbal": "v2.4.2"
 	},
+    "require-dev": {
+    "panique/laravel-sass": "dev-master"
+    },
 	"autoload": {
 		"classmap": [
 			"app/commands",
