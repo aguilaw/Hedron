@@ -16,7 +16,7 @@ Display the homepage for the admin dashboard
 *****************************************************************/    
 	public function AdminDashboard()
     {  
-         return Redirect::action('ImagesController@ImageNew');
+         return Redirect::action('ImagesController@MakeNewImage');
         
 	}
 /****************************************************************

@@ -16,7 +16,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Monoton|Mrs+Sheppards|Orbitron:500,400,700|' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Raleway:300,400,500,300,600,700|Allerta+Stencil|Source+Code+Pro:300,500,400,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href={{ asset("assets/css2/overallStyles.css") }}>
+	<link rel="stylesheet" href={{ asset("assets/css2/importstyles.css")}}>
     <link rel="stylesheet" href={{ asset("assets/css2/AdminStyles.css") }}>
     @yield('specific-styles')     
 </head>
