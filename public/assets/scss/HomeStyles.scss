@@ -1,9 +1,9 @@
 /*overwites*/
 .center-home{
+padding-top:2%;
 }
 
 body{
-width:100%;
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
 /*background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjkiLz4KICAgIDxzdG9wIG9mZnNldD0iMjklIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNiIvPgogICAgPHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4yIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMCIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0) 100%); /* FF3.6+ */
@@ -18,31 +18,25 @@ background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, 
 
 #illustration{
         position:relative;
-        width:55%;
-        height:210%;
-        float:left;
-        margin-left:-3%;
-        max-width:578px;
-        background:no-repeat url(../home/hedron_youngirl_web_sm.png) ;
+        display:inline-block;
+        width:42%;
+        height:727px;
+        background:no-repeat url(../home/hedron_youngirl_nb_web_sm.png) ;
         background-size:contain;
-        margin-right:-20%;
+        margin-right:4%;
+        margin-top:-2%;
         z-index:60;
     }
    
-    #header-band-ext{
-        position:relative;
-        width:74%;
-        height:400px;
-        right:0;
-        left:auto;
-        margin-top:28px;
-        padding:2%;
+    #header-band-ext-home{
+        height:70px;
+
     }
     #header-band{
         text-align:center;
         position:relative;
         margin:auto;
-        max-width:816px;
+        max-width:1000px;
         width:100%;
         height:100%;
         z-index:0;
@@ -63,18 +57,21 @@ background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, 
             margin-right:5%;
         }
         .featured-widget{
-         float:left;
         position:relative;
-        height:45%;
-        width:56%;
+        display:inline-block;
         padding:0;
-        margin-left:12%;
+        margin-top:-10%;
+        width:49%;
+        float:right;
             #img-left,
             #img-mid,
             #img-right{
-                -webkit-border-radius:10px;
-                -moz-border-radius:10px;
-                border-radius:10px;
+                -webkit-border-radius:100%;
+                -moz-border-radius:100%;
+                border-radius:100%;
+                border-width:5px;
+                border-style:solid;
+                border-color:$COLOR_DARKGREY;
             }
             .frame img{
                 height:100%;
@@ -85,27 +82,27 @@ background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, 
         }
 .header-wrap{
     position:relative;
-    text-align:center;
     margin:auto;
     z-index:20;
-    margin-right:0;
-    padding:0;
-    padding-left:36%;
+    padding-left:23%;
+    width:83%;
         
         
  
     
     #updates-text{
-    margin:auto;
+    margin:0;
         width:85%;
+        margin:auto;
         -webkit-border-radius:10px ;
         -moz-border-radius:10px ;
         border-radius:10px ;
     }
     
     #sq-rnd{
-        height:300px;
+        height:370px;
         width:85%;
+        margin:auto;
         display:block;
         position:relative;
         overflow-y: scroll;
@@ -115,8 +112,7 @@ background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, 
         border-radius:10px;
         background-color:rgba(23,25,25,.6);
         padding: 40px 40px 40px 40px;
-        margin-right: auto;
-        margin-left: auto;
+        margin-bottom:5%;
     
         &::-webkit-scrollbar{
             background-color: #9DA09D;
@@ -147,18 +143,8 @@ background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, 
             max-width:500px;
             margin:auto;
         }
-    } 
-}
-    #header-band-ext{
-        width:100%;
-        background-color:$COLOR_DARKGREY;
     }
-.page-bottom{
-    text-align:center;
-    margin-top:5%;
-    width:100%;
-    
-    #project-text, #sketch-text{
+       #project-text, #sketch-text{
 	color: $COLOR_GOLD;
 	width:100%;
     padding:2%;
@@ -168,7 +154,7 @@ background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, 
 	background-color:$COLOR_DARKGREY;
 	margin-top:-4%;
     }
-    .latest, .sketch{
+    .latest, .sketchbook{
         width:43%;
         height:126px;
         position: relative;
@@ -187,68 +173,58 @@ background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, 
         background-position: 50% 50%;
 
     }
-    .sketch{
+    .sketchbook{
         background-image:url(../home/sketchbook_icon.png);
         background-size:cover;
         background-position: 50% 50%;
-        margin-left:3%;
     }
+    
+}
+
+.page-bottom{
+    text-align:center;
+    margin-top:6%;
+    width:100%;
+    
+ 
 }
 
 
- @media only screen and (max-width: 800px) {
-    #sq-rnd{
-        width:200%;
-        padding:4%;
-    }
-     .header-wrap{
-        padding:10px;
-    }
-    #header-band{
-        padding-left:6%;
-        
-        #illustration{
-        background-image:url(../home/hedron_youngirl_nb_web_sm.png) ;
-        height:111%;
-        width:35%;
-        }
-        #hedron-name{
-        margin:auto;
-        }
-        .underline{
-        margin: 2% auto;
-        }
-        .featured-widget{
-            width:66%;
-            margin-left:11%;
-        }
-    }
-}
-@media only screen and (max-width: 600px) {
+ 
+@media only screen and (max-width: 800px) {
+    
     .nav{
         width:100%;
         text-align:center;
+        .logo-sm{
+            display:none;
+        }
     }
-
+    #header-band-ext-home{
+    
+    height:415px;
+    }
     #header-band{
-     padding:3%;
+        padding:3%;
          #illustration{
-        background-image:url(../home/logo_shadow_stairs.png) ;
-        height:141px;
-        width:230px;
-        margin:auto;
-        margin-left:81px;
-        float:none;
+            background-image:url(../home/logo&name.png) ;
+            height:141px;
+            width:230px;
+            margin:auto;
+            float:none;
         }
         #hedron-name{
                 display:none;
              }
          .featured-widget{
-            width:80%;
+            width: 100%;
+            margin: auto;
+            float: none;
          }
      }
     .header-wrap{
         padding:0;
+    width:100%;
         #updates-text{
             font-size:150%;
         }
@@ -265,30 +241,50 @@ background: -moz-linear-gradient(top,  rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 29%, 
         border-radius: 1px;
      }
 }
-
+@media only screen and (max-width: 640px) {
+    #header-band-ext-home{
+    height:360px;
+    }
+ #header-band{
+         #illustration{
+            margin-bottom:3%;
+            margin-top:0;
+        }
+}}
 @media only screen and (max-width: 480px) {
     nav{
         width:100%;
         text-align:center;
         font-size:80%;
+        
     }
-
+    #header-band-ext-home{
+    
+    height:420px;
+    }
     #header-band{
-         #illustration{
-        margin-left:13px;
+        #illustration{
         }
         .featured-widget{
+        width: 70%;
             #img-a-mid, #img-a-right{
-                display:none;
+                display:none; 
             }
-            
+            #img-left{
+                -webkit-border-radius:10px;
+                -moz-border-radius:10px;
+                border-radius:10px;
+            }
            .frame img{
-            width:100%;
-            margin-top:20px;
+                width:100%;
+                margin-top:20px;
            }
-         
          }
-         
+    }
+    .header-wrap{
+        .sketchbook, .latest{
+            width:100%;
+        }
     }
 }
    

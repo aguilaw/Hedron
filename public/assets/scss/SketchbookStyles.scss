@@ -1,0 +1,118 @@
+
+.nav{
+
+}
+
+html{
+min-height:100%;
+background-attachment:fixed;
+}
+.center{
+    width:100%;
+    height:100%;
+    max-width:none;
+    padding:0;
+    padding-bottom:5%;
+    overflow:visible;
+}
+    .bubble {
+        width:45%;
+        margin:auto;
+        margin-top:3%;
+        font-family:roboto;
+        font-weight:100;
+    }
+
+        .bubble-sm{
+        width:50%;
+        text-align:center;
+        }
+        .pointer-big{
+            border-width:26px 62px 0px 0;
+            top:-25px;
+            left:75px;
+        }
+        #sketchbook-txt{
+        width:40%;
+        color: #FFE668;
+        position:relative;
+        margin:auto;
+        background:none;
+        }
+        #sketch-intro{
+        font-size:Larger;
+        }
+        
+    .sketch-wrapper{
+        margin:auto;
+        width:80%;
+        max-width:2000px;
+    }
+    .view{
+    width:90%;
+    height:100%;
+    margin:auto;
+    max-width:1200px;
+    margin-top:5%;
+         overflow:hidden;
+    }
+
+    #frame{
+        position:relative;
+        width:0;
+        float:left;
+        border-radius: 10px;
+        background-color:rgba(23,25,25,.3);
+
+        
+    }
+    #frame:after { 
+       content: "."; 
+       visibility: hidden; 
+       display: block; 
+       height: 0; 
+       clear: both;
+    }
+
+    .info{
+    max-width:300px;
+    min-width:200px;
+    }
+        #mssg{
+            display:none;
+        }
+    .close-bttn{
+        position:absolute;
+        top:10px;
+        right:10px;
+        z-index:70;
+        display:block;
+    }
+    .book-wrap{
+        
+        text-align:left;
+        float:right;
+        height:80%;
+        max-width:1200px;
+        margin:0;
+        padding:5%;
+        padding-top:0;
+        margin-top:0;
+        overflow-y:scroll;
+    }
+        .book-wrap hr {
+            width:90%;
+        }
+    .year-text{
+    margin-top:2.5%;
+    }
+    .diag-thumb{
+        width:100px;
+        height:100px;
+        
+    margin-top:0;
+    }
+    .diag-thumb-img{
+    width:150%;
+    right:14%;
+    }

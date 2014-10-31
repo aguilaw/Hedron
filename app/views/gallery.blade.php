@@ -24,11 +24,14 @@
 <!--darkens the page to make it seem like it fades into the bg when viewing an image-->
 <div id="blanket"></div>
 <div id="sketch-popup"></div>
-<div class="center">
-    <div class="bubble " >
-		<div class="pointer-big" ></div>
-        <p id="sketch-intro">Welcome to the gallery.</p><p> Here is a quick glance at some of my work.</p>
+ <div id="header-band-ext">
+    <div id="header-band">
+    <img class="logo-sm" src={{asset("assets/home/logo-sm.png")}} >
+     <div id="hedron-speech"><div class="bubble-pointer"></div><p>Welcome to the gallery. Here is a quick glance at some of my work.</p></div>
 </div>
+</div>
+<div class="center">
+
     <ul class="book-wrap">
 
   @foreach($images as $image)

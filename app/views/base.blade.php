@@ -39,7 +39,7 @@
             <!--<li class="logo-block ">
                 <div class="circle"><a class="logo-link" href="{{ url('home') }}"><img class="logo"  src="{{asset('/assets/Hedron_logo_Vector.svg')}}"></a></div>
             </li> -->
-            
+             <a href="{{ url('home') }}" ><img class="logo-sm" src={{asset("assets/logo_noface.png")}} ></a>
             <div class="social-block">
                 <a class="fa fa-facebook  social"></a>
                 <a class="fa fa-twitter social"></a>

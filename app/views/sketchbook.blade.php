@@ -31,14 +31,13 @@ when viewing an image-->
     var FEAT_THUMB_URL="{{Config::get('globals.GALLERY_URL')}}"; 
     var GALLERY_URL="{{Config::get('globals.GALLERY_URL')}}"; 
 </script>
-
+ <div id="header-band-ext">
+    <img class="logo-sm" src={{asset("assets/home/logo-sm.png")}} >
+     <div id="hedron-speech"><div class="bubble-pointer"></div><p>Ah yes... the good'ol sketchbook. It contains everything from napkin doodles to illustrations that didn't quite make the cut.</p></div>
+     </div>
+     <h1 id="sketchbook-txt">Sketchbook</h1>
 <div class="center">
-    <h1 id="sketchbook-txt">Sketchbook</h1>
-    <div class="bubble " >
-            <div class="pointer-big" ></div>
-            <p id="sketch-intro">Ah yes... the good'ol sketchbook. It contains everything from napkin doodles to illustrations that didn't quite make the cut.
-            </p>
-    </div>
+   
 
     <div class="view">   
         <div id="frame"></div> 
