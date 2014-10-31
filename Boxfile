@@ -23,7 +23,7 @@ web1:
     - assets/gallery
     - /assets/gallery
   after_build:
-    - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php -- --version=1.0.0-alpha7; fi; php composer.phar self-update; php composer.phar dump-autoload -o; php composer.phar install --prefer-source; "
+    - "if [ ! -f composer.phar ]; then curl -s http://getcomposer.org/installer | php -- --version=1.0.0-alpha7; fi; php composer.phar self-update; php composer.phar dump-autoload -o; php composer.phar install --prefer-source --no-dev; "
   after_deploy:
     - "php artisan cache:clear"
     - "rm -f app/storage/views/*"
