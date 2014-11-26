@@ -26,7 +26,7 @@
          <div id="header-band-ext-home">
          
         <div id="header-band">
-         <div id="illustration"  ></div>
+           
             <ul class="featured-widget">            
                <li class="frame"> <a  id="img-a-left" href="{{ url('gallery') }}">
                     <img id="img-left" src={{asset("assets/home/img_mask_light.png")}}>
@@ -46,8 +46,25 @@
             </ul>
          </div>
         </div>
+        
+    <div class="home-banner">
+        <img class="hedron" src={{asset("assets/Hedron_Character.png")}} alt="HEDRON">
+       <div class="bbl-wrap">
+           <div class="bubble main-bbl bigtext " >
+                <div class="pointer-big bigtext-exempt"  ></div>
+                <p id="greeting">Greetings...</p>
+                <p class="intro bigtext-exempt">I am 
+                    <img id="hedron-name" src={{asset("assets/Hedron_Signiture_Vector.svg")}} alt="HEDRON" onerror="this.onerror=null; this.src='image.png'"></p>
+
+            </div>
+            <div class="bubble second-bbl bigtext " >
+                <p class="intro">I speak in little boxes</p>
+                 <p class="intro">and make art. </p>
+            </div>
+        </div>
+    </div>
     <div class="center-home">
-    
+        
         <div class="header-wrap">
             
             <h1 id="updates-text">UPDATES<i class="fa fa-chevron-down"></i></h1><br>
@@ -64,9 +81,7 @@
 			<h2 id="sketch-text">SKETCHBOOK</h2>
 		</a>
         </div>
-        <div class="page-bottom">
-         
-        <div>
+
     </div>
         
        

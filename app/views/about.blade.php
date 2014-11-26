@@ -12,31 +12,14 @@
 @stop
 
 @section('body')
-<div id="blank-top-stripe" ></div>
-<div class="center">
-<img class="hedron" src={{asset("assets/Hedron_Character.svg")}} alt="HEDRON">
-<div class="bbl-wrap">
-<div class="bubble main-bbl bigtext " >
-    <div class="pointer-big bigtext-exempt"  ></div>
-    <p id="greeting">Greetings...</p>
-    <p class="intro bigtext-exempt">I am 
-        <img class="name  " src={{asset("assets/Hedron_Signiture_Vector.svg")}} alt="HEDRON" onerror="this.onerror=null; this.src='image.png'"></p>
-     <p class="intro">I speak in little boxes</p>
-     <p class="intro">and make art. </p>
+ <div id="header-band-ext">
+    <div id="header-band">
+    <img class="logo-sm" src={{asset("assets/home/logo-sm.png")}} >
+     <div id="hedron-speech"><div class="bubble-pointer"></div><p>Now for the tragic backstory.</p></div>
 </div>
-
-    <div class="bubble  right-top" >
-		<div class="pointer-border border-sm bigtext-exempt" >
-		</div>
-        <p id="intro">But you may already know that... </p>
-	</div>
+</div>
+<div class="center">
     
-     <div class="bubble  right-btm" >
-		<div class="pointer-border border-sm bigtext-exempt" >
-		</div>
-        <p>YOU are here for the tragic origin story.</p>
-	</div>
-     <i class="fa  fa-long-arrow-down fa-5x"></i>
 	</div>
     
     

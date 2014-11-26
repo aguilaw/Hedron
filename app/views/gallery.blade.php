@@ -16,7 +16,6 @@
 
 
 @section('styles')
-	<link rel="stylesheet" href={{ asset("assets/css2/GalleryStyles.css")}}> 
 @stop
 
 

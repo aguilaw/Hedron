@@ -2,18 +2,17 @@
     display:inline-block;
     position:relative;
     margin:auto;
-    width:45%;
+    vertical-align:bottom;
     z-index:20;
 }
 
 
 .bbl-wrap{
-display:inline-table;
-width:40%;
-
-    .main-bbl{
-    min-width:320px;
-    margin-top:8%;
+display:inline-block;
+width:43%;
+ height:100%;   
+ padding-top:7%;
+    .main-bbl, .second-bbl{
      background: $COLOR_DARKGREY;
     z-index:10;
     
@@ -24,15 +23,8 @@ width:40%;
     }
     
     #greeting{
-     color:$COLOR_GOLD;
-        font-size:300%;
-        font-weight:300;
-    }
-    .intro{
-     color:$COLOR_GOLD;
-        font-size:250%;
-        font-weight:300;
-        margin-top:-6%;
+    position:relative;
+    z-index:50;
     }
      .name{
     color:$COLOR_WHITE;
@@ -40,7 +32,7 @@ width:40%;
      font-size:150%;
      text-shadow: 1px 1px #000;
      width:43%;
-     margin-top:-5%;
+     margin-top:-3%;
    }
 }
     .right-btm,.right-top{
@@ -82,7 +74,6 @@ width:40%;
     width:80%;
     line-height:31px;
     font-size:250%;
-    
      color:#989898;
    font-family:orbitron;
 }

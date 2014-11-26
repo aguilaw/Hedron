@@ -2,42 +2,35 @@
   display: inline-block;
   position: relative;
   margin: auto;
-  width: 45%;
+  vertical-align: bottom;
   z-index: 20;
 }
 .bbl-wrap {
-  display: inline-table;
-  width: 40%;
+  display: inline-block;
+  width: 43%;
+  height: 100%;
+  padding-top: 7%;
 }
-.bbl-wrap .main-bbl {
-  min-width: 320px;
-  margin-top: 8%;
+.bbl-wrap .main-bbl, .bbl-wrap .second-bbl {
   background: ;
   z-index: 10;
 }
-.bbl-wrap .main-bbl .pointer-big {
+.bbl-wrap .main-bbl .pointer-big, .bbl-wrap .second-bbl .pointer-big {
   border-color: transparent ;
   left: -9.8%;
   top: 33%;
 }
-.bbl-wrap .main-bbl #greeting {
-  color: ;
-  font-size: 300%;
-  font-weight: 300;
+.bbl-wrap .main-bbl #greeting, .bbl-wrap .second-bbl #greeting {
+  position: relative;
+  z-index: 50;
 }
-.bbl-wrap .main-bbl .intro {
-  color: ;
-  font-size: 250%;
-  font-weight: 300;
-  margin-top: -6%;
-}
-.bbl-wrap .main-bbl .name {
+.bbl-wrap .main-bbl .name, .bbl-wrap .second-bbl .name {
   color: ;
   position: relative;
   font-size: 150%;
   text-shadow: 1px 1px #000;
   width: 43%;
-  margin-top: -5%;
+  margin-top: -3%;
 }
 .bbl-wrap .right-btm, .bbl-wrap .right-top {
   background: ;

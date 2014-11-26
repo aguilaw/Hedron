@@ -16,8 +16,6 @@
 
 
 @section('styles')
-	<link rel="stylesheet" href={{ asset("assets/css2/GalleryStyles.css")}}> 
-    <link rel="stylesheet" href={{ asset("assets/css2/SketchbookStyles.css")}}>
 
     	
 @stop
@@ -35,12 +33,14 @@ when viewing an image-->
     <img class="logo-sm" src={{asset("assets/home/logo-sm.png")}} >
      <div id="hedron-speech"><div class="bubble-pointer"></div><p>Ah yes... the good'ol sketchbook. It contains everything from napkin doodles to illustrations that didn't quite make the cut.</p></div>
      </div>
-     <h1 id="sketchbook-txt">Sketchbook</h1>
 <div class="center">
    
 
     <div class="view">   
-        <div id="frame"></div> 
+        <div id="frame">
+            <i class="close-bttn fa fa-times-circle fa-2x"></i>
+            <div id="img-frame"></div>
+        </div> 
         <ul class="book-wrap">
             @foreach($images as $image)
                 <?php $aDate=explode("-", $image->date_created) ?>
@@ -55,7 +55,9 @@ when viewing an image-->
                 <img class="diag-thumb-img"  src="{{ asset('assets/gallery/thumb').'/ICON_'.$image->file_name}}">
             </li>
              @endforeach
-             <li><div class=" bubble bubble-sm" >
+             <hr>
+             <li><div class="bubble-sm" >
+             
             <p id="sketch-intro">Need More? How about checking out the social networks?</p>
     </div></li>
         </ul>

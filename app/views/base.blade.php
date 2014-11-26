@@ -50,6 +50,7 @@
                 <a href="{{ url('home') }}" class="nav-bttn home">Home</a>
                 <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
                 <a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
+                <a href="{{ url('sketchbook') }}" class="nav-bttn sketchbook">Sketchbook</a>
                 <a href="{{ url('contact') }}"  class="nav-bttn contact">Contact</a>
             </div>
 		</nav>

@@ -1,11 +1,47 @@
 /*overwites*/
 .center-home {
   padding-top: 2%;
+  margin-top: 0;
+}
+#header-band-ext-home {
+  margin-bottom: 30px;
+}
+.home-banner {
+  position: relative;
+  width: 90%;
+  max-width: 1300px;
+  height: 550px;
+  margin: auto;
+  padding: 1%;
+  padding-bottom: 0;
+  box-shadow: inset 3px 3px 28px black;
+  background-color: rgba(23, 25, 25, 0.2);
+  border-radius: 100px;
+  border-style: solid;
+  border-color: ;
+  border-width: 0;
+  border-left-width: 29px;
+  border-right-width: 29px;
+}
+.home-banner #hedron-name {
+  position: relative;
+  width: 35%;
+  margin-top: -5%;
+}
+.home-banner .main-bbl .intro {
+  font-size: 250%;
+  font-weight: 300;
+}
+.home-banner .second-bbl {
+  width: 75%;
+}
+.home-banner .second-bbl .intro {
+  margin-top: 0;
 }
 #illustration {
   position: relative;
   display: inline-block;
-  width: 42%;
+  height: 100%;
   height: 727px;
   background: no-repeat url(../home/hedron_youngirl_nb_web_sm.png);
   background-size: contain;
@@ -20,15 +56,10 @@
   text-align: center;
   position: relative;
   margin: auto;
-  max-width: 1000px;
+  max-width: 1300px;
   width: 100%;
   height: 100%;
   z-index: 0;
-}
-#header-band #hedron-name {
-  position: relative;
-  width: 38%;
-  margin-left: 13%;
 }
 #header-band .underline {
   margin-top: 15px;
@@ -44,7 +75,7 @@
   position: relative;
   display: inline-block;
   padding: 0;
-  margin-top: -10%;
+  margin-top: -8%;
   width: 49%;
   float: right;
 }
@@ -65,8 +96,7 @@
   position: relative;
   margin: auto;
   z-index: 20;
-  padding-left: 23%;
-  width: 83%;
+  width: 100%;
 }
 .header-wrap #updates-text {
   margin: 0;
@@ -88,6 +118,7 @@
   -moz-border-radius: 10px;
   border-radius: 10px;
   background-color: rgba(23, 25, 25, .6);
+  box-shadow: ;
   padding: 40px 40px 40px 40px;
   margin-bottom: 5%;
 }
@@ -152,34 +183,48 @@
   margin-top: 6%;
   width: 100%;
 }
-@media only screen and (max-width: 800px) {
-  .nav {
-    width: 100%;
-    text-align: center;
+@media only screen and (max-width: 1000px) {
+  .home-banner {
+    height: 416px;
   }
-  .nav .logo-sm {
-    display: none;
+  .home-banner .hedron {
+    max-height: 100%;
+  }
+  .home-banner .bubble {
+    width: 100%;
+  }
+  .home-banner .second-bbl {
+    width: 65%;
   }
   #header-band-ext-home {
-    height: 415px;
+    height: 100px;
   }
   #header-band {
-    padding: 3%;
-  }
-  #header-band #illustration {
-    background-image: url(../home/logo&name.png);
-    height: 141px;
-    width: 230px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
-    float: none;
-  }
-  #header-band #hedron-name {
-    display: none;
+    height: 100px;
   }
   #header-band .featured-widget {
     width: 100%;
+    height: 100%;
     margin: auto;
     float: none;
+  }
+  #header-band .featured-widget .frame {
+    display: inline-block;
+    height: 100%;
+    width: 30%;
+    overflow: hidden;
+  }
+  #header-band .featured-widget .frame #img-left, #header-band .featured-widget .frame #img-mid, #header-band .featured-widget .frame #img-right {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    background-position: 0 34%;
+    width: 100%;
   }
   .header-wrap {
     padding: 0;
@@ -199,40 +244,35 @@
     border-radius: 1px;
   }
 }
-@media only screen and (max-width: 640px) {
-  #header-band-ext-home {
-    height: 360px;
+@media only screen and (max-width: 650px) {
+  .home-banner {
+    border-left-width: 7px;
+    border-right-width: 7px;
+    height: 324px;
   }
-  #header-band #illustration {
-    margin-bottom: 3%;
-    margin-top: 0;
+  .home-banner .hedron {
+    max-height: 89%;
+  }
+  .home-banner .main-bbl {
+    margin-top: 8%;
+  }
+  .home-banner .second-bbl {
+    display: none;
   }
 }
 @media only screen and (max-width: 480px) {
-  nav {
+  .nav {
     width: 100%;
     text-align: center;
     font-size: 80%;
   }
-  #header-band-ext-home {
-    height: 420px;
+  .nav .logo-sm {
+    width: 200px;
   }
-  #header-band .featured-widget {
-    width: 70%;
+  .home-banner .hedron {
+    max-height: 100%;
   }
-  #header-band .featured-widget #img-a-mid, #header-band .featured-widget #img-a-right {
+  .home-banner .main-bbl {
     display: none;
-  }
-  #header-band .featured-widget #img-left {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
-  }
-  #header-band .featured-widget .frame img {
-    width: 100%;
-    margin-top: 20px;
-  }
-  .header-wrap .sketchbook, .header-wrap .latest {
-    width: 100%;
   }
 }

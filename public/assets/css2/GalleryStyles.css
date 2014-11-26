@@ -10,7 +10,6 @@
 }
 .book-wrap {
   width: 100%;
-  height: 100%;
   max-width: 1325px;
   position: relative;
   padding: 0;
@@ -32,7 +31,6 @@ hr {
   margin-top: 6.5%;
   z-index: 50;
   position: relative;
-  margin-right: 11%;
   float: left;
 }
 .year-text:after {
@@ -51,13 +49,13 @@ hr {
 .diag-thumb {
   position: relative;
   display: inline-block;
-  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
   /* Safari and Chrome */
+  box-shadow: 0px 5px 5px 5px rgba(0, 0, 0, 0.5);
   -webkit-transform: skewX(-30deg);
-  transform: skewX(-30deg);
   /* IE 9 */
-  -ms-transform: skewX(-30deg);
+  transform: skewX(-30deg);
   /* float: left;*/
+  -ms-transform: skewX(-30deg);
   overflow: hidden;
   z-index: 50;
   height: 270px;
@@ -71,8 +69,8 @@ hr {
 }
 .diag-thumb-img {
   position: relative;
-  margin: auto;
   /* Safari and Chrome */
+  margin: auto;
   -webkit-transform: skewX(30deg);
   -ms-transform: skewX(30deg);
   transform: skewX(30deg);
