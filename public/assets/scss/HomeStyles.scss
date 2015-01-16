@@ -5,6 +5,10 @@ margin-top:0;
 }
 #header-band-ext-home{
 margin-bottom:30px;
+ background:rgba(56, 56, 56, 0.48);
+    a:hover{
+         text-decoration:none;
+    }
 }
 body{
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -32,7 +36,9 @@ position:relative;
     padding:1%;
     padding-bottom:0;
     box-shadow:inset 3px 3px 28px black;
-    background-color:rgba(23, 25, 25, 0.2);
+    /*background-color:rgba(23, 25, 25, 0.2);*/
+    background: url(../bg.jpg)  no-repeat;
+background-size:    cover;
     
     border-radius:100px;
     border-style:solid;
@@ -95,21 +101,29 @@ position:relative;
         padding:0;
         margin-top:-8%;
         width:49%;
+        height:170px;
         float:right;
-            #img-left,
-            #img-mid,
-            #img-right{
-                -webkit-border-radius:100%;
+        .frame{
+        overflow:hidden;
+            position:relative;
+            display:inline-block;
+            width:30%;
+            height:100%;
+            background-color:$COLOR_DARKGREY;
+             -webkit-border-radius:100%;
                 -moz-border-radius:100%;
                 border-radius:100%;
                 border-width:5px;
                 border-style:solid;
                 border-color:$COLOR_DARKGREY;
-            }
-            .frame img{
-                height:100%;
-                width:30%;
-                background-size:cover;
+        }
+            #img-left,
+            #img-mid,
+            #img-right{
+                max-width:100%;
+                position:absolute;
+                top:0;
+                left:0;
             }
         }   
      }
@@ -260,6 +274,9 @@ position:relative;
             margin: auto;
             float: none;
             .frame{
+             -webkit-border-radius:0;
+                -moz-border-radius:0;
+                border-radius:0;
             display:inline-block;
             height:100%;
             width:30%;
@@ -267,10 +284,8 @@ position:relative;
             #img-left,
             #img-mid,
             #img-right{
-                border-radius:0;
-                -webkit-border-radius:0;
-                background-position:0 34%;
-                width:100%;
+                max-width:100%;
+                top:-70%;
             }
             }
          }
@@ -296,6 +311,16 @@ position:relative;
 }
 
 @media only screen and (max-width: 650px) {
+    #header-band{
+    .featured-widget{
+            .frame{
+            #img-left,
+            #img-mid,
+            #img-right{
+                top:0;
+            }
+            }
+         }}
     .home-banner{
         border-left-width:7px;
         border-right-width:7px;

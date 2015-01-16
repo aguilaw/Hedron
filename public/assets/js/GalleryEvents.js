@@ -1,5 +1,4 @@
 (function(){
-$(".gallery").css({"color":"#feb900","background-color":"#383838"});
     $("#blanket, #sketch-popup").click(function(){
          $('#blanket').fadeOut("slow");
          $('#sketch-popup').fadeOut("slow");

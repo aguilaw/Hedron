@@ -9,7 +9,7 @@
 	</title>
     <!-- J query-->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -47,7 +47,7 @@
                 <a class="fa fa-youtube social" ></a>
             </div>
             <div class="nav-block">
-                <a href="{{ url('home') }}" class="nav-bttn home">Home</a>
+                <a href="{{ url('home') }}" class="nav-bttn home ">Home</a>
                 <a href="{{ url('about') }}"  class="nav-bttn about">About</a>
                 <a href="{{ url('gallery') }}" class="nav-bttn gallery">Gallery</a>
                 <a href="{{ url('sketchbook') }}" class="nav-bttn sketchbook">Sketchbook</a>

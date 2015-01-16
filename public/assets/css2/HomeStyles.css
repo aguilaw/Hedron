@@ -5,6 +5,10 @@
 }
 #header-band-ext-home {
   margin-bottom: 30px;
+  background: rgba(56, 56, 56, 0.48);
+}
+#header-band-ext-home a:hover {
+  text-decoration: none;
 }
 .home-banner {
   position: relative;
@@ -15,7 +19,9 @@
   padding: 1%;
   padding-bottom: 0;
   box-shadow: inset 3px 3px 28px black;
-  background-color: rgba(23, 25, 25, 0.2);
+  /*background-color:rgba(23, 25, 25, 0.2);*/
+  background: url(../bg.jpg) no-repeat;
+  background-size: cover;
   border-radius: 100px;
   border-style: solid;
   border-color: ;
@@ -77,9 +83,16 @@
   padding: 0;
   margin-top: -8%;
   width: 49%;
+  height: 170px;
   float: right;
 }
-#header-band .featured-widget #img-left, #header-band .featured-widget #img-mid, #header-band .featured-widget #img-right {
+#header-band .featured-widget .frame {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  height: 100%;
+  background-color: ;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
@@ -87,10 +100,11 @@
   border-style: solid;
   border-color: ;
 }
-#header-band .featured-widget .frame img {
-  height: 100%;
-  width: 30%;
-  background-size: cover;
+#header-band .featured-widget #img-left, #header-band .featured-widget #img-mid, #header-band .featured-widget #img-right {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .header-wrap {
   position: relative;
@@ -215,16 +229,17 @@
     float: none;
   }
   #header-band .featured-widget .frame {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
     display: inline-block;
     height: 100%;
     width: 30%;
     overflow: hidden;
   }
   #header-band .featured-widget .frame #img-left, #header-band .featured-widget .frame #img-mid, #header-band .featured-widget .frame #img-right {
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    background-position: 0 34%;
-    width: 100%;
+    max-width: 100%;
+    top: -70%;
   }
   .header-wrap {
     padding: 0;
@@ -245,6 +260,9 @@
   }
 }
 @media only screen and (max-width: 650px) {
+  #header-band .featured-widget .frame #img-left, #header-band .featured-widget .frame #img-mid, #header-band .featured-widget .frame #img-right {
+    top: 0;
+  }
   .home-banner {
     border-left-width: 7px;
     border-right-width: 7px;

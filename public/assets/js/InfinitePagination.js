@@ -1,7 +1,6 @@
 /*get more updates when the bottom of the updates box is reached*/
 /*****sq-rnd = the box containing the list of updates*/
 $(document).ready(function(){
-$(".home").css({"color":" #feb900","background-color":"#383838"});
     var page=2;
      /*sets data to prevent multiple ajax calls*/
     $('#sq-rnd').data('ajaxready', true).scroll(function(){

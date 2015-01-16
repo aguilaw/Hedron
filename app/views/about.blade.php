@@ -26,7 +26,7 @@
    
  <hr id="line"> <hr id="line"> <hr id="line">
  
- <!-- The intro story split into P tags in order to use big text formatting and auto font resize-->
+ <!-- The intro story split into P tags in order to use big text formatting and auto font resize
  <div class="bigtext story" >   
 <p id="story"><span id="first-letter">I</span>t was a dark and stormy night... </p>
 <p class="thin">3AM beckoned</p><p> on yet another all-nighter.</p>
@@ -43,6 +43,6 @@
 <p class="thin">Hello Internet!</p>
 <p class="light-txt"> Nice to meet you.</p>
         </div>
- </div>
+ </div-->
 @stop
 

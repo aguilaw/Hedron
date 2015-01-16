@@ -28,20 +28,14 @@
         <div id="header-band">
            
             <ul class="featured-widget">            
-               <li class="frame"> <a  id="img-a-left" href="{{ url('gallery') }}">
-                    <img id="img-left" src={{asset("assets/home/img_mask_light.png")}}>
-                </a>
+               <li class="frame"> 
+                   
                 </li>
                 <li class="frame">
-                <a  id="img-a-mid" href="{{ url('gallery') }}">
-                    <img id="img-mid" src={{asset("assets/home/img_mask_light.png")}} >
-                </a>
+                    
                 </li>
                 <li class="frame">
-                <a  id="img-a-right"  href="{{ url('gallery') }}">  <!-- had id frame-->
-                    <img id="img-right"  src={{asset("assets/home/img_mask_light.png")}} >
-                </a><!--end .diag-top -->
-                </li>
+                    
             <!-- End Features -->
             </ul>
          </div>
@@ -54,7 +48,7 @@
                 <div class="pointer-big bigtext-exempt"  ></div>
                 <p id="greeting">Greetings...</p>
                 <p class="intro bigtext-exempt">I am 
-                    <img id="hedron-name" src={{asset("assets/Hedron_Signiture_Vector.svg")}} alt="HEDRON" onerror="this.onerror=null; this.src='image.png'"></p>
+                    <img id="hedron-name" src={{asset("assets/Hedron_Signiture_Vector.png")}} alt="HEDRON" onerror="this.onerror=null; this.src='image.png'"></p>
 
             </div>
             <div class="bubble second-bbl bigtext " >
