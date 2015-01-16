@@ -1,9 +1,11 @@
 $(document).ready(function(){
 
     
+    
     AddFeaturedToHTML(featured);    
     displaceImgs();
     rotateImgs();
+     
 });
 
 
@@ -15,9 +17,9 @@ function AddFeaturedToHTML(featImgs){
            var imgUrl= HOME_URL+'/'+featImgs[i]['link_to']+'/'+featImgs[i]['id'];
          var imgSource= FEAT_THUMB_URL+"ICON_"+featImgs[i]['file_name'];
             
-                $("<a  id='img-a-left' href="+imgUrl+"><img id='img-left' src="+imgSource+"></a>").appendTo(leftFrame).css("opacity",0);
-                 $("<a  id='img-a-mid' href="+imgUrl+"><img id='img-mid' src="+imgSource+"></a>").appendTo(midFrame).css("opacity",0);
-                  $("<a  id='img-a-right' href="+imgUrl+"><img id='img-right' src="+imgSource+"></a>").appendTo(rightFrame).css("opacity",0);           
+                $("<a  id='img-a-left' href="+imgUrl+"><img id='img-left' src="+imgSource+"></a>").appendTo(leftFrame).css({"display":"none","opacity":0});
+                 $("<a  id='img-a-mid' href="+imgUrl+"><img id='img-mid' src="+imgSource+"></a>").appendTo(midFrame).css({"display":"none","opacity":0});
+                  $("<a  id='img-a-right' href="+imgUrl+"><img id='img-right' src="+imgSource+"></a>").appendTo(rightFrame).css({"display":"none","opacity":0});           
     }
   
 }
@@ -33,41 +35,45 @@ function displaceImgs(){
     
 }
 function rotateImgs(){
-     var duration = 500;
-     var interval= 2000;
+     var duration = 300;
+      var interval= 2000;
          var leftFrame= $(".frame").first();
     var  midFrame=leftFrame.next();
     var  rightFrame=midFrame.next();
+    
      midFrame.children()
                     .first()
-                    .css({"opacity":1})
+                    .css({"display":"inline-block","opacity":1})
                     .animate({"opacity": 0,"duration": duration })
-                    .next()
+                    .next().css({"display":"inline-block"})
                     .animate({"opacity": 1,"duration": duration })
                     .promise()
                     .done(function(){
-                        $(this).prev().css("opacity",0).appendTo(midFrame);
+                        $(this).prev().css({"display":"none"}).appendTo(midFrame);
                         });
+                        
           leftFrame.children()
                     .first()
-                    .css({"opacity":1})
+                    .css({"display":"inline-block","opacity":1})
                     .animate({"opacity": 0,"duration": duration })
                     .next()
+                    .css({"display":"inline-block"})
                     .animate({"opacity": 1,"duration": duration })
                     .promise()
                     .done(function(){
-                        $(this).prev().css("opacity",0).appendTo(leftFrame);
+                         $(this).prev().css({"display":"none"}).appendTo(leftFrame);
                         });
+                        
          rightFrame.children()
                     .first()
-                    .css({"opacity":1})
+                    .css({"display":"inline-block","opacity":1})
                     .animate({"opacity": 0,"duration": duration })
                     .next()
+                    .css({"display":"inline-block"})
                     .animate({"opacity": 1,"duration": duration })
                     .promise()
                     .done(function(){
-                       $(this).prev().css("opacity",0).appendTo(rightFrame);
-                        setTimeout(rotateImgs, interval);
+                       $(this).prev().css({"display":"none"}).appendTo(rightFrame);
                         });
-    
+    setTimeout(rotateImgs, interval);
 }
