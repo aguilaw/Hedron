@@ -870,7 +870,7 @@ hr {
     display: none;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 490px) {
   .nav {
     width: 100%;
     text-align: center;
@@ -882,7 +882,7 @@ hr {
   .home-banner .hedron {
     max-height: 100%;
   }
-  .home-banner .main-bbl {
+  .home-banner .bbl-wrap {
     display: none;
   }
 }

@@ -2,6 +2,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <!-- Viewport meta tag to prevent iPhone from scaling our page -->
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<meta charset="UTF-8">
 	<!-- <link rel="shortcut icon" href=".\favicon.ico"> -->
 	<title>
