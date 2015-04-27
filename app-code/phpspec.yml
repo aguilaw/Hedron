@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: hedron
+        psr4_prefix: hedron
+        src_path: app
