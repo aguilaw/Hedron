@@ -2,19 +2,26 @@
 use Auth;
 use hedron\Artwork;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ArtworksController extends Controller {
 /*Constants*/
 /********************Public Functions*******************************
 ****************************************************************/
+        protected $THUMB_FILE_PATH;
+        protected $ARTWORK_FILE_PATH;
+
         public function __construct() {
             $this->middleware('auth');
+            $this->THUMB_FILE_PATH = public_path()."/images/gallery/thumb/";
+            $this->ARTWORK_FILE_PATH = public_path()."/images/gallery/";
         }
     /***************************************************************/
        public function index()
        {
-           $artworks=Artwork::orderBy('date_created','desc')->get();
-           return view('admin/artworks',compact('artworks'));
+
+           $artworks= Artwork::all();
+           return view('admin.artworks',compact('artworks'));
        }
  /***************************************************************/
     public function create()
@@ -25,162 +32,159 @@ class ArtworksController extends Controller {
 /*****************************************************************/
     public function edit(Artwork $artwork)
     {
-        $artworks=Artwork::orderBy('date_created','desc')->get();
-        $toEdit=$artwork;
-        return view('admin.admin-artworks'); //, compact('artworks' , 'toEdit') );
+        return view('admin.artworks-edit', compact( 'artwork') );
     }
     /**************************************************************** */
-     public function update($artwork)
+     public function update(Artwork $artwork, Request $request)
     {
-        // $validate = $this->validate(Input::all());
-        // if($validate->passes()){
-                /*if the uploaded file has changed replace the last file with the new one*/
-                if (Input::hasFile('file')){
-                        unlink(Config::get('globals.DEST_PATH').$artwork->file_name);
-                        list($ext,$fileName,$width,$height,$fileSize)=$this->SaveImginFS($artwork->id);
+        $artwork->fill($request->all());
+
+               if ($request->hasFile('file_upload')){
+                        $this->deleteImgsFromFileSystem($artwork->file_name);
+
+                        list($ext,$fileName,$width,$height,$fileSize)=$this->SaveImginFS($artwork->slug,$request->file('file_upload'));
                         $artwork->file_name=$fileName;
-                        $artwork->file_ext=$ext;
+                        $artwork->file_extension=$ext;
                         $artwork->file_size=$this->HumanFileSize($fileSize);
                         $artwork->file_width=$width;
                         $artwork->file_height=$height;
+
+                        $this->MakeThumb($artwork,425,170,"425x170",100);
+                        $this->MakeThumb($artwork,292,170,"220x170",100);
+                        $this->MakeThumb($artwork,292,null,"292x",100);
+                        $this->MakeThumb($artwork,220,null,"220xx",100);
                }
-                     $newFileName=$artwork->id.".".$artwork->file_ext;
-                    rename(Config::get('globals.DEST_PATH').$artwork->file_name, Config::get('globals.DEST_PATH').$newFileName);
-                    $artwork->file_name=$newFileName;
-             /*Set the other artwork parameters  from Input:: and save*/
-            $this->SetValsFromInput($artwork);
-            $this->MakeThumb($artwork,380,350,"ICON",200);
-            return Redirect::action('ArtworksController@EditArtwork',$artwork->id)->with('message',"artwork saved succesfully.");
-        //}
-        //else{
-        //   return Redirect::action('ArtworksController@EditArtwork',$artwork->id)->withErrors($validate->messages());
-        //}
+               else{
+                    /*CHECK that the old file still exists befor renaming it.*/
+                    /*TODO:rename all thumbnails*/
+                    if(Storage::exists('/gallery/'.$artwork->filename)){
+                        $newFileName=$artwork->slug.".".$artwork->file_extension;
+                        rename($this->ARTWORK_FILE_PATH.$artwork->file_name, $this->ARTWORK_FILE_PATH.$newFileName);
+                        $artwork->file_name=$newFileName;
+                    }
+
+              }
+
+        $artwork->save();
+        return redirect()->route('artworks_path',$artwork->slug)->with('message',"artwork saved succesfully.");
+
     }
  /*****************************************************************/
-    public function store(){
-        if(!Input::file('file')->isValid()){
-             return Redirect::action('ArtworksController@MakeNewArtwork')->with('message',"image Size Exceeds Limit")
-                                                                                                ->withInput(Input::except('file'));
-        }
+    public function store(Request $request){
 
-         $validate = $this->validate(Input::all());
+        $artwork=Artwork::create($input = $request->all());
+
+
+        /*if(!Request::file('file')->isValid()){
+             return Redirect()->route('createArtwork_path')->with('message',"image Size Exceeds Limit")
+                                                                                                ->withInput(Request::except('file'));
+        }*/
+        list($ext,$fileName,$width,$height,$fileSize)=$this->SaveImginFS($artwork->slug,$request->file('file_upload'));
+    /*     $validate = $this->validate(Input::all());
          if($validate->passes() && Input::file('file')->isValid()){
 
-            /*Save the artwork info to the Database*/
-            $artwork= new Artwork;
-            //save to assign an id
-            $artwork->save();
-            list($ext,$fileName,$width,$height,$fileSize)=$this->SaveImginFS($artwork->id);
+*/
             $artwork->file_name=$fileName;
-            $artwork->file_ext=$ext;
+            $artwork->file_extension=$ext;
             $artwork->file_size=$this->HumanFileSize($fileSize);
             $artwork->file_width=$width;
             $artwork->file_height=$height;
 
-            /*Set the other artwork parameters  from Input:: and save*/
-            $this->SetValsFromInput($artwork);
-            return Redirect::action('ArtworksController@EditArtwork',$artwork->id)->with('message',"New artwork added successfully.");
-        }
-        else{
-        return Redirect::action('ArtworksController@MakeNewArtwork')->withErrors($validate->messages())
-                                                                                         ->withInput(Input::except('file'));
-        }
+            //Set the other artwork parameters  from Input:: and save
+            $artwork->save();
+            $this->MakeThumb($artwork,425,170,"425x170",150);
+            $this->MakeThumb($artwork,292,170,"220x170",150);
+            $this->MakeThumb($artwork,292,null,"292x",100);
+            $this->MakeThumb($artwork,220,null,"220xx",100);
+            return redirect()->route('editArtwork_path',$artwork->slug)->with('message',"New artwork added successfully.");
+
     }
  /*****************************************************************/
-    public function Delete($artwork){
-        $artwork->delete();
-        $redirect=Artwork::first();
-        if($redirect==null){
-            return Redirect::action('ArtworksController@MakeNewArtwork')->with('message',"Artwork deleted successfully.");
-         }
-         else{
-            return Redirect::action('ArtworksController@EditArtwork',$redirect->id)->with('message',"Artwork deleted successfully.");
-         }
+    public function Delete(Artwork $artwork){
 
+        $this->deleteImgsFromFileSystem($artwork->file_name);
+        $artwork->delete();
+        return redirect()->route('artworks_path')->with('message',"Artwork deleted successfully.");
 
     }
  /********************PRIVATE FUNCTIONS******************************/
 /*****************************************************************/
+    private function deleteImgsFromFileSystem($filename){
+        if (Storage::exists('/gallery/'.$filename))
+        {
+            Storage::delete('/gallery/'.$filename);
+        }
+        if (Storage::exists('/gallery/thumb/'.'220x_'.$filename))
+        {
+            Storage::delete('/gallery/thumb/'.'220x_'.$filename);
+        }
+        if (Storage::exists('/gallery/thumb/'.'292x_'.$filename))
+        {
+            Storage::delete('/gallery/thumb/'.'292x_'.$filename);
+        }
+        if (Storage::exists('/gallery/thumb/'.'425x170_'.$filename))
+        {
+            Storage::delete('/gallery/thumb/'.'425x170_'.$filename);
+        }
+    }
+/*****************************************************************/
+
     private function HumanFilesize($bytes) {
         $size = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
         $factor = floor((strlen($bytes) - 1) / 3);
         return sprintf("%.2f", $bytes / pow(1024, $factor)) . @$size[$factor];
     }
 /*****************************************************************/
-     private function SaveImginFS($id){
-        $ext=Input::file('file')->getClientOriginalExtension();
-        $fileName=$id.".".$ext;
-        Input::file('file')->move(Config::get('globals.DEST_PATH'),$fileName);
-        $fileSize=Input::file('file')->getClientSize();
-        list($width, $height) = getimagesize(Config::get('globals.DEST_PATH').$fileName);
-
-
+     private function SaveImginFS($slug, $file){
+        $ext=$file->getClientOriginalExtension();
+        $fileName=$slug.".".$ext;
+        $file->move($this->ARTWORK_FILE_PATH,$fileName);
+        $fileSize=$file->getClientSize();
+        list($width, $height) = getimagesize($this->ARTWORK_FILE_PATH.$fileName);
         return array($ext,$fileName,$width,$height,$fileSize);
 
      }
-/*****************************************************************/
-    private function SetValsFromInput($artwork){
-         $artwork->title=Input::get('title');
-            $artwork->date_created=Input::get('date');
-            $artwork->tools=Input::get('tools');
-            /*when the project type is not one of the defaults get data from text box*/
-            if(Input::get('type')=="Other"){
-                $artwork->project_type=Input::get('type-other-val');
-            }
-            else{
-                 $artwork->project_type=Input::get('type');
-            }
-            $artwork->description=Input::get('desc');
-            if(Input::get('featured') != null){
-                $artwork->featured=Input::get('featured');
-            }
-            else{
-                $artwork->featured="";
-            }
-            $artwork->link_to=Input::get('link-to');
 
-            $artwork->pos_x=Input::get('left');
-            $artwork->pos_y=Input::get('top');
-            $artwork->save();
-
-    }
   /*******************************************************************/
     function MakeThumb($artwork,$thumbWidth,$thumbHeight,$type,$percent) {
-    $dest=Config::get('globals.DEST_PATH')."thumb/".$type."_".$artwork->file_name;
-    $src=Config::get('globals.DEST_PATH').$artwork->file_name;
+
+        $dest=$this->THUMB_FILE_PATH.$type."_".$artwork->file_name;
+        $src=$this->ARTWORK_FILE_PATH.$artwork->file_name;
+
         /* read the source artwork */
         /*create the directory if it doesnt exist*/
-        if (!file_exists(Config::get('globals.DEST_PATH')."thumb")) {
-            mkdir(Config::get('globals.DEST_PATH')."thumb", 0777, true);
+        if (!file_exists($this->THUMB_FILE_PATH)) {
+            mkdir($this->THUMB_FILE_PATH, 0777, true);
         }
 
-        if($artwork->file_ext =="png"){
+        if($artwork->file_extension =="png"){
             $source_artwork = imagecreatefrompng($src);
         }
         else{
             $source_artwork = imagecreatefromjpeg($src);
         }
-        /*the factor required to scale the thumbsize area to match that in admin/imgs
-            if img full height is 800 it is displayed as 700px in dmin/img (width:200% of 350px square)
-            the 300px square becomes .875*350=400px*/
-        $factor=$artwork->file_height/(($percent/100)*$thumbHeight);
 
+        if ($thumbHeight == null){
+            $thumbHeight=($thumbWidth*$artwork->file_height)/$artwork->file_width;
+        }
+
+        $factor=$artwork->file_width/(($percent/100)*$thumbWidth);
         if( $artwork->file_height > $artwork->file_width ){
             // Portrait
+
            $desired_width = $thumbWidth*$factor;
            $desired_height = $artwork->file_height * ( ($thumbHeight*$factor) / $artwork->file_height);
          }
         else{
              //Landscape
-
             $desired_height = $thumbHeight*$factor;
             $desired_width = $artwork->file_width * ( $thumbWidth*$factor / $artwork->file_width );
         }
-         //   return "f".$factor." h".$desired_height." w".$desired_width;
-        /* create a new, "virtual" artwork */
-            $widthOffset=abs(Input::get('left'));
 
-        $heightOffset=abs(Input::get('top'))*1.6;
+        /* create a new, "virtual" artwork */
+            $widthOffset=abs($artwork->horizontal_offset);
+
+        $heightOffset=abs($artwork->vertical_offset);
         $virtual_artwork = imagecreatetruecolor($thumbWidth, $thumbHeight);
 
         /* copy source artwork at a resized size */

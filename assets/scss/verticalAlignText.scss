@@ -1,0 +1,50 @@
+a img,:link img,:visited img { border:none }
+address { font-style:normal }
+fieldset { border: none;}
+legend { display:none; }
+
+.items li
+{
+	float: left;
+	margin: 0px 5px 5px 0px;
+	text-transform: uppercase;
+}
+
+.items .outerContainer
+{
+	display: table;
+	height: 180px;
+	overflow: hidden;
+	width: 200px;
+	background-color: #EBEBEB;
+	border-bottom: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+}
+
+.items .outerContainer:Hover
+{
+	background-color: red;
+}
+
+.items .innerContainer
+{
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.items  .element a
+{
+	color: #999999;
+	text-decoration: none;
+	padding: 0px 10px;
+	display: block;
+}
+
+.items .outerContainer:Hover .innerContainer .element a
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}

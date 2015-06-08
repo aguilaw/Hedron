@@ -1,6 +1,7 @@
 <?php namespace hedron\Http\Controllers;
 
-
+use hedron\Artwork;
+use hedron\Post;
 class PagesController extends Controller {
     public function __construct() {
         $this->middleware('auth',['only' => 'ShowAdminDashboard']);
@@ -17,15 +18,18 @@ class PagesController extends Controller {
                                 ->get();
 
 		return View::make('home',compact('featured','updates'));*/
-        return view('home');
+        $featured=Artwork::where('featured' ,'=', '1')->take(5)->orderBy('date_created','desc')->get();
+        $posts=Post::orderBy('date_created', 'desc')->take(5)->get();
+        $items=$this->mergeCollectionsBydate($featured,$posts);
+        return view('home',compact('items'));
 	}
 /***********************************************************************/
-	public function ShowGallery($toShow=null)
+	public function ShowWork($toShow=null)
 	{
-        $artworks=Artwork::where('link_to','=','gallery')
+        $thumbnails=Artwork::select('file_name', 'slug','type', 'title','date_created','description','tools','commissioner')->where('display_in','=','gallery')
                         ->orderBy('date_created','desc')
                         ->get();
-		return view('gallery',compact('artworks','currYear','toShow'));
+		return view('work',compact('thumbnails','toShow'));
 	}
 /***********************************************************************/
 	public function ShowAbout()
@@ -48,7 +52,7 @@ class PagesController extends Controller {
         if (Request::ajax()) {
             return Response::json(View::make('show-sketch',compact('toShow'))->render());
         }
-         $images=Image::where('link_to','=','sketchbook')
+         $thumbnails=Artwork::where('link_to','=','sketchbook')
                         ->orderBy('date_created','desc')
                         ->get();
          $aDate=explode('-',$images->first()->date_created);
@@ -65,4 +69,14 @@ public function ShowAdminDashboard()
 
 }
 /***********************************************************************/
+private function mergeCollectionsBydate($c1,$c2){
+    $merged=$c2->merge($c1);
+    /*$merged->sortByDesc(function($item){
+        return $item->date_created;
+    });
+    */
+    $merged->shuffle();
+    return $merged;
+}
+
 }

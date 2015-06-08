@@ -1,0 +1,8 @@
+@font-face{
+	font-family: 'hetilica';
+	src: url('hetilica_bold_macroman/hetilica-webfont.eot');
+	src: url('hetilica_bold_macroman/hetilica-webfont.eot?iefix') format('eot'),
+	     url('hetilica_bold_macroman/hetilica-webfont.woff') format('woff'),
+	     url('hetilica_bold_macroman/hetilica-webfont.ttf') format('truetype'),
+	     url('hetilica_bold_macroman/hetilica-webfont.svg#hetilica-webfont') format('svg');
+}

@@ -23,31 +23,26 @@ class PostsController extends Controller {
     }
 
 /*****************************************************************/
-    public function edit(Post $posts)
+    public function edit(Post $post)
     {
-        return "in controller edit post";
+        return view('admin.posts-edit',compact('post'));
     }
     /**************************************************************** */
-     public function update($posts)
+     public function update(Post $post, Request $request)
     {
-        return "in controller updated post";
+        $post->fill($request->all())->save();
+        return redirect()->route('posts_path')->with('message',"post saved succesfully.");
     }
  /*****************************************************************/
-    public function store(){
+    public function store(Request $request){
 
-        return "in controller strored post";
+        $post=Post::create($input = $request->all());
+        $post->save();
+        return redirect()->route('posts_path')->with('message',"post saved succesfully.");
     }
  /*****************************************************************/
     public function Delete($posts){
         $posts->delete();
-        $redirect=Post::first();
-        if($redirect==null){
-            return Redirect::action('PostController@MakeNewPost')->with('message',"Post deleted successfully.");
-         }
-         else{
-            return Redirect::action('PostController@EditPost',$redirect->id)->with('message',"Post deleted successfully.");
-         }
-
-
-    }
+        return redirect()->route('posts_path')->with('message',"post deleted successfully.");
+        }
 }

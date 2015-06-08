@@ -49,12 +49,7 @@ use AuthenticatesAndRegistersUsers;
         //}
     }
  /*****************************************************************/
-    public function store(){
 
-        return "in controller stored user"; /*Redirect::action('UsersController@MakeNewUser')->withErrors($validate->messages())
-                                                                                         ->withInput(Input::except('file')); */
-
-    }
  /*****************************************************************/
     public function Delete($user){
         $user->delete();

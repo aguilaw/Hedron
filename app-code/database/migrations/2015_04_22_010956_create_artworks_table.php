@@ -24,10 +24,17 @@ class CreateArtworksTable extends Migration {
 			$table->string('tools');
 			$table->string("display_in");
 			$table->boolean("featured");
-			$table->text("descriptiton");
+			$table->text("description")->nullable();;
 
 			$table->integer("thumb_offset_horizontal")->nullable();
 			$table->integer("thumb_offset_vertical")->nullable();
+			$table->integer("file_width")->nullable();
+			$table->integer("file_height")->nullable();
+			$table->integer("file_size")->nullable();
+			$table->string("file_name")->nullable();
+			$table->string("file_extension")->nullable();
+			$table->string("file_path")->nullable();
+			$table->string("thumb_file_path")->nullable();
 			$table->string("slug")->unique();
 
 			$table->timestamps();

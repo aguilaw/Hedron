@@ -15,7 +15,9 @@
 Route::bind ('artwork',function($slug){
 	return hedron\Artwork::whereSlug($slug)->first();
 });
-
+Route::bind ('post',function($id){
+	return hedron\Post::whereid($id)->first();
+});
 
 Route::get('/', 'PagesController@ShowHome');
 Route::get('/home','PagesController@ShowHome');
@@ -29,8 +31,8 @@ Route::get('/sketchbook/{artwork}','PagesController@ShowSketchbook');
 Route::get('/sketchbook','PagesController@ShowSketchbook');
 
 Route::get('/about', 'PagesController@ShowAbout');
-//Route::get('/contact', 'PagesController@ShowContact');
-//Route::get('/work', 'PagesController@ShowContact');
+Route::get('/contact', 'PagesController@ShowContact');
+Route::get('/work/{artwork?}',['as' =>'works_path', 'uses' =>'PagesController@ShowWork']);
 //Route::get('/latest-project', 'PagesController@ShowComingSoon');
 
 
@@ -49,13 +51,12 @@ Route::get('/admin/artworks', ['as' => 'artworks_path', 'uses' =>'ArtworksContro
 Route::get('/admin/artworks/{artwork}', ['as' =>'editArtwork_path', 'uses' => 'ArtworksController@edit']);
 Route::get('/admin/artworks/delete/{artwork}',['as' =>'deleteArtwork_path', 'uses' =>'ArtworksController@delete']);
 
-Route::get('/admin/posts/new', 'PostsController@create');
-Route::get('/admin/posts', 'PostsController@index');
-Route::get('/admin/posts/{post}', 'PostsController@update');
-Route::get('/admin/posts/delete/{post}', 'PostsController@delete');
+Route::get('/admin/posts/new',['as' =>'createPost_path', 'uses' =>'PostsController@create']);
+Route::get('/admin/posts',['as' =>'posts_path', 'uses' =>'PostsController@index']);
+Route::get('/admin/posts/{post}',['as' =>'editPost_path', 'uses' =>'PostsController@edit']);
+Route::get('/admin/posts/delete/{post}',['as' =>'deletePost_path', 'uses' => 'PostsController@delete']);
 
 Route::get('/admin/users/register',['as' => 'registerUser_path', 'uses' =>'UsersController@getRegister']);
-Route::post('/admin/users/register',['as' => 'postRegisterUser_path', 'uses' =>'UsersController@postRegister']);
 Route::get('/login',['as' => 'login_path', 'uses' =>'UsersController@getLogin']);
 Route::post('/login',['as' => 'postlogin_path', 'uses' =>'UsersController@postLogin']);
 Route::get('/logout',['as' => 'getlogout_path', 'uses' =>'UsersController@getLogout']);
@@ -67,15 +68,14 @@ Route::get('/admin/users/delete/{user}', 'UsersController@delete');
 /*Handle Forms*******************************************************/
 
 Route::post('/admin/artworks/delete/{artwork}', 'ArtworksController@delete');
-Route::post('/admin/artworks/new', 'ArtworksController@store');
-Route::post('/admin/artworks/{artwork}', 'ArtworksController@post');
-/*
-Route::post('/admin/posts/new', 'PostsController@SaveNewUpdate');
-Route::post('/admin/posts/{post}', 'PostsController@SaveUpdateEdit');
-Route::post('/admin/posts/delete/{post}', 'PostsController@DeleteUpdate');
+Route::post('/admin/artworks/new', ['as' =>'artworkStore_path', 'uses' => 'ArtworksController@store']);
+Route::PATCH('/admin/artworks/{artwork}', ['as' =>'artworkEdit_path', 'uses' => 'ArtworksController@update']);
 
-Route::post('/admin/users/new', 'UsersController@SaveNewUser');
-Route::post('/admin/users/{user}', 'UsersController@SaveUserEdit');
-Route::post('/admin/users/delete/{user}', 'UsersController@DeleteUser');
+Route::post('/admin/posts/new',['as' =>'postStore_path', 'uses' => 'PostsController@store']);
+Route::PATCH('/admin/posts/{post}',['as' =>'postUpdate_path', 'uses' => 'PostsController@update']);
+Route::post('/admin/posts/delete/{post}', 'PostsController@delete');
 
-*/
+
+Route::post('/admin/users/register',['as' => 'postRegisterUser_path', 'uses' =>'UsersController@postRegister']);
+Route::post('/admin/users/{user}', 'UsersController@update');
+Route::post('/admin/users/delete/{user}', 'UsersController@delete');

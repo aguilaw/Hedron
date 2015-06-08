@@ -1,0 +1,157 @@
+
+.public-header{
+    position: relative;
+    margin-bottom:$TYPE_SCALE*1em;
+    padding-left:50%;
+    padding-right:1%;
+    color:white;
+
+    p{
+        padding-left:32%;
+
+    }
+    h2{
+        font-size:275%;
+        line-height:100%;
+        font-family:roboto, arial, sans serif;
+        font-weight:300;
+    }
+    h3{
+    }
+
+}
+.signature{
+    display:inline-block;
+    width:70%;
+    img{
+        max-width:100%;
+    }
+}
+.bubble-margin{
+    margin-bottom:20px;
+}
+.main-bubble{
+    background:$HEDRON_GREY;
+    border-radius:7%;
+    text-align:right;
+    border-left:rgb(254, 185, 0) 8px solid;
+    border-right:rgb(254, 185, 0) 8px solid;
+}
+.main-bubble:before{
+    border-color:transparent $HEDRON_GREY;
+}
+.post-bubble{
+    position:relative;
+    width:100%;
+    overflow: visible;
+    background:$HEDRON_GREY;
+    margin-top:$TYPE_SCALE*.125em;
+    color:white;
+    .underline{
+        text-align:left;
+        color:white;
+        font-size:$TYPE_SCALE*1em;
+        margin:$TYPE_SCALE*.25em;
+        border-color:white;
+        span{
+            color:$HEDRON_GOLD;
+            font-size:75%;
+        }
+        .fa{
+            color:$HEDRON_ORANGE;
+        }
+    }
+}
+
+.post-bubble:before{
+    border-width: 0 0 15px 70px;
+
+    bottom:-15px;
+
+}
+.hedron-character{
+    position:relative;
+    background:transparent;
+    margin-top:-27%;
+    img{
+        width:60%;
+        float:left
+    }
+}
+.home-grid h3{
+    line-height:$TYPE_SCALE*5em
+}
+.static-link{
+    height:$TYPE_SCALE*7em;
+    background:$HEDRON_ORANGE;
+}
+
+@media only screen and (min-width: 480px) {
+    .signature{
+        width:30%;
+        display:inline-block;
+        img{
+            margin:0;
+        }
+    }
+    .public-header {
+        padding-left:32%;
+        h1{
+            display:inline;
+            font-size:150%;
+        }
+        p{font-size:225%;
+            padding:0;}
+        h1 + p{
+            display:inline;
+            font-size:300%;
+        }
+    }
+    .main-bubble{
+        padding:$TYPE_SCALE*1.5em 0;
+        text-align:center;
+        z-index: 0;
+
+
+    }
+    .post-bubble:before{
+    }
+    .post-bubble:after{
+    }
+    .speech-bubble:before{
+
+    }
+    .speech-bubble:after{
+
+    }
+    .hedron-character{
+        float:left;
+        margin-top:-22%;
+        padding:0;
+        z-index: 10;
+        img{
+            width:125%;
+            float:none;
+        }
+    }
+    .home-grid{
+        position:relative;
+    }
+    .home-grid .thumbnail{
+        float:left;
+        margin: $TYPE_SCALE*1em $TYPE_SCALE*.2em ;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .public-header h1{
+            font-size:200%;
+        }
+}
+@media only screen and (min-width: 750px) {
+    .public-header h1{
+            font-size:250%;
+        }
+    .signature{
+        width:30%;
+    }
+}

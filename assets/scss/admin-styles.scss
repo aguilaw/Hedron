@@ -1,0 +1,95 @@
+/*INDEX**************************************/
+
+.thumbnail{
+    height:$TYPE_SCALE*8em;
+    overflow: hidden;
+    background:$HEDRON_ORANGE;
+    border-radius:$TYPE_SCALE*1em;
+        img{
+            height:100%;
+        }
+}
+.quick-info{
+    width:100%;
+}
+.underline{
+    border-bottom:1px solid $HEDRON_GREY;
+}
+/*EDIT/ CREATE AREAS**************************************/
+.admin-header{
+    position: relative;
+    text-align:center;
+    background-color:$HEDRON_GREY_HEAVY_ALPHA;
+    border-radius:$TYPE_SCALE*2em;
+    padding:$TYPE_SCALE *2em;
+    background: url(../images/bgs/bg.jpg) no-repeat;
+    h1,h2{
+        margin-bottom:2%;
+    }
+    a{
+        color:white;
+    }
+    a:visited {  color:white; }
+    .underline{
+        border-bottom:1px solid $HEDRON_GOLD;
+    }
+    img{
+        max-height:$TYPE_SCALE*8em;
+        max-width:100%;
+        float:none;
+        display:block;
+        margin:0 auto;
+        border-radius:5%;
+    }
+    .mini{
+        color:white;
+    }
+}
+.border-right{
+    display:inline-block;
+    padding-right:$TYPE_SCALE*1em;
+    border-right:1px solid $HEDRON_GREY;
+}
+.quick-info{
+    padding:1% 2%;
+    text-align:center;
+    .selected-icon{
+        color:$HEDRON_GOLD;
+
+    }
+    .not-selected-icon{
+        color:$HEDRON_GREY;
+    }
+    .fa-times{
+        color:red;
+    }
+}
+
+.img-preview-panel{
+    margin-top: $TYPE_SCALE*3em;
+    img{
+        border: $TYPE_SCALE*.5em solid $HEDRON_GOLD;
+        max-width: 95%;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .inline{
+        display:inline;
+    }
+    header img{
+            display:inline;
+            margin:0 $TYPE_SCALE*1.5em;
+            max-height:$TYPE_SCALE*12em;
+    }
+    .form-wrap{
+        float:left;
+    }
+    .img-preview-panel{
+        float:right;
+    }
+    form .form-group .form-group-inline{
+            width:24%;
+        }
+
+}
