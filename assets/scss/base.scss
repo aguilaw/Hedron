@@ -16,16 +16,25 @@ body{
     position:relative;
     background-image:url(../images/bgs/hexellence.png);
     padding-top:$TYPE_SCALE*2em;
+
+    font-size: 1.0625em;
+    line-height: 1.294117647em;
+    margin: 0 auto;
 }
 a{
     text-decoration:none;
 }
 a:visited {  color:$HEDRON_GREY; }
 a:focus { color:$HEDRON_GOLD; }
-a:hover, a:active {  color:$HEDRON_GOLD; }
+a:hover, a:active {  color:$HEDRON_ORANGE; }
+.form-group input:focus , .form-group textarea:focus{
+    background-color:$HEDRON_GREY_HEAVY_ALPHA;
+    outline:none;
+}
 /************************************************************************
 TYPOGRAPHY
 *************************************************************************/
+/*
 p{
     font-size:$P_FONT_SIZE*1em;
     line-height:($TYPE_SCALE / $P_FONT_SIZE);
@@ -38,23 +47,67 @@ h1,h2,h3,h4,h5,h6{
 
 h1{
     color:white;
-    font-family: Roboto, arial,sans-serif;
     font-size:$P_FONT_SIZE * 3em;
     line-height:($P_FONT_SIZE * 3em)/($TYPE_SCALE);
-    font-size:$P_FONT_SIZE * 2em;
-    line-height:($P_FONT_SIZE*1.5em)/($TYPE_SCALE);
 
 }
 h2{
     color:$HEDRON_GOLD;
-    font-family: Rock Salt, arial,sans-serif;
     font-size:$P_FONT_SIZE * 2em;
-    line-height:($P_FONT_SIZE * 2em)/($TYPE_SCALE*.75);
+    line-height:($P_FONT_SIZE * 2em)/($TYPE_SCALE*.5);
 }
 h3{
     font-size:($P_FONT_SIZE * $TYPE_SCALE)*1em;
     line-height:($P_FONT_SIZE * $TYPE_SCALE)/($TYPE_SCALE+$FOURTH_TYPE_SCALE)*1em
 }
+*/
+h1,h2,h3,h4,h5,h6{
+    font-weight:200;
+}
+h1 {
+  font-size: 3.352941176em;
+  line-height: 1.157894736em;
+}
+h2 {
+  font-size: 2.235294118em;
+  line-height: 1.157894736em;
+}
+h3 {
+  font-size: 1.470588235em;
+  line-height: 1.76em;
+}
+h4 {
+  font-size: 1em;
+  line-height: 1.294117647em;
+}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 1.29411765em;
+  margin-bottom: 1.29411765em;
+}
+
+/* Sanitation */
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+b, strong, em, small, code {
+  line-height: 1;
+}
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+sub {
+  top: 0.4em;
+}
+
+
+
 /**********************************************************************/
 /*TYPOGRAPHY
 
@@ -64,57 +117,124 @@ Y*******************************************************/
 .showItem {
     display: list-item;
 }
+
 .hideItem {
     display: none;
 }
+/*custom checkbox********************************************************/
+/***********************************************************************/
 .filter-section{
     color:$HEDRON_GREY;
 }
 .filter-option{
     display:inline;
+	width: 20px;
+	margin: 20px auto;
+	position: relative;
+    input[type=checkbox] {
+	visibility: hidden;
+}
+}
+.filter-option label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+    left:0;
+	border-radius: 4px;
+
+	-webkit-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	-moz-box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+	box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,.4);
+
+}
+
+.filter-option label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 9px;
+	height: 5px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid $HEDRON_ORANGE;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.filter-option label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+}
+
+.filter-option input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+/* end custom checkbox********************************************************/
+/***********************************************************************/
+.inline{
+    display:inline-block;
+}
+
+.home-grid{
+    width:100%;
 }
 .page-header{
     padding:$TYPE_SCALE*.5em 0;
     margin-bottom:$TYPE_SCALE*1em;
-    .post-bubble:before{
-        left:75%;
-    }
-    .post-bubble:after{
-        left:75%;
+    .post-bubble:before,.post-bubble:after{
+        left:70%;
     }
 }
-
+.intro-group{
+        margin-bottom:$TYPE_SCALE*1em;
+        display:block;
+}
 .portrait{
-    margin-bottom:$TYPE_SCALE*1em;
-    max-height:235px;
+    width:100%;
+
+}
+.big-letters{
+    width:333px;
 }
 .bigletters h1{
         line-height:1;
-        color:$HEDRON_GOLD;
+        color:$HEDRON_ORANGE;
     }
-.bio{
-    text-align:justify;
-}
-.map{
-    width:100%;
-}
-.hedron-head{
-    margin-top:$TYPE_SCALE*.5em;
-    height:3em;
-}
-.block {
-    position: relative;
-    width:100%;
-    margin:$TYPE_SCALE*.25em;
-    -webkit-transition: all 1s ease-in-out;
-    -moz-transition: all 1s ease-in-out;
-    -o-transition: all 1s ease-in-out;
-    -ms-transition: all 1s ease-in-out;
-    transition: all 1s ease-in-out;
-    img{
+    .bio{
+        text-align:justify;
+    }
+    .map{
         width:100%;
     }
-}
+    .hedron-head{
+        margin-top:$TYPE_SCALE*.5em;
+        height:3em;
+    }
+    .block {
+        position: relative;
+        width:100%;
+        margin:$TYPE_SCALE*.25em 0;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        -ms-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+    }
 
 .speech-bubble{
     position:relative;
@@ -124,7 +244,7 @@ Y*******************************************************/
 .speech-bubble:before{
     content:"";
     position: absolute;
-    left:20%;
+    left:4%;
     border-style:solid;
     border-width:0 0 35px 70px;
     border-color:transparent $HEDRON_GREY;
@@ -136,7 +256,7 @@ Y*******************************************************/
     content:"";
     position:absolute;
     bottom:-19px;
-    left:20%;
+    left:4%;
     border-width: 0 0 19px 16px;
     border-style:solid;
     border-color:transparent whitesmoke;
@@ -153,17 +273,62 @@ Y*******************************************************/
 }
 .static-block{
     background:$HEDRON_ORANGE;
-    h1{
+    padding:1% 0;
+    h3{
         color:$HEDRON_DARK_ORANGE;
-        list-height: 1.2em;
+        font-weight:100;
+
     }
 }
+.img-block{
+    overflow:hidden;
+    height:148px;
 
+    img{
+        width:100%;
+        -webkit-transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        -o-transition: all 300ms ease-in-out;
+        -ms-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+    }
+    figcaption {
+    	background: rgba(0,0,0,0.55);
+    	color: white;
+    	display: table;
+    	height: 100%;
+        width:100%;
+    	left: 0;
+    	opacity: 0;
+    	position: absolute;
+    	right: 0;
+    	top: 0;
+    	z-index: 100;
+    }
+    .caption-title {
+        display: table-cell;
+        vertical-align: middle;
+
+    }
+
+    .caption-tools{
+        margin:0;
+    display: table-cell;
+    font-size:1.5em;
+
+    }
+    :hover figcaption {
+	opacity: 1;
+}
+:hover img {
+width: 110%;
+}
+}
 .hide-mobile{
     display:none;
 }
 .page-container{
-    max-width:900px;
+    max-width:1200px;
     margin:0 auto;
 }
 .center{
@@ -214,9 +379,7 @@ nav{
     color:white;
     a:visited {  color:white; }
 }
-.main-nav{
-    margin-bottom:$TYPE_SCALE*1em;
-}
+
 
 .gallery-view {
     .artwork{
@@ -265,8 +428,11 @@ form{
     .input, textarea{
         width:96%;
         padding:2%;
-        background:$HEDRON_GREY;
         color:$HEDRON_ORANGE;
+        background-color:transparent;
+        border: dotted 0px $HEDRON_GREY;
+        border-bottom-width:2px;
+
     }
     .fa{
         padding:2% 0;
@@ -292,83 +458,11 @@ form{
 }
 .border{
     border:2px solid $HEDRON_GREY;
-    border-radius:2%;;
+    border-radius:2%;
 }
 .submit{
     margin:10%;
     padding:5%;
     font-weight: 300;
     background:$HEDRON_GOLD;
-}
-
-@media only screen and (min-width: 480px) {
-    .hedron-head{
-        height:5em;
-    }
-    .img-block{
-        overflow:hidden;
-    }
-    .hide-mobile{
-        display:inline;
-    }
-    .block {
-        width: 31%;
-        border-radius:$TYPE_SCALE*.25em;
-        margin:0;
-    }
-
-    h1{
-        font-size:$P_FONT_SIZE * 2em;
-        line-height:($P_FONT_SIZE * 2em)/($TYPE_SCALE);
-    }
-    s
-    li{
-        display:inline-block;
-    }
-
-    .main-nav {
-        border-bottom:1px solid $HEDRON_GREY;
-        position: relative;
-        .navbar-nav{
-            padding:0 2%;
-            border-bottom:0px ;
-            position: absolute;
-            display:inline-block;
-            bottom:0;
-            right:0;
-        }
-        .navbar-social{
-            margin:$TYPE_SCALE 0;
-        }
-        .logo-condensed{
-            display:none;
-        }
-        .logo{
-            display:inline-block;
-            float:left;
-        }
-    }
-
-    .navbar-social
-    {
-        float:left;
-    }
-
-    form{
-        margin-top:$TYPE_SCALE*5em;
-        max-width:$TYPE_SCALE*25em;
-    }
-    .portrait{
-        float:right;
-    }
-    .bigletters{
-        float:left;
-    }
-
-}
-@media only screen and (min-width: 824px) {
-    h1{
-        font-size:$P_FONT_SIZE * 3em;
-        line-height:($P_FONT_SIZE * 2.5em)/($TYPE_SCALE);
-    }
 }

@@ -1,0 +1,170 @@
+
+@media only screen and (min-width: 480px) {
+
+
+
+    .hedron-head{
+        height:5em;
+    }
+
+    .hide-mobile{
+        display:inline;
+    }
+
+
+/*    h1{
+        font-size:$P_FONT_SIZE * 2em;
+        line-height:($P_FONT_SIZE * 2em)/($TYPE_SCALE);
+    }*/
+
+
+    .main-nav {
+        border-bottom:1px solid $HEDRON_GREY;
+        position: relative;
+        .navbar-nav{
+            padding:0 2%;
+            border-bottom:0px ;
+            position: absolute;
+            display:inline-block;
+            bottom:0;
+            right:0;
+        }
+        .navbar-social{
+            margin:$TYPE_SCALE 0;
+        }
+        .logo-condensed{
+            display:none;
+        }
+        .logo{
+            display:inline-block;
+            float:left;
+        }
+    }
+
+    .navbar-social
+    {
+        float:left;
+    }
+    form{
+        margin-top:$TYPE_SCALE*5em;
+        max-width:$TYPE_SCALE*25em;
+    }
+    .portrait{
+        max-height:235px;
+        width:auto;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+    .home-widget{
+        padding-top:0px;
+    }
+
+
+    .signature{
+        width:30%;
+        display:inline-block;
+        img{
+            margin:0;
+        }
+    }
+    .hedron-bubble {
+
+        h1{
+            display:inline;
+            font-size:150%;
+        }
+        p{font-size:225%;
+            padding:0;}
+        h1 + p{
+            display:inline;
+            font-size:300%;
+        }
+    }
+    .main-bubble{
+        /*width:111%;
+        left: -67px;*/
+        border-left:rgb(254, 185, 0) 16px solid;
+        border-right:rgb(254, 185, 0) 16px solid;
+        padding:$TYPE_SCALE*1.5em 0;
+        z-index: 0;
+
+
+    }
+    .hedron-character{
+        width:285px;
+
+        padding:0;
+        z-index: 100;
+        img{
+            width:131%;
+
+            z-index: 100;
+        }
+    }
+    .home-grid{
+        position:relative;
+        margin:auto;
+        max-width:600px;
+    }
+    .home-grid .thumbnail{
+        float:left;
+        margin: $TYPE_SCALE*1em $TYPE_SCALE*.2em ;
+    }
+
+    .block {
+        width: 285px;
+        border-radius:$TYPE_SCALE*.25em;
+    }
+    .hedron-bubble{
+        width:285px;
+    }
+
+    li{
+        display:inline-block;
+    }
+
+
+    .hedron-bubble
+        h1{
+            font-size:200%;
+        }
+
+        .signature{
+            width:30%;
+        }
+}
+@media only screen and (min-width: 750px) {
+
+    .hedron-bubble h1{
+            font-size:350%;
+        }
+    .signature{
+        width:37%;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .home-grid{
+        max-width:900px;
+    }
+    .hedron-bubble{
+        width:580px;
+    }
+    /*h1{
+        font-size:$P_FONT_SIZE * 3em;
+        line-height:($P_FONT_SIZE * 2.5em)/($TYPE_SCALE);
+    }*/
+}
+@media only screen and (min-width: 1400px) {
+
+    .home-grid{
+        max-width:1200px;
+    }
+    /*h1{
+        font-size:$P_FONT_SIZE * 3em;
+        line-height:($P_FONT_SIZE * 2.5em)/($TYPE_SCALE);
+    }*/
+}

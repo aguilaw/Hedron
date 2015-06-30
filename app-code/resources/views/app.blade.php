@@ -25,7 +25,7 @@
 	@yield('quick-styles')
 </head>
 <body onload="setupBlocks()">
-	<div  class="span_9_of_9 page-container">
+	<div  class="page-container">
 		@if (!Auth::guest())
 		<nav class="span_5_of_9 navbar-admin">
 			<ul class="">
@@ -46,11 +46,11 @@
 		<nav class="navbar span_9_of_9 group main-nav">
 			<a class="navbar-brand" href="/">
 				<img class="logo-condensed span_3_of_9" src= {{ asset('images/brand/bunny_vector.svg') }}>
-				<img class="logo span_2_of_9" src= {{ asset('images/brand/logo_noface_dark.png') }}>
+				<img class="logo span_1_of_9" src= {{ asset('images/brand/logo_noface_dark.png') }}>
 
 			</a>
 
-			<ul class="navbar-nav span_4_of_9">
+			<ul class="navbar-nav underline span_4_of_9">
 				<li class="span_1_of_4"><a href="{{ url('/') }}">Home</a></li>
 				<li class="span_1_of_4"><a href="{{ url('/work') }}">Work</a></li>
 				<li class="span_1_of_4"><a href="{{ url('/about') }}">About</a></li>
@@ -58,11 +58,24 @@
 				<li class="span_1_of_4"><a href="{{ url('/contact') }}">Contact</a></li>
 			</ul>
 			<!--<ul class="navbar-social">
+
+
 				<li><a><i class="fa  fa-tumblr"></i></a></li>
 				<li><a><i class="fa   fa-facebook-square"></i></a></li>
 				<li><a><i class="fa  fa-youtube"></i></a></li>
 			</ul> -->
 		</nav>
+		@section('header')
+		<header class="page-header span_9_of_9 underline">
+			<div class="span_5_of_9 center">
+				<div class="speech-bubble post-bubble ">
+					@yield('header-mssg')
+
+				</div>
+				<span><img class="hedron-head" src="{{ asset('images/brand/hedron_head_small.png') }}" alt="Hedron" ></span>
+			</div>
+		</header>
+		@show
 			@yield('content')
 	</div>
 	<!-- Scripts -->

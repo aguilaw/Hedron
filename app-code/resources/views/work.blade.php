@@ -1,29 +1,28 @@
 @extends('app')
-
+@section('header-mssg')
+<p class="speech">Welcome to the gallery.</p>
+@endsection
 @section('content')
-<header class="page-header span_9_of_9 underline">
-	<div class="span_5_of_9 center">
-		<div class="speech-bubble post-bubble ">
-			<p class="speech">Welcome to the gallery.</p><p class="speech"> Here you can flip through some of my work. </p>
-		</div>
-		<span><img class="hedron-head" src="{{ asset('images/brand/hedron_head_small.png') }}" alt="Hedron" ></span>
-	</div>
-</header>
+
+
+
 <section>
 	<ul class="filter-section">
-		<label><strong>Show:</strong></label>
+		<label><strong>Show: </strong></label>
 	    <li class="filter-option">
-	        <input checked="true" type="checkbox" value="illustration"/>
-	        <label>Illustration</label>
+	        <input id="illustration" name="illustration" checked="true" type="checkbox" value="illustration"/>
+	        <label for="illustration"></label>
+			<span>Illustration</span>
 	    </li>
 	    <li class="filter-option">
-
-	        <input checked="true" type="checkbox" value="painting"/>
-	        <label>Painting</label>
+	        <input id="painting" name="painting" checked="true" type="checkbox" value="painting"/>
+	        <label for="painting"></label>
+			<span>Painting</span>
 	    </li>
 	    <li class="filter-option">
-	        <input checked="true" type="checkbox" value="project"/>
-	        <label>Projects</label>
+	        <input id="project" name="project" checked="true" type="checkbox" value="project"/>
+	        <label for="project"></label>
+			<span>Project</span>
 	    </li>
 	</ul>
 </section>
@@ -41,12 +40,19 @@
 					@if (isset($toShow))
 						{{($toShow->slug == $thumbnail->slug)? "class=display-on-load":""}}
 					@endif>
-					<img class="stretch-image"
-					srcset="{{ asset('images/gallery/thumb/'.'425x170_'. $thumbnail->file_name) }} 425w,
-							{{ asset('images/gallery/thumb/'.'292x_'. $thumbnail->file_name) }} 292w"
-					sizes="(min-width: 30em) 9em, 35em"
-					src="{{ asset('images/gallery/thumb/'.'292x_'. $thumbnail->file_name) }}"
-					alt="{{ $thumbnail->title}}">
+					<figure>
+						<img class="stretch-image"
+						srcset="{{ asset('images/gallery/thumb/'.'425x170_'. $thumbnail->file_name) }} 425w,
+								{{ asset('images/gallery/thumb/'.'292x_'. $thumbnail->file_name) }} 292w"
+						sizes="(min-width: 30em) 9em, 35em"
+						src="{{ asset('images/gallery/thumb/'.'292x_'. $thumbnail->file_name) }}"
+						alt="{{ $thumbnail->title}}">
+						<figcaption>
+							<h2 class="caption-title">{{$thumbnail->title}}</h2>
+							<p class="caption-tools">{{$thumbnail->tools}}</p>
+
+						</figcaption>
+					</figure>
 				</a>
 			</li>
 			@endif

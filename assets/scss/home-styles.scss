@@ -1,10 +1,12 @@
-
-.public-header{
-    position: relative;
-    margin-bottom:$TYPE_SCALE*1em;
-    padding-left:50%;
-    padding-right:1%;
+.home-widget{
+    padding-top:530px;
+}
+.hedron-bubble{
+    position:absolute;
+    right:0;
+    top:120px;
     color:white;
+    width:62%;
 
     p{
         padding-left:32%;
@@ -16,10 +18,8 @@
         font-family:roboto, arial, sans serif;
         font-weight:300;
     }
-    h3{
-    }
-
 }
+
 .signature{
     display:inline-block;
     width:70%;
@@ -33,12 +33,14 @@
 .main-bubble{
     background:$HEDRON_GREY;
     border-radius:7%;
-    text-align:right;
-    border-left:rgb(254, 185, 0) 8px solid;
-    border-right:rgb(254, 185, 0) 8px solid;
+    border-width:0px;
 }
 .main-bubble:before{
     border-color:transparent $HEDRON_GREY;
+    left:72%;
+}
+.main-bubble:after{
+    left:72%;
 }
 .post-bubble{
     position:relative;
@@ -70,88 +72,16 @@
 
 }
 .hedron-character{
-    position:relative;
+    position:absolute;
+    top:300px;
     background:transparent;
-    margin-top:-27%;
+    width:70%;
     img{
-        width:60%;
-        float:left
+        width:100%;
     }
 }
-.home-grid h3{
-    line-height:$TYPE_SCALE*5em
-}
+
 .static-link{
     height:$TYPE_SCALE*7em;
     background:$HEDRON_ORANGE;
-}
-
-@media only screen and (min-width: 480px) {
-    .signature{
-        width:30%;
-        display:inline-block;
-        img{
-            margin:0;
-        }
-    }
-    .public-header {
-        padding-left:32%;
-        h1{
-            display:inline;
-            font-size:150%;
-        }
-        p{font-size:225%;
-            padding:0;}
-        h1 + p{
-            display:inline;
-            font-size:300%;
-        }
-    }
-    .main-bubble{
-        padding:$TYPE_SCALE*1.5em 0;
-        text-align:center;
-        z-index: 0;
-
-
-    }
-    .post-bubble:before{
-    }
-    .post-bubble:after{
-    }
-    .speech-bubble:before{
-
-    }
-    .speech-bubble:after{
-
-    }
-    .hedron-character{
-        float:left;
-        margin-top:-22%;
-        padding:0;
-        z-index: 10;
-        img{
-            width:125%;
-            float:none;
-        }
-    }
-    .home-grid{
-        position:relative;
-    }
-    .home-grid .thumbnail{
-        float:left;
-        margin: $TYPE_SCALE*1em $TYPE_SCALE*.2em ;
-    }
-}
-@media only screen and (min-width: 600px) {
-    .public-header h1{
-            font-size:200%;
-        }
-}
-@media only screen and (min-width: 750px) {
-    .public-header h1{
-            font-size:250%;
-        }
-    .signature{
-        width:30%;
-    }
 }

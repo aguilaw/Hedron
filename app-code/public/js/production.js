@@ -297,8 +297,6 @@ var margin = 10;
 var windowWidth = 0;
 var blocks = [];
 var mobile = 480;
-var addOrRemoveMobile=0;
-var addOrRemoveDynamic=0;
 
 
 $(function(){
@@ -328,16 +326,24 @@ function setupBlocks() {
 
 function positionBlocks() {
     $('.block').each(function(){
-        $(this).toggleClass( "dynamic-block", addOrRemoveDynamic );
+		$(this).css({
+			'height':'auto'
+        });
         var min = Array.min(blocks);
         var index = $.inArray(min, blocks);
         var leftPos = margin+(index*(colWidth+margin));
+		var max_height = $(this).outerHeight();
         $(this).css({
             'left':leftPos+'px',
             'top':min+'px',
-            'position':'absolute'
+            'position':'absolute',
+			'height':max_height
         });
-        blocks[index] = min+$(this).outerHeight()+margin+parseInt($(this).css("margin-top"))+parseInt($(this).css("margin-bottom"));
+        blocks[index] = min+max_height+margin+parseInt($(this).css("margin-top"))+parseInt($(this).css("margin-bottom"));
+
+		if($(this).outerWidth()>colWidth){
+			blocks[index+1] = min+max_height+margin+parseInt($(this).css("margin-top"))+parseInt($(this).css("margin-bottom"));
+		}
     });
 }
 
@@ -784,6 +790,7 @@ Array.min = function(array) {
   });
 
 }).call(this);
+
 
 // get all of our list items
 var itemsToFilter = document.querySelectorAll("#items-to-filter li");

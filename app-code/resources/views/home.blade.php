@@ -1,38 +1,49 @@
 @extends('app')
+@section('header')
+@overwrite
 
 @section('content')
 <div class="span_9_of_9 group">
-	<header class="public-header">
-	<div class="speech-bubble main-bubble ">
-		<h1>Greetings!</h1>
-		<h1> I am </h1>
-		<span class="signature"><img src="{{ asset('images/brand/Hedron_Signiture_Vector.png') }}" alt="Hedron" ></span>
-		<span class="hide-mobile">
-		<h3 > A web developer with artistry</h3></span>
-	</div>
-	</header>
 
 	<section class="home-widget span_9_of_9">
 	<ul class="home-grid">
 		<li class=" block  group hedron-character">
 			<img src="{{ asset('images/brand/Hedron_Character.png') }}" alt="Its me HEDRON!" >
 		</li>
+		<li class=" block  group hedron-bubble">
+			<div class="speech-bubble main-bubble ">
+				<h1>I am </h1>
+				<span class="signature"><img src="{{ asset('images/brand/Hedron_Signiture_Vector.png') }}" alt="Hedron" ></span>
+				<span class="hide-mobile">
+				<h3>A web developer with artistry </h3></span>
+			</div>
+		</li>
 		<li class=" static-block block">
-			<h1>CODE</h1>
+			<h3>CODE</h3>
 		</li>
 		<li class=" static-block block ">
-			<h1>DESIGN</h1>
+			<h3>DESIGN</h3>
+		</li>
+		<li class=" static-block block ">
+			<h3>ART</h3>
 		</li>
 		@foreach( $items as $item )
 			@if($item->file_name != null)
 				<li class="block img-block">
 				<a class="home-item" href="{{ route('works_path',$item->slug) }}">
+				<figure>
 					<img class="stretch-image"
 					srcset="{{ asset('images/gallery/thumb/'.'425x170_'. $item->file_name) }} 425w,
 							{{ asset('images/gallery/thumb/'.'292x_'. $item->file_name) }} 292w"
 					sizes="(min-width: 30em) 9em, 35em"
 					src="{{ asset('images/gallery/thumb/'.'292x_'. $item->file_name) }}"
 					alt="{{ $item->title}}">
+					<figcaption>
+						<h2 class="caption-title">{{$item->title}}</h2>
+						<p class="caption-tools">{{$item->tools}}</p>
+
+					</figcaption>
+				</figure>
 				</a>
 			@else
 				<li class="block bubble-margin">
