@@ -1,8 +1,19 @@
 
 @media only screen and (min-width: 480px) {
+    .hedron-character{
+        right:6%;
 
-
-
+    }
+    .signature{
+        width:60%;
+        top:14%;
+        left:8%;
+    }
+    .tagline{
+        bottom:-15%;
+    font-size:$TYPE_SCALE*.5em;
+    left:11%;
+}
     .hedron-head{
         height:5em;
     }
@@ -57,19 +68,10 @@
 }
 
 @media only screen and (min-width: 600px) {
-
-    .home-widget{
-        padding-top:0px;
+    .hero{
+        height:650px;
     }
 
-
-    .signature{
-        width:30%;
-        display:inline-block;
-        img{
-            margin:0;
-        }
-    }
     .hedron-bubble {
 
         h1{
@@ -94,14 +96,8 @@
 
     }
     .hedron-character{
-        width:285px;
-
-        padding:0;
-        z-index: 100;
         img{
-            width:131%;
 
-            z-index: 100;
         }
     }
     .home-grid{
@@ -133,20 +129,37 @@
         }
 
         .signature{
-            width:30%;
         }
 }
 @media only screen and (min-width: 750px) {
-
+    .signature{
+        width:64%;
+    }
     .hedron-bubble h1{
             font-size:350%;
         }
     .signature{
-        width:37%;
     }
 }
 
 @media only screen and (min-width: 900px) {
+    /*.hedron-character{
+        right:10%;
+
+    }
+    .signature{
+        width:56%;
+        top:15%;
+        img{
+
+        }
+    }
+    .tagline{
+        bottom:-10%;
+    font-size:$TYPE_SCALE*1em;
+    left:0;
+    right:0;
+}*/
     .home-grid{
         max-width:900px;
     }

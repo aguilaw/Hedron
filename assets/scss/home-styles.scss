@@ -1,5 +1,4 @@
 .home-widget{
-    padding-top:530px;
 }
 .hedron-bubble{
     position:absolute;
@@ -19,13 +18,35 @@
         font-weight:300;
     }
 }
+.hedron-character{
+    background:transparent;
+    position:absolute;
+    display:inline-block;
+    right:-9%;
+    top:5%;
+    height:90%;
+    z-index:20;
+    img{
+        max-height:100%;
+    }
+}
 
 .signature{
     display:inline-block;
-    width:70%;
+    position:absolute;
+    left:4%;
+    top:14%;
+    margin:auto;
+    width:67%;
     img{
-        max-width:100%;
+        width:100%;
     }
+}
+.tagline{
+    position:absolute;
+    bottom:-15%;
+    font-size:$TYPE_SCALE*.3em;
+    left:5%;
 }
 .bubble-margin{
     margin-bottom:20px;
@@ -71,15 +92,7 @@
     bottom:-15px;
 
 }
-.hedron-character{
-    position:absolute;
-    top:300px;
-    background:transparent;
-    width:70%;
-    img{
-        width:100%;
-    }
-}
+
 
 .static-link{
     height:$TYPE_SCALE*7em;

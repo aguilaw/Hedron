@@ -296,7 +296,7 @@ var colWidth = 0;
 var margin = 10;
 var windowWidth = 0;
 var blocks = [];
-var mobile = 480;
+var mobile = 600;
 
 
 $(function(){

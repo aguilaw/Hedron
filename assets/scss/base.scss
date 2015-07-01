@@ -114,6 +114,19 @@ sub {
 Y*******************************************************/
 
 /**********************************************************/
+.hero{
+    height:455px;
+    position:relative;
+    border-bottom:1px $HEDRON_GREY solid;
+    overflow:hidden;
+
+}
+.hero-group{
+    position:relative;
+    height:100%;
+    max-width:750px;
+    margin:auto;
+}
 .showItem {
     display: list-item;
 }
@@ -345,13 +358,13 @@ header .post-bubble:before{
 }
 
 nav{
-    margin:0 auto;
+    margin:$TYPE_SCALE*1em auto;
     li{
         display: inline-block;
     }
     .logo-condensed{
         display:block;
-        margin-top:$TYPE_SCALE*3em;
+        margin-top:$TYPE_SCALE*1em;
         max-height:$TYPE_SCALE * 5em;
     }
     .logo{

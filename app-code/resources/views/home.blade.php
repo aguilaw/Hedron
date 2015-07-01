@@ -3,30 +3,29 @@
 @overwrite
 
 @section('content')
-<div class="span_9_of_9 group">
-
-	<section class="home-widget span_9_of_9">
-	<ul class="home-grid">
-		<li class=" block  group hedron-character">
-			<img src="{{ asset('images/brand/Hedron_Character.png') }}" alt="Its me HEDRON!" >
-		</li>
-		<li class=" block  group hedron-bubble">
+	<section class="hero">
+		<div class="hero-group">
+		<div class=" group hedron-character">
+			<img src="{{ asset('images/brand/hedron_girlteen.png') }}" alt="Its me HEDRON!" >
+		</div>
+		<span class="signature"><img src="{{ asset('images/brand/Hedron_Signiture_Vector.png') }}" alt="Hedron" >
+			<div class="tagline">
+				<h3>CODE &nbsp&#8226&nbsp DESIGN &nbsp&#8226&nbsp ART</h3>
+			</div>
+		</span>
+		<!-- <div class="group hedron-bubble">
 			<div class="speech-bubble main-bubble ">
 				<h1>I am </h1>
 				<span class="signature"><img src="{{ asset('images/brand/Hedron_Signiture_Vector.png') }}" alt="Hedron" ></span>
 				<span class="hide-mobile">
 				<h3>A web developer with artistry </h3></span>
 			</div>
-		</li>
-		<li class=" static-block block">
-			<h3>CODE</h3>
-		</li>
-		<li class=" static-block block ">
-			<h3>DESIGN</h3>
-		</li>
-		<li class=" static-block block ">
-			<h3>ART</h3>
-		</li>
+		</div>
+	-->
+	</div>
+	</section>
+	<section class="home-widget span_9_of_9">
+	<ul class="home-grid">
 		@foreach( $items as $item )
 			@if($item->file_name != null)
 				<li class="block img-block">
@@ -62,5 +61,4 @@
 			</li>
 	</ul>
 	<section>
-</div>
 @endsection
