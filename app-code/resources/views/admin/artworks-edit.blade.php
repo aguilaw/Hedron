@@ -1,14 +1,13 @@
 @extends('app')
-
+@section('header-mssg')
+<h2 class="speech">Edit <span class="mini">{{ $artwork->title }}</span></h2>
+@endsection
 @section('content')
-    <header class="admin-header">
-        <h1 class="inline">Edit <span class="mini">{{ $artwork->title }}</span></h1>
-        <img class="artwork-preview" src= {{ asset('images/gallery/'.$artwork->file_name) }}>
-    </header>
+     <a class="btn btn-submit" href={{ route('createArtwork_path') }}><i class="fa  fa-plus not-selected-icon"></i>Create</a>
 
     <section class=" form-wrap span_5_of_8 ">
     {!! Form::model($artwork, ['route' => ['artworkEdit_path', $artwork->slug], 'method'=>'PATCH','files'=>true])!!}
-        @include('artworks._form');
+        @include('artworks._form')
     {!! Form::close() !!}
     </section>
     <section class="img-preview-panel span_3_of_8">

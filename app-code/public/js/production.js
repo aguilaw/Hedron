@@ -297,7 +297,8 @@ var margin = 10;
 var windowWidth = 0;
 var blocks = [];
 var mobile = 600;
-
+var tallestColHeight=0;
+var HOMEGRID=$('.home-grid');
 
 $(function(){
 	$(window).resize(setupBlocks);
@@ -306,7 +307,7 @@ $(function(){
 
 function setupBlocks() {
 
-    windowWidth = $('.home-grid').outerWidth();
+    windowWidth = HOMEGRID.outerWidth();
 
         if(windowWidth < mobile){
             $('.block').each(function(){
@@ -339,7 +340,12 @@ function positionBlocks() {
             'position':'absolute',
 			'height':max_height
         });
-        blocks[index] = min+max_height+margin+parseInt($(this).css("margin-top"))+parseInt($(this).css("margin-bottom"));
+		var newColHeight=min+max_height+margin+parseInt($(this).css("margin-top"))+parseInt($(this).css("margin-bottom"));
+		if(newColHeight > tallestColHeight){
+			tallestColHeight=newColHeight;
+			HOMEGRID.css({'height':tallestColHeight+'px'});
+		}
+        blocks[index] = newColHeight ;
 
 		if($(this).outerWidth()>colWidth){
 			blocks[index+1] = min+max_height+margin+parseInt($(this).css("margin-top"))+parseInt($(this).css("margin-bottom"));

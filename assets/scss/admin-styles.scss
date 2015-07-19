@@ -12,9 +12,7 @@
 .quick-info{
     width:100%;
 }
-.underline{
-    border-bottom:1px solid $HEDRON_GREY;
-}
+
 /*EDIT/ CREATE AREAS**************************************/
 .admin-header{
     position: relative;
@@ -48,11 +46,15 @@
 .border-right{
     display:inline-block;
     padding-right:$TYPE_SCALE*1em;
-    border-right:1px solid $HEDRON_GREY;
+    border-right:1px solid white;
 }
 .quick-info{
     padding:1% 2%;
     text-align:center;
+    p{
+        margin-top:0;
+        border-top:1px solid rgb(113, 113, 113);
+    }
     .selected-icon{
         color:$HEDRON_GOLD;
 

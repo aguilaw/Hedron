@@ -26,58 +26,26 @@
 </head>
 <body onload="setupBlocks()">
 	<div  class="page-container">
-		@if (!Auth::guest())
-		<nav class="span_5_of_9 navbar-admin">
-			<ul class="">
-			<!-- <li><a href="{{ url('/auth/login') }}">Login</a></li> -->
-			<li class="span_1_of_5"><a href="{{ url('/admin/artworks') }}">Artworks</a></li>
-			<li class="span_1_of_5"><a href="{{ url('/admin/posts') }}">Posts</a></li>
-			<li class="span_1_of_5"><a href="{{ url('/admin/users') }}">Users</a></li>
-			<li class="span_1_of_5 dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-				<ul class="dropdown-menu" role="menu">
-					<li><a href={{ route('getlogout_path') }}>Logout</a></li>
-				</ul>
-			</li>
-			</ul>
-		</nav>
-		@endif
-
-		<nav class="navbar span_9_of_9 group main-nav">
-			<a class="navbar-brand" href="/">
-				<img class="logo-condensed span_3_of_9" src= {{ asset('images/brand/bunny_vector.svg') }}>
-				<img class="logo span_1_of_9" src= {{ asset('images/brand/logo_noface_dark.png') }}>
-
-			</a>
-
-			<ul class="navbar-nav underline span_4_of_9">
-				<li class="span_1_of_4"><a href="{{ url('/') }}">Home</a></li>
-				<li class="span_1_of_4"><a href="{{ url('/work') }}">Work</a></li>
-				<li class="span_1_of_4"><a href="{{ url('/about') }}">About</a></li>
-
-				<li class="span_1_of_4"><a href="{{ url('/contact') }}">Contact</a></li>
-			</ul>
-			<!--<ul class="navbar-social">
-
-
-				<li><a><i class="fa  fa-tumblr"></i></a></li>
-				<li><a><i class="fa   fa-facebook-square"></i></a></li>
-				<li><a><i class="fa  fa-youtube"></i></a></li>
-			</ul> -->
-		</nav>
+		@section('navs')
+			@include('navs')
+		@show
 		@section('header')
-		<header class="page-header span_9_of_9 underline">
+		<header class="page-header span_9_of_9">
 			<div class="span_5_of_9 center">
 				<div class="speech-bubble post-bubble ">
 					@yield('header-mssg')
 
 				</div>
-				<span><img class="hedron-head" src="{{ asset('images/brand/hedron_head_small.png') }}" alt="Hedron" ></span>
 			</div>
 		</header>
 		@show
-			@yield('content')
+		@yield('content')
+		{{-- ONLY DISPLAY THE FOOTER IF NOT AND ADMINISTRATOR--}}
+		@if (Auth::guest())
+			@include('footer')
+		@endif
 	</div>
+
 	<!-- Scripts -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src={{ asset('/js/production.min.js') }}></script>

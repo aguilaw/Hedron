@@ -4,7 +4,6 @@
     position:absolute;
     right:0;
     top:120px;
-    color:white;
     width:62%;
 
     p{
@@ -22,9 +21,9 @@
     background:transparent;
     position:absolute;
     display:inline-block;
-    right:-9%;
+    right:-4%;
     top:5%;
-    height:90%;
+    height:57%;
     z-index:20;
     img{
         max-height:100%;
@@ -41,6 +40,17 @@
     img{
         width:100%;
     }
+}
+.home-code{
+    width:98%;
+    max-width:1842px;
+    position:absolute;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    margin:auto;
+
 }
 .tagline{
     position:absolute;
@@ -67,12 +77,11 @@
     position:relative;
     width:100%;
     overflow: visible;
-    background:$HEDRON_GREY;
+    background:$HEDRON_GREY_LIGHT;
     margin-top:$TYPE_SCALE*.125em;
-    color:white;
+
     .underline{
         text-align:left;
-        color:white;
         font-size:$TYPE_SCALE*1em;
         margin:$TYPE_SCALE*.25em;
         border-color:white;

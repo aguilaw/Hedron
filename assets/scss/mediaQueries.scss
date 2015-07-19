@@ -1,8 +1,12 @@
 
 @media only screen and (min-width: 480px) {
+    h1 {
+      font-size: 3.352941176em;
+      line-height: 1.157894736em;
+    }
+
     .hedron-character{
         right:6%;
-
     }
     .signature{
         width:60%;
@@ -14,9 +18,6 @@
     font-size:$TYPE_SCALE*.5em;
     left:11%;
 }
-    .hedron-head{
-        height:5em;
-    }
 
     .hide-mobile{
         display:inline;
@@ -30,48 +31,80 @@
 
 
     .main-nav {
-        border-bottom:1px solid $HEDRON_GREY;
         position: relative;
         .navbar-nav{
-            padding:0 2%;
-            border-bottom:0px ;
-            position: absolute;
-            display:inline-block;
-            bottom:0;
-            right:0;
+            padding:0 1%;
+            width:100%;
         }
         .navbar-social{
-            margin:$TYPE_SCALE 0;
-        }
-        .logo-condensed{
-            display:none;
-        }
-        .logo{
-            display:inline-block;
-            float:left;
-        }
-    }
 
-    .navbar-social
-    {
-        float:left;
+        }
+
     }
     form{
         margin-top:$TYPE_SCALE*5em;
         max-width:$TYPE_SCALE*25em;
     }
     .portrait{
-        max-height:235px;
+        max-height:292px;
         width:auto;
+
     }
 
 }
 
 @media only screen and (min-width: 600px) {
-    .hero{
-        height:650px;
-    }
+    .main-nav{
+        .navbar-nav{
+            position: absolute;
+            display:inline-block;
+            left:0;
+            bottom:-36px;
+            width:auto;
+            width:45%;
+        }
+        .navbar-social{
+            position: absolute;
+            display:inline-block;
+            right:0;
+            bottom:-36px;
+            width:45%;
+            border-bottom-width:1px;
 
+        }
+    }
+    .home-code{
+        width:70%;
+    }
+    .filler-band{
+        height:200px;
+    }
+    .insta{
+        position:absolute;
+        top:40px;
+        :hover{
+            color:white;
+        }
+    }
+    .intro{
+        img{
+            width:auto;
+        }
+    }
+    .bio{
+        width:60%;
+    }
+    .home-code{
+        width:70%;
+        max-width:1842px;
+        position:absolute;
+        bottom:0;
+        top:0;
+        left:0;
+        right:0;
+        margin:auto;
+
+    }
     .hedron-bubble {
 
         h1{
@@ -96,8 +129,12 @@
 
     }
     .hedron-character{
+        right:6%;
+        top:2%;
+        height:95%;
+        z-index:20;
         img{
-
+            max-height:100%;
         }
     }
     .home-grid{
@@ -132,13 +169,18 @@
         }
 }
 @media only screen and (min-width: 750px) {
+
     .signature{
         width:64%;
     }
     .hedron-bubble h1{
             font-size:350%;
         }
-    .signature{
+    .main-nav{
+        .navbar-nav, .navbar-social{
+
+            bottom:0;
+        }
     }
 }
 

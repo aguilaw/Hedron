@@ -20,7 +20,7 @@ class ArtworksController extends Controller {
        public function index()
        {
 
-           $artworks= Artwork::all();
+           $artworks= Artwork::orderBy('title','DESC')->get();
            return view('admin.artworks',compact('artworks'));
        }
  /***************************************************************/

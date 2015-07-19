@@ -1,14 +1,15 @@
 <div class="quick-info">
 @if (isset($artwork))
-<span class="border-right"><i class="fa fa-4x fa-diamond @if( $artwork->featured ==1) selected-icon @else not-selected-icon @endif "></i></span>
+<span class="border-right"><i class="fa fa-4x fa-diamond @if( $artwork->featured == 1) selected-icon @else not-selected-icon @endif "></i></span>
 <a  href={{ route('deleteArtwork_path',[$artwork->slug]) }} ><i class="fa  fa-2x fa-times"></i></a>
 @else
 <i class="fa fa-4x fa-diamond not-selected-icon"></i>
 @endif
 </div>
 <div class="form-group ">
-    {!! Form::label('featured',null) !!}
-    {!! Form::checkbox('featured','1') !!}
+    {!! Form::label('featured','featured?',null) !!}
+    {!! Form::radio('featured','1',null) !!}yes
+    {!! Form::radio('featured','0',null) !!}no
 </div>
 <div class="form-group underline">
     {!! Form::file('file_upload',['class' =>'span_3_of_4 file-upload']) !!}

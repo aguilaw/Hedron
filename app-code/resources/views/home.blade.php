@@ -2,8 +2,12 @@
 @section('header')
 @overwrite
 
+@section('navs')
+@overwrite
+
 @section('content')
 	<section class="hero">
+		@include('navs')
 		<div class="hero-group">
 		<div class=" group hedron-character">
 			<img src="{{ asset('images/brand/hedron_girlteen.png') }}" alt="Its me HEDRON!" >
@@ -24,7 +28,12 @@
 	-->
 	</div>
 	</section>
+	<section class="filler-band">
+		<img  class="home-code" src="{{ asset('images/brand/home-code-2.png') }}" alt="Hedron" >
+	</section>
+
 	<section class="home-widget span_9_of_9">
+		<h2 >Featured</h2>
 	<ul class="home-grid">
 		@foreach( $items as $item )
 			@if($item->file_name != null)
@@ -60,5 +69,5 @@
 				<img src="{{ asset('images/brand/hedron-runs-large.gif') }}" alt="Its me HEDRON!" >
 			</li>
 	</ul>
-	<section>
+</section>
 @endsection

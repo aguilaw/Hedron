@@ -14,21 +14,24 @@ body{
     box-sizing: border-box;
     text-align: center;
     position:relative;
-    background-image:url(../images/bgs/hexellence.png);
-    padding-top:$TYPE_SCALE*2em;
+    background-image:url(../images/bgs/use_your_illusion.png);
+    background-attachment:fixed;
+//    background-color:$HEDRON_GREY;
+
 
     font-size: 1.0625em;
     line-height: 1.294117647em;
     margin: 0 auto;
+    color:white;
 }
 a{
     text-decoration:none;
 }
-a:visited {  color:$HEDRON_GREY; }
+a:visited {  color:white; }
 a:focus { color:$HEDRON_GOLD; }
 a:hover, a:active {  color:$HEDRON_ORANGE; }
 .form-group input:focus , .form-group textarea:focus{
-    background-color:$HEDRON_GREY_HEAVY_ALPHA;
+    background-color:$HEDRON_GREY_LIGHT;
     outline:none;
 }
 /************************************************************************
@@ -65,8 +68,8 @@ h1,h2,h3,h4,h5,h6{
     font-weight:200;
 }
 h1 {
-  font-size: 3.352941176em;
-  line-height: 1.157894736em;
+    font-size: 2.235294118em;
+    line-height: 1.157894736em;
 }
 h2 {
   font-size: 2.235294118em;
@@ -106,24 +109,108 @@ sub {
   top: 0.4em;
 }
 
+footer{
+    background-color:$HEDRON_GREY_DARK;
+    padding:$TYPE_SCALE*2em $TYPE_SCALE*1em;
+    position: relative;
+    .hashtag{
+    }
+    .footer-social{
+        padding:20px;
+        border-radius:20px;
+        margin:$TYPE_SCALE*.5em;
+        background-color:$HEDRON_ORANGE;
+    }
+    .footer-links{
+        position: absolute;
+        bottom:0;
 
+    }
+    .insta-fa{
+        position:absolute;
+        width:30%;
+        top:-16px;
+        left:0;
+        padding:5px;
+        background-color:$HEDRON_GOLD;
+        :hover{
+            color:white;
+        }
+    }
+    .insta{
+        position: relative;
+        top:53px;
+        height:270px;
+        width:240px;
+    background-color:$HEDRON_GOLD;
+        margin:auto;
+    }
 
+}
+section{
+    padding:$TYPE_SCALE*1em 0;
+
+    }
 /**********************************************************************/
 /*TYPOGRAPHY
 
 Y*******************************************************/
 
 /**********************************************************/
+.underline{
+    border-bottom:1px solid white;
+}
+.gold-text{
+    color:$HEDRON_GOLD;
+}
 .hero{
-    height:455px;
+    height:750px;
     position:relative;
     border-bottom:1px $HEDRON_GREY solid;
     overflow:hidden;
+    background-image:url(../images/bgs/bg.jpg);
+    background-size:cover;
+    background-attachment:fixed;
 
+
+}
+
+.hero:before{
+    background:url(../images/bgs/stripe.png);
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    height:100%;
+    display:block;
+    opacity:.04;
+}
+.centered-text{
+    display:table-cell;
+    vertical-align:middle;
+
+
+}
+
+.paralax, .filler-band{
+    height:200px;
+    width: 100%;
+    position:relative;
+    display:table;
+    background-color:$HEDRON_GOLD;
+}
+
+.paralax{
+    height:100px;
+    background-size:cover;
+    background-attachment:fixed;
+    margin:$TYPE_SCALE*1em 0;
 }
 .hero-group{
     position:relative;
-    height:100%;
+    height:80%;
     max-width:750px;
     margin:auto;
 }
@@ -137,7 +224,7 @@ Y*******************************************************/
 /*custom checkbox********************************************************/
 /***********************************************************************/
 .filter-section{
-    color:$HEDRON_GREY;
+    margin:0
 }
 .filter-option{
     display:inline;
@@ -202,6 +289,12 @@ Y*******************************************************/
 .inline{
     display:inline-block;
 }
+.home-widget{
+    padding:2em 0;
+ h2{
+
+}
+}
 
 .home-grid{
     width:100%;
@@ -209,9 +302,7 @@ Y*******************************************************/
 .page-header{
     padding:$TYPE_SCALE*.5em 0;
     margin-bottom:$TYPE_SCALE*1em;
-    .post-bubble:before,.post-bubble:after{
-        left:70%;
-    }
+
 }
 .intro-group{
         margin-bottom:$TYPE_SCALE*1em;
@@ -221,18 +312,40 @@ Y*******************************************************/
     width:100%;
 
 }
+.intro{
+    .bigletters{
+        display:inline-block;
+        margin:$TYPE_SCALE*1em $TYPE_SCALE*1.5em;
+
+        h1{
+            padding:0 $TYPE_SCALE*.25em;
+        }
+    }
+    .bigletters-right{
+        border-left:1px solid $HEDRON_GOLD;
+        text-align:left;
+
+    }
+    .bigletters-left{
+        vertical-align:top;
+        border-right:1px solid $HEDRON_GOLD;
+        text-align:right;
+    }
+    img{
+        display:inline-block;
+        width:80%;
+    }
+}
+
 .big-letters{
     width:333px;
 }
-.bigletters h1{
-        line-height:1;
-        color:$HEDRON_ORANGE;
-    }
     .bio{
         text-align:justify;
-    }
-    .map{
-        width:100%;
+        width:95%;
+        margin:auto;
+        font-size:150%;
+        line-height:1.4;
     }
     .hedron-head{
         margin-top:$TYPE_SCALE*.5em;
@@ -260,7 +373,7 @@ Y*******************************************************/
     left:4%;
     border-style:solid;
     border-width:0 0 35px 70px;
-    border-color:transparent $HEDRON_GREY;
+    border-color:transparent $HEDRON_GREY_LIGHT;
     display:block;
     bottom:-23px;
     width:0;
@@ -272,7 +385,7 @@ Y*******************************************************/
     left:4%;
     border-width: 0 0 19px 16px;
     border-style:solid;
-    border-color:transparent whitesmoke;
+    border-color:transparent $HEDRON_GREY;
     display:block;
     width:0;
 }
@@ -288,7 +401,6 @@ Y*******************************************************/
     background:$HEDRON_ORANGE;
     padding:1% 0;
     h3{
-        color:$HEDRON_DARK_ORANGE;
         font-weight:100;
 
     }
@@ -307,7 +419,6 @@ Y*******************************************************/
     }
     figcaption {
     	background: rgba(0,0,0,0.55);
-    	color: white;
     	display: table;
     	height: 100%;
         width:100%;
@@ -317,6 +428,7 @@ Y*******************************************************/
     	right: 0;
     	top: 0;
     	z-index: 100;
+        color:white;
     }
     .caption-title {
         display: table-cell;
@@ -325,7 +437,7 @@ Y*******************************************************/
     }
 
     .caption-tools{
-        margin:0;
+    margin:0;
     display: table-cell;
     font-size:1.5em;
 
@@ -341,7 +453,7 @@ width: 110%;
     display:none;
 }
 .page-container{
-    max-width:1200px;
+    max-width:1900px;
     margin:0 auto;
 }
 .center{
@@ -354,31 +466,45 @@ header .post-bubble{
     color:$HEDRON_GREY;
 }
 header .post-bubble:before{
+    border-width:14px 38px 3px 0;
+    left:37%;
+    bottom:94%;
     border-color:transparent $HEDRON_GOLD;
 }
 
+header .post-bubble:after{
+    border-width: 0;
+}
+
 nav{
-    margin:$TYPE_SCALE*1em auto;
     li{
         display: inline-block;
     }
-    .logo-condensed{
+/*    .logo-condensed{
         display:block;
         margin-top:$TYPE_SCALE*1em;
         max-height:$TYPE_SCALE * 5em;
+    }*/
+    .logo-wrap{
+        box-shadow:1px 1px black;
+        height:300px;
+        width:250px;
     }
     .logo{
-        display:none;
+        height:150px;
     }
     .navbar-nav{
-        border-bottom:1px solid $HEDRON_GREY;
+        border-bottom:1px solid white;
         min-width:310px;
+        width:100%;
+        .nav-link{
+            width:70px;
+        }
     }
     .navbar-social
     {
         box-sizing:content-box;
-        padding-top:$HALF_TYPE_SCALE*1em;
-        padding-bottom:$TYPE_SCALE*3em;
+            border-bottom-width:0;
         .fa{
             margin:0 $TYPE_SCALE*1.50em;
         }
@@ -387,22 +513,25 @@ nav{
 .navbar-admin{
     position: relative;
     max-width:1000px;
-    padding-bottom:$TYPE_SCALE*.5em;
-    background-color: $HEDRON_GREY;
-    color:white;
-    a:visited {  color:white; }
+    padding-bottom:$TYPE_SCALE*.25em;
+    border-bottom:2px solid white;
+    margin:auto;
+li{
+    width:95px;
+}
+    a:visited {   }
 }
 
 
 .gallery-view {
     .artwork{
         list-style:none;
-        margin: 3% 0;
+        margin: 3% 1%;
         display:inline-block;
     }
     .post{
         padding:2%;
-        max-height:$TYPE_SCALE*3em;
+        max-height:$TYPE_SCALE*5em;
         overflow: hidden;
         text-align:left;
         display:inline-block;
@@ -442,9 +571,8 @@ form{
         width:96%;
         padding:2%;
         color:$HEDRON_ORANGE;
-        background-color:transparent;
-        border: dotted 0px $HEDRON_GREY;
-        border-bottom-width:2px;
+        background-color:$HEDRON_GREY_DARK;
+        border: solid 0px $HEDRON_GREY_DARK;
 
     }
     .fa{
@@ -455,7 +583,6 @@ form{
         display:inline-block;
         span{
             float:right;
-            color:gray;
         }
     }
 
@@ -478,4 +605,9 @@ form{
     padding:5%;
     font-weight: 300;
     background:$HEDRON_GOLD;
+    border: solid 0px $HEDRON_GREY;
+    border-radius:10px;
+    font-size:200%;
+    color:rgb(128, 78, 0);
+
 }
